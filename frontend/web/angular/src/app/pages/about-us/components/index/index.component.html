@@ -1,0 +1,5 @@
+<app-section-about-detail *ngFor="let item of aboutUsDetails; let i = index" [aboutUsDetail]="item" [index]="i + 1"></app-section-about-detail>
+<app-section-specialities></app-section-specialities>
+<app-section-testimonials></app-section-testimonials>
+<app-section-director-citation></app-section-director-citation>
+<app-gallery (gallerySelected)="galleryData = $event;" [galleryData]="galleryData" [showCount]="true"></app-gallery>

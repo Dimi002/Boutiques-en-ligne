@@ -1,0 +1,72 @@
+<section class="section section-doctor-details-card">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-center col-md-11">
+                <div class="card doctor-details">
+                    <div class="card-body">
+                        <div class="row photo-biography">
+                            <div class="col-md-3 contact-infos">
+                                <div class="photo">
+                                    <app-custom-image [src]="imageService.getCover(data?.userId?.userImagePath)" [alt]="data?.userId?.firstName"></app-custom-image>
+                                </div>
+                                <div class="contact">
+                                    <ul>
+                                        <li class="list-item">
+                                            <p>
+                                                <i class="fa fa-phone phone"></i>
+                                                <a href="tel:{{ data?.userId?.phone }}">{{ data?.userId?.phone }}</a>
+                                            </p>
+                                        </li>
+                                        <li class="list-item">
+                                            <p>
+                                                <i class="fa fa-envelope"></i>
+                                                <a href="mailto:{{ data?.userId?.phone }}">{{ data?.userId?.email }}</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9 biography">
+                                <div class="doctor-name-and-speciality">
+                                    <h4>
+                                        {{ data?.userId?.firstName }} {{ data?.userId?.lastName }}
+                                        <span>{{ getSpecialities(data?.specialitiesList) }}</span>
+                                    </h4>
+                                    <section class="biography">
+                                        <h6 class="biograpy-title">
+                                            About me
+                                        </h6>
+                                        <p class="biography-desc">
+                                            {{ data?.biography }}
+                                        </p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row schedule-planning">
+                            <section class="doctor-planning">
+                                <h6 class="doctor-planning-title">
+                                    {{this.translations.ChoisirPlage}}
+                                </h6>
+                                <div class="planning">
+                                    <app-schedule-widget #scheduleWidget (weekDaysSlotsSelected)="onScheduleTiming($event)" [slotsRange]="clinicOpeningAngClosingHours"></app-schedule-widget>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="row appointment-form-wrapper">
+                            <section class="patient-appointment-form">
+                                <h6 class="patinent-appointment-form-title">
+                                    {{this.translations.RemplissageInfo}}
+                                </h6>
+                                <div class="appointment-form">
+                                    <app-appointment-form (save)="save($event)"></app-appointment-form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

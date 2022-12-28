@@ -1,0 +1,32 @@
+section.specialities-header-list {
+    height: auto;
+    padding: 1.2rem;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 10%);
+    position: relative;
+    ul.specialities-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        flex-grow: 1;
+        li {
+            list-style: none;
+            font-size: 1rem;
+            padding: 10px 1.2rem;
+            a {
+                font-weight: bold;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

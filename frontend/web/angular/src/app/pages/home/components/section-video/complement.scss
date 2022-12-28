@@ -1,0 +1,36 @@
+section.section-video {
+    section.section-video-description {
+        padding: 40px 3rem;
+        position: relative;
+        div.row {
+            div.col-center {
+                margin: auto;
+                div.col-md-6 {
+                    li {
+                        list-style: none;
+                        font-size: 1.15rem;
+                        p.video-description {
+                            text-align: left;
+                            i {
+                                margin-right: 0.5rem;
+                            }
+                        }
+                    }
+                    app-video-ligthbox {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        app-cross-with-image.bottom-left {
+            position: absolute;
+            left: -128px; bottom: -238px;
+            height: 300px;
+            width: 300px;
+            z-index: 0;
+            filter: blur(10px);
+            opacity: 0.2;
+        }
+    }
+}

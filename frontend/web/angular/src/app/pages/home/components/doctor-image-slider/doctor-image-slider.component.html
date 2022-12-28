@@ -1,0 +1,10 @@
+<ngx-slick-carousel class="carousel doctor-carousel" #slickComponent [config]="slideConfig" (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <!-- Slider Item -->
+    <app-custom-image ngxSlickItem *ngFor="let item of doctors"
+        [src]="imageService.getCover(item?.userId?.userImagePath)" class="img-fluid doctor-img"
+        [alt]="item?.userId?.firstName"></app-custom-image>
+    <app-custom-image ngxSlickItem *ngIf="doctors && doctors.length === 0"
+        src="" class="img-fluid doctor-img" alt=""></app-custom-image>
+    <!-- /Slider Item -->
+</ngx-slick-carousel>

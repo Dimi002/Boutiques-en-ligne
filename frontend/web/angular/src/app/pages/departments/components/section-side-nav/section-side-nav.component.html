@@ -1,0 +1,11 @@
+<section class="side-menu dashboard-widget">
+    <nav class="side-menu-nav dashboard-menu">
+        <ul>
+            <li *ngFor="let item of departments" class="{{ (item === activeDepartment)? 'active': '' }}">
+                <a (click)="sectActiveDepartment(item)" href="javascript:void(0);">
+                    <span>{{ item?.specialityName }}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>

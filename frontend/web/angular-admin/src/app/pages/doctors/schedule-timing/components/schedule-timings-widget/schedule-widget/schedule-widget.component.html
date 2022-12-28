@@ -1,0 +1,27 @@
+<div class="card schedule-widget mb-0">
+
+    <!-- Schedule Header -->
+    <div class="schedule-header">
+
+        <!-- Schedule Nav -->
+        <app-schedule-widget-nav (select)="onSelectDay($event)" [navItems]="navItems" [activeNavItem]="activeNavItem">
+        </app-schedule-widget-nav>
+        <!-- /Schedule Nav -->
+
+    </div>
+    <!-- /Schedule Header -->
+
+    <!-- Schedule Content -->
+    <div class="tab-content schedule-cont">
+        <!-- Time Slot Wrapper -->
+        <div class="time-slots-wrapper" [class]="weekDaysWithSlots?.day !== activeNavItem? 'hide': ''">
+            <!-- Time Slot List -->
+            <app-schedule-widget-time-slots [slot]="weekDaysWithSlots" *ngIf="weekDaysWithSlots?.day === activeNavItem">
+            </app-schedule-widget-time-slots>
+            <!-- /Time Slot List -->
+        </div>
+        <!-- /Time Slot Wrapper -->
+    </div>
+    <!-- /Schedule Content -->
+
+</div>

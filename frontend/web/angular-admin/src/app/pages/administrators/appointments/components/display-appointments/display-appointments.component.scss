@@ -1,0 +1,18 @@
+div.card {
+    div.card-body {
+        padding: 20px;
+        position: relative;
+    }
+    td {
+        div.table-action {
+            a.btn {
+                margin: 0 2px;
+            }
+        }
+        h2.table-avatar {
+            a.avatar {
+                margin-right: 7px;
+            }
+        }
+    }
+}

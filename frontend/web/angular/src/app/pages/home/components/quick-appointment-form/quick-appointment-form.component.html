@@ -1,0 +1,90 @@
+<div class="card">
+    <div class="card-body">
+        <!-- Quick Appointment Form -->
+        <form [formGroup]="form" class="quick-appointment-form">
+            <!-- Appointment Infos -->
+            <section class="row form-row appointment-informations">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>{{this.translations.SelectionDeSpecialite}}</label>
+                        <select (change)="onSpecialityChange($event)" formControlName="speciality"
+                            class="form-control select">
+                            <option disabled selected value="select-speciality">
+                                -{{this.translations.SelectionDeSpecialite}}-</option>
+                            <option *ngFor="let item of specialities" [value]="item?.id">{{ item?.specialityName }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>{{this.translations.SelectionDeMedecin}}</label>
+                        <select (change)="onSpecialistChange($event)" formControlName="specialist"
+                            class="form-control select">
+                            <option disabled selected value="select-doctor">-{{this.translations.SelectionDeMedecin}}-
+                            </option>
+                            <option *ngFor="let item of doctors" [value]="item?.specialistId">{{ item?.userId?.firstName
+                                + ' ' + item?.userId?.lastName }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input formControlName="appointmentDate" type="date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>{{ this.translations.Heure }} <span>({{ this.translations.HeureOuverTureFermeture }} {{
+                                startTime }} -- {{ endTime }})</span></label>
+                        <input formControlName="appointmentHour" type="time" [min]="startTime" [max]="endTime"
+                            class="form-control" required>
+                    </div>
+                </div>
+            </section>
+            <!-- /Appointment Infos -->
+
+            <!-- Patient Infos -->
+            <section class="row form-row patient-informations">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientName" type="text" placeholder="{{this.translations.NomComplet}}"
+                            translate="yes" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientPhone" type="text" placeholder="{{this.translations.Telephone}}"
+                            translate="yes" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientEmail" type="text" placeholder="{{this.translations.Email}}"
+                            translate="yes" class="form-control">
+                    </div>
+                </div>
+            </section>
+            <!-- /Patient Infos -->
+
+            <!-- Purpose Infos -->
+            <section class="row form-row purpose-informations">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea formControlName="patientMessage" placeholder="{{this.translations.BesoinsDuPatient}}"
+                            rows="7" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6 submit-section">
+                    <div class="form-group">
+                        <button (click)="saveChanges()" [disabled]="form.invalid" type="submit"
+                            class="btn btn-primary btn-block submit-btn">{{this.translations.PrendreUnRDV}}</button>
+                    </div>
+                </div>
+            </section>
+            <!-- /Purpose Infos -->
+        </form>
+        <!-- /Quick Appointment Form -->
+    </div>
+</div>

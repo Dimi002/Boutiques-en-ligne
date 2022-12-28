@@ -1,0 +1,41 @@
+<!-- Education -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Education</h4>
+        <div class="education-info">
+            <div *ngFor="let item of items" class="row form-row education-cont">
+                <div class="col-12 col-md-10 col-lg-10">
+                    <div class="row form-row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Degree</label>
+                                <input [(ngModel)]="item.degree" placeholder="American Dental Medical University" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>College/Institute</label>
+                                <input [(ngModel)]="item.college" placeholder="BDS" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Year of Completion</label>
+                                <input [(ngModel)]="item.yearOfCompletion" placeholder="2003-2005" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="items && (item !== items[0])" class="col-12 col-md-2 col-lg-2">
+                    <label class="d-md-block d-sm-none d-none">&nbsp;</label>
+                    <a (click)="remove(item)" href="javascript:void(0)" class="btn btn-danger trash"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="add-more">
+            <a (click)="addSlot()" href="javascript:void(0);" class="add-education"><i class="fa fa-plus-circle"></i> Add
+                More</a>
+        </div>
+    </div>
+</div>
+<!-- /Education -->

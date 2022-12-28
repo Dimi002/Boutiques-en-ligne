@@ -1,0 +1,21 @@
+section.section-features {
+    background: none;
+    padding-top: 3rem;
+    div.container-fluid {
+        div.row {
+            div.col-md-5.features-img {
+                img {
+                    max-height: 500px;
+                    object-fit: contain;
+                }
+            }
+            div.col-md-7 {
+                div.features-slider {
+                    div.feature-item {
+                        width: max-content !important;
+                    }
+                }
+            }
+        }
+    }
+}

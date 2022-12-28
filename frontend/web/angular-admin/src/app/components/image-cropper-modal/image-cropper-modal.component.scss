@@ -1,0 +1,16 @@
+div.modal-body {
+    max-height: 550px;
+    overflow-y: auto;
+
+    div.submit-section {
+        position: sticky;
+        bottom: 0;
+        z-index: 2;
+        button.submit-btn {
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            min-width: 120px;
+        }
+    }
+}

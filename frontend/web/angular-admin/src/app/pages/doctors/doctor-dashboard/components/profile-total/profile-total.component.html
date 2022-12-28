@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card dash-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                        <div class="dash-widget dct-border-rht">
+                            <div class="circle-bar circle-bar1">
+                                <div class="circle-graph1" data-percent="75">
+                                    <img src="assets/website/img/icon-01.png" class="img-fluid" alt="patient">
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6>Total Patient</h6>
+                                <h3>{{totalobjet?.allPatient}}</h3>
+                                <p class="text-muted">ALL Appointments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-4">
+                        <div class="dash-widget dct-border-rht">
+                            <div class="circle-bar circle-bar2">
+                                <div class="circle-graph2" data-percent="65">
+                                    <img src="assets/website/img/icon-02.png" class="img-fluid" alt="Patient">
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6>Today Accept Patient</h6>
+                                <h3>{{totalobjet?.allAceptTodayPatient}}</h3>
+                                <p class="text-muted">{{totalobjet?.allAceptTodayPatientDate | date}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-4">
+                        <div class="dash-widget">
+                            <div class="circle-bar circle-bar3">
+                                <div class="circle-graph3" data-percent="50">
+                                    <img src="assets/website/img/icon-03.png" class="img-fluid" alt="Patient">
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6>Today Cancel Patient</h6>
+                                <h3>{{totalobjet?.allCancelTodayPatient}}</h3>
+                                <p class="text-muted">{{totalobjet?.allCancelTodayPatientDate | date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

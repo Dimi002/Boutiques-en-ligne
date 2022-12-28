@@ -1,0 +1,14 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="page-title">{{ (breadcrumbs && breadcrumbs.length > 0)? breadcrumbs[breadcrumbs.length - 1]?.label: '' }}</h3>
+            <ul class="breadcrumb">
+                <li *ngFor="let menu of breadcrumbs; let i = index;"
+                 class="breadcrumb-item {{ (breadcrumbs && breadcrumbs.length === i + 1)? 'active': '' }}"
+                 (click)="navService.goTo(menu?.url)">{{ menu?.label }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- /Page Header -->

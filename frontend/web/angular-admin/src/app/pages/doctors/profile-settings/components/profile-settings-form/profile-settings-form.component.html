@@ -1,0 +1,207 @@
+<div class="card-body p-0 pb-4">
+    <!-- Profile Settings Form -->
+    <form [formGroup]="form">
+        <div class="row form-row">
+            <!-- Doctor basic Informations -->
+            <div formGroupName="basicInfos" class="p-0">
+                <!-- Basic Information -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Basic Informations</h4>
+                        <div class="row form-row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="change-avatar">
+                                        <div class="profile-img">
+                                            <img src="{{ this.profileImageUrl? this.profileImageUrl: 'assets/website/img/doctors/doctor-placeholder.jpg' }}"
+                                                alt="User Image">
+                                        </div>
+                                        <div class="upload-img">
+                                            <div class="change-photo-btn">
+                                                <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                                <input formControlName="profileImage" type="file" class="upload"
+                                                    id="profile-image" accept="image/jpg,image/jpeg,image/png,image/gif"
+                                                    (change)="selectFile($event)">
+                                            </div>
+                                            <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
+                                                2MB</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="firstName">First name</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <input type="text" class="form-control" placeholder="First name" id="firstName"
+                                            formControlName="firstName" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="lastName">Last name</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <input type="text" class="form-control" placeholder="Last name" id="lastName"
+                                            formControlName="lastName" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="username">Username</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <input type="text" class="form-control" placeholder="Username" id="username"
+                                            formControlName="username" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="phone">Phone</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <span>+237</span>
+                                        </button>
+                                        <input type="text" class="form-control" placeholder="phone number" id="phone"
+                                            formControlName="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="email">Email</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                        <input type="email" class="form-control" placeholder="Email" id="email"
+                                            formControlName="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="birthDate">birthDate</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="fa fa-calendar"></i>
+                                        </button>
+                                        <input type="date" class="form-control" placeholder="birthDate" id="birthDate"
+                                            formControlName="birthDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Basic Information -->
+
+
+        </div>
+        <!-- /Doctor basic Informations -->
+
+        <!-- Contact Details -->
+        <div class="card contact-card" formGroupName="contactInfos">
+            <!-- About Me -->
+            <div>
+                <div class="card-body">
+                    <h4 class="card-title">About Me</h4>
+                    <div class="form-group mb-0">
+                        <label>Biography</label>
+                        <textarea [(ngModel)]="biography" class="form-control" rows="5"
+                            formControlName="biography"></textarea>
+                    </div>
+                    <small class="form-text text-muted">Note : Type & Press enter to add your
+                        biography</small>
+                </div>
+            </div>
+            <!-- /About Me -->
+            <div class="card-body">
+                <h4 class="card-title">Contact Details</h4>
+                <div class="row form-row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Year Of Experience</label>
+                            <input formControlName="yearOfExperience" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="gender" class="form-control" formControlName="gender">
+                                <option value="" disabled>Please chose your gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">City - Country</label>
+                            <input formControlName="city" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Contact Details -->
+
+        <!-- Services and Specialization -->
+        <div class="card services-card" formGroupName="spacializationInfos">
+            <div class="card-body">
+                <h4 class="card-title">Specialization</h4>
+                <div class="form-group mb-0">
+                    <label>Specialization </label>
+
+                    <app-custom-multiple-select [inputValue]="inputValue"
+                        [inputPlaceholder]="inputPlaceholderSpecilisation" [machtList]="machtList"
+                        [selectedItems]="selectedItems" (typingInputEvent)="getItemList($event)"
+                        (deleteOptionEvent)="deleteItem($event)" (selectOptionEvent)="selectItem($event)">
+                    </app-custom-multiple-select>
+
+                    <small class="form-text text-muted">Note : Type & Press enter to add new
+                        specialization</small>
+                </div>
+            </div>
+        </div>
+        <!-- /Services and Specialization -->
+
+        <!-- Education -->
+        <!-- <app-education-form (onChange)="onEducChange($event)" class="p-0"></app-education-form> -->
+        <!-- /Education -->
+
+        <!-- Experience -->
+        <!-- <app-experience-form (onChange)="onExpChange($event)" class="p-0"></app-experience-form> -->
+        <!-- /Experience -->
+
+        <!-- Awards -->
+        <!-- <app-awards-form (onChange)="onAwardChange($event)" class="p-0"></app-awards-form> -->
+        <!-- /Awards -->
+
+        <div class="submit-section">
+            <button (click)="saveChanges()" type="submit" class="btn btn-primary submit-btn">
+                <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status"
+                        aria-hidden="true"></span></i>
+                <span *ngIf="!isLoading">Save Changes</span>
+            </button>
+        </div>
+    </form>
+    <!-- /Profile Settings Form -->

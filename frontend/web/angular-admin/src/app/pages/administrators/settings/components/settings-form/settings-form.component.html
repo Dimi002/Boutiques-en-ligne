@@ -1,0 +1,154 @@
+<!-- Profile Settings Form -->
+<form [formGroup]="form">
+    <div class="row form-row">
+        <div class="card">
+            <div class="card-header">
+                <h4>images</h4>
+            </div>
+            <div class="card-body col-md-12 row ">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <div class="change-avatar">
+                            <div class="profile-img">
+                                <app-custom-image [src]="loadningImage" alt="User Image" imgClass="rounded-circle">
+                                </app-custom-image>
+                            </div>
+                            <div class="upload-img">
+                                <div class="change-photo-btn">
+                                    <span><i class="fa fa-upload"></i>Upload Image for website logo</span>
+                                    <input type="file" class="upload" id="profile-image"
+                                        accept="image/jpg,image/jpeg,image/png,image/gif" (change)="selectFile($event)">
+                                </div>
+                                <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
+                                    2MB</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <div class="change-avatar">
+                            <div class="profile-img">
+                                <app-custom-image [src]="coverImage" alt="User Image" imgClass="rounded-circle">
+                                </app-custom-image>
+                            </div>
+                            <div class="upload-img">
+                                <div class="change-photo-btn">
+                                    <span><i class="fa fa-upload"></i>Upload Cover image for video
+                                        presentation</span>
+                                    <input type="file" class="upload" id="profile-image"
+                                        accept="image/jpg,image/jpeg,image/png,image/gif"
+                                        (change)="selectFile($event, 1)">
+                                </div>
+                                <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
+                                    2MB</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Information de contact et localisation</h4>
+            </div>
+            <div class="card-body row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Principal Email</label>
+                        <input formControlName="email" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Secondary Email</label>
+                        <input formControlName="email2" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input formControlName="adresse" type="text" class="form-control datetimepicker">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label> Principal Phone</label>
+                        <input formControlName="tel" type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label> Secondary Phone</label>
+                        <input formControlName="tel2" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Lien utiles</h4>
+            </div>
+            <div class="card-body row">
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label>link For video presentation </label>
+                        <input formControlName="video" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>LinkedIn</label>
+                        <input formControlName="ln" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Facebook</label>
+                        <input formControlName="fb" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Twitter</label>
+                        <input formControlName="twitter" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Instagram</label>
+                        <input formControlName="insta" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Heure ouverture et fermeture</h4>
+            </div>
+            <div class="card-body row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Time Start of day</label>
+                        <input formControlName="planingStartAt" type="number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Time End of day</label>
+                        <input formControlName="planingEndAt" type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit-section">
+        <button (click)="saveChanges()" type="submit" class="btn btn-primary submit-btn" [disabled]="isLoading">
+            <span class="spinner-grow" *ngIf="isLoading"></span>
+            Save Changes</button>
+    </div>
+</form>
+<!-- /Profile Settings Form -->

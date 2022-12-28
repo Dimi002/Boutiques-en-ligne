@@ -1,0 +1,43 @@
+<!-- Schedule Widget -->
+<section class="card booking-schedule schedule-widget">
+
+    <!-- Schedule Header -->
+    <div class="schedule-header">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Day Slot -->
+                <div class="day-slot">
+                    <ul>
+                        <li *ngFor="let slot of weekSlots" (click)="onSelectWeekSlot(slot)" class="week-day-slot {{ slot.selected? 'selected': '' }}">
+                            <span>{{ slot?.weekDay }}</span>
+                            <span class="slot-date">{{ slot?.date | date:'mediumDate' }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /Day Slot -->
+            </div>
+        </div>
+    </div>
+    <!-- /Schedule Header -->
+
+    <!-- Schedule Content -->
+    <div class="schedule-cont">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Time Slot -->
+                <div class="time-slot">
+                    <ul class="clearfix">
+                        <li *ngFor="let weekSlot of weekSlots">
+                            <a *ngFor="let daySlot of weekSlot.weekDaySlots" (click)="onSelectDaySlot(weekSlot, daySlot)" class="timing {{ daySlot.selected? 'selected': '' }} {{ daySlot.disabled? 'disabled': '' }}" href="javascript:void(0);">
+                                <span>{{ daySlot?.time }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /Time Slot -->
+            </div>
+        </div>
+    </div>
+    <!-- /Schedule Content -->
+</section>
+<!-- /Schedule Widget -->

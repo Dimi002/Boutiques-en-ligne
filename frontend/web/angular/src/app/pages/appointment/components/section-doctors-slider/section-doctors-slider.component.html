@@ -1,0 +1,13 @@
+<section class="section section-doctors-slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-center col-md-11">
+                <section class="doctor-slider slider row">
+                    <app-doctors-slider-widget class="col-md-4 m-auto" (doctorSelect)="onSelect($event)"
+                        *ngFor="let doctor of doctors" [data]="doctor">
+                    </app-doctors-slider-widget>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

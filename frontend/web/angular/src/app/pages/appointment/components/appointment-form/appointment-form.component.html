@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <!-- Quick Appointment Form -->
+        <form [formGroup]="form" class="quick-appointment-form">
+            <!-- Patient Infos -->
+            <section class="row form-row patient-informations">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientName" type="text" placeholder="{{this.translations.NomComplet}}" translate="yes" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientPhone" type="text" placeholder="{{this.translations.Telephone}}" translate="yes" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input formControlName="patientEmail" type="text" placeholder="{{this.translations.Email}}" translate="yes" class="form-control">
+                    </div>
+                </div>
+            </section>
+            <!-- /Patient Infos -->
+
+            <!-- Purpose Infos -->
+            <section class="row form-row purpose-informations">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea formControlName="patientMessage" placeholder="{{this.translations.BesoinsDuPatient}}" rows="7" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6 submit-section">
+                    <div class="form-group">
+                        <button (click)="saveChanges()" [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block submit-btn">{{this.translations.PrendreUnRDV}}</button>
+                    </div>
+                </div>
+            </section>
+            <!-- /Purpose Infos -->
+        </form>
+        <!-- /Quick Appointment Form -->
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<section class="contact-cards">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="service-item style-1 bg-f8" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="content-infos">
+                        <h5><a href="javascript:void(0);" class="color-333">Contact Info</a></h5>
+                        <p>
+                            <a *ngFor="let phone of websiteAddresses.phones" href="tel:{{ phone }}">{{ phone }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="service-item style-1 bg-f8" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fa fa-clock"></i>
+                    </div>
+                    <div class="content-infos">
+                        <h5>
+                            <a href="javascript:void(0);" class="color-333">
+                                {{this.translations.HeuresDeTravail}}
+                                <span *ngIf="setting?.planingStartAt && setting?.planingEndAt">:</span>
+                            </a>
+                            <h5 *ngIf="setting?.planingStartAt && setting?.planingEndAt" class="planing-hours">{{ getHour(setting?.planingStartAt) }}H - {{ getHour(setting?.planingEndAt) }}H</h5>
+                        </h5>
+                        <p *ngFor="let address of websiteAddresses.addresses">{{ address }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="service-item style-1 bg-f8" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="content-infos">
+                        <h5><a href="javascript:void(0);" class="color-333">Email</a></h5>
+                        <p>
+                            <a *ngFor="let email of websiteAddresses.emails" href="mailto:{{ email }}">{{ email }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

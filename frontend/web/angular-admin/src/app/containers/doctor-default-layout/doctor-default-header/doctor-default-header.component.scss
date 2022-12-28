@@ -1,0 +1,27 @@
+header.header {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+
+    ul.nav.header-navbar-rht {
+        li {
+            padding-right: 0;
+
+            div.dropdown-menu-right.lang-dropdown {
+                min-width: 108px;
+            }
+
+            div.dropdown-user-menu {
+                left: -120px;
+            }
+
+            span.lang-key {
+                line-height: 1.5;
+                padding-left: 10px;
+                font-size: 1rem;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

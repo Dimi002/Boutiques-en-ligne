@@ -1,0 +1,40 @@
+section.section-mapa-description {
+    color: #ffff ;
+    background-color: #ffff;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    div.row {
+        div.col-center {
+            margin: auto;
+            padding: 1rem 4rem 1rem 4rem;
+            background-color: var(--custom-primary);
+            box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+            border-radius: 0.5rem;
+            li {
+                list-style: none;
+                font-size: 1.15rem;
+                p.mapa-item {
+                    text-align: left;
+                    i {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+            div.submit-section {
+                button {
+                    background-color: var(--custom-primary-dark);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-mapa-description {
+        div.row {
+            div.col-center {
+                padding: 1rem 2rem 1rem 2rem;
+            }
+        }
+    }
+}

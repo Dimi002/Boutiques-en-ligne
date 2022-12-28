@@ -1,0 +1,60 @@
+section.content.success-page-cont {
+    div.success-cont {
+        app-doctors-slider-widget {    
+            max-width: 450px;
+            display: block;
+            margin: auto;
+        }
+        h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            width: 98%;
+        }
+        a {
+            color: #ffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: auto;
+            i {
+                font-size: 1rem;
+                display: flex;
+            }
+        }
+        p {
+            margin-bottom: 1rem;
+            strong span {
+                color: var(--custom-primary);
+            }
+        }
+        ul.appointment-notification-modes {
+            margin: 0;
+            padding: 0;
+            max-width: 50%;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            li {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+            }
+            label, input {
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media only screen and (max-width:575px) {
+    section.content.success-page-cont {
+        div.success-cont {
+            ul.appointment-notification-modes {
+                max-width: 80%;
+            }
+            a {
+                width: 100%;
+            }
+        }
+    }
+}

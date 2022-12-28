@@ -1,0 +1,24 @@
+<section class="section section-features">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 features-img">
+                <img src="assets/website/img/features/feature-07.png" class="img-fluid" alt="Feature">
+            </div>
+            <div class="col-md-7">
+                <app-section-title [data]="data"></app-section-title>
+                <div class="features-slider">
+                    <ngx-slick-carousel class="carousel" #slickComponent [config]="slideConfig"
+                        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                        <!-- Slider Item -->
+                        <div ngxSlickItem *ngFor="let feature of features" class="feature-item text-center">
+                            <img [src]="feature?.img" alt="Feature">
+                            <p>{{ feature?.name }}</p>
+                        </div>
+                        <!-- /Slider Item -->
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

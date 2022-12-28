@@ -1,0 +1,15 @@
+<!-- Take Appointment Page Header -->
+<!--app-section-page-header [data]="data"></app-section-page-header-->
+<!-- /Take Appointment Page Header -->
+
+<!-- Specialities Header List -->
+<app-section-specialities-header (specialitySelected)="onSelectSpeciality($event)" [specialities]="specialities"></app-section-specialities-header>
+<!-- /Specialities Header List -->
+
+<!-- Doctors Slider -->
+<app-section-doctors-slider (doctorSelected)="onSelectDoctor($event)" [doctors]="specialists"></app-section-doctors-slider>
+<!-- /Doctors Slider -->
+
+<!-- Doctor Details Card -->
+<app-section-doctor-details-card #doctorCardDetails (schedule)="onSchedule($event)" (submitAppointment)="onSubmitAppointment($event)" [data]="selectedDoctor"></app-section-doctor-details-card>
+<!-- Doctor Details Card -->

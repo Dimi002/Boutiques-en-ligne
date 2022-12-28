@@ -1,0 +1,115 @@
+{
+    "menu": {
+        "Accueil": "Home",
+        "Consultations": "Consultations",
+        "Departements": "Departments",
+        "Galerie": "Gallery",
+        "AProposDeNous": "About Us",
+        "ContactezNous": "Contact Us"
+    },
+    "footer": {
+        "PourLesDocteurs": "For Doctors",
+        "RendezVous": "Appointments",
+        "Connexion": "Login",
+        "Inscription": "Register",
+        "TableauDeBordDuDocteur": "Doctor Dashboard",
+        "TermesEtConditions": "Terms and Conditions",
+        "Politique": "Policy",
+        "PourLesPatients": "For Patients",
+        "ChercherUnDocteur": "Search for Doctors",
+        "PrendreUnRDV": "Make Appointments",
+        "Description": "The Medical-Surgical Clinic Le Berceau in short CMCB is located in Douala at 199 Rue Foulcault in Akwa, opposite Nextel General Management or opposite Hotel le Ndé and 200 meters from the MTN General Management."
+    },
+    "search": {
+        "ChercherUnDocteur": "Search Doctor, Make an Appointment",
+        "PlaceHolder": "Search Doctors, Diseases Etc",
+        "Exemple": "Ex : Dental or Sugar Check up etc",
+        "Rechercher": "Search",
+        "Specialite": "Speciality",
+        "Specialiste": "Specialist"
+    },
+    "appointment": {
+        "SelectionDeSpecialite": "Select a Speciality",
+        "SelectionDeMedecin": "Select a Doctor",
+        "Heure": "Time",
+        "HeureOuverTureFermeture": "Between ",
+        "NomComplet": "Full Name",
+        "Telephone": "Phone Number",
+        "Email": "Email",
+        "BesoinsDuPatient": "Describe your needs",
+        "PrendreUnRDV": "Take Appointment",
+        "RdvAccepte": "Appointment booked Successfully!",
+        "RdvAvec": "Appointment booked with",
+        "Le": "on",
+        "PageAccueil": "Go Back Home !",
+        "Confirmation": "Make an appointment in our clinic with the doctor",
+        "HeureProgrammee": "Your appointment will be schedule at ",
+        "Rappel": "Let us call you back by sending you",
+        "Mail": "An Email",
+        "Message": "A Phone SMS",
+        "ConfirmezLeRDV": "Confirm appointment",
+        "HeuresDeTravail": "Business Hours",
+        "Titre": "Take A Quick Appointment",
+        "TitreConfirmationDeRDV": "Please confirm the appointment",
+        "Choisir": "Select",
+        "PrendreUnRdvAvec": "Take An Appointment With",
+        "RemplissageInfo": "Fill in your personal information to make an appointment",
+        "ChoisirPlage": "Select a time for the appointment",
+        "ErreurPasDeDocteurSelectionne": "Please select a doctor !"
+    },
+    "doctorWidget": {
+        "Reserver": "Book Now",
+        "DisponibleLe": "Available on",
+        "AnneeExperience": "Year(s) of experience"
+    },
+    "contact": {
+        "Nom": "Name",
+        "Objet": "Subject",
+        "Envoi": "SEND MESSAGE"
+    },
+    "speciality": {
+        "SavoirPlus": "Read More",
+        "TitreDeSection": "Clinic And Specialities"
+    },
+    "mapa": {
+        "Cerebrale": "Cerebral (Hemiplegia);",
+        "Insuffisance": "Rename (Insufficiency);",
+        "Cardiaque": "Heart (Insufficiency and Infactus);",
+        "MapaTitre": "What is ABPM?",
+        "MapaDescription": "ABPM (Ambulatory Blood Pressure Measurement) allows for better detection and treatment of hypertension, which is the most common and often the most serious cardiovascular disease and complication:"
+    },
+    "video": {
+        "Staff": " Our staff intervenes with a lot of professionalism in order to provide you with care for children, adults, the elderly and the disabled. disabled people. ",
+        "Objectif": "They contribute with professionalism to the maintenance of people in a in a quality psychological state from their reception to their complete recovery.",
+        "Titre": "What We Do",
+        "Description": "Our primary mission is to welcome and provide care to patients; to ensure their comfort and well-being in order to maintain and improve their health."
+    },
+    "sectionDirecteur": {
+        "MotDuDirecteur": "Our staff intervenes with a lot of professionalism in order to provide you with care for: children, adults up to the elderly and handicapped people. They contribute with professionalism to maintain people in a quality psychological state from their reception until their complete recovery. Our primary mission is to welcome and provide care to patients; to ensure their comfort and well-being in order to maintain and improve their health.",
+        "TitreSectionDirecteur": "Clinic Director Word"
+    },
+    "sectionMedecin": {
+        "NosMedecins": "Our Doctors"
+    },
+    "temoignage": {
+        "TitreSectionTemoignage": "Our Patients Says"
+    },
+    "sectionAvailable": {
+        "Titre": "Availabe Features In Our Clinic",
+        "Description": "Availabe Features in Our Clinic', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+    },
+    "sectionAnounce": {
+        "Hotler": "Blood Pressure Hotler ;",
+        "HotlerRyth": "Rhythmic Hotler;",
+        "Titre": "Now Available"
+    },
+    "aboutUs": {
+        "Description1": "The Clinique Médico-Chirurgicale le Berceau « SAS » (CMCB « SAS »), a private medical-surgical establishment exists in Douala, Cameroon since 2021 by order No. 2227/MINSANTE/SG/DOSTS/SDOS/SFSP of June 03, 2021. Order signed by the Minister of Health. The Medical-Surgical Clinic Le Berceau in abbreviated CMCB is located in Douala at 199 Rue Foulcault in Akwa, opposite Nexttel General Management or opposite Hotel le Ndé and 200 meters from the General Management MTN.",
+        "Description2": "Operational, the clinic since its inception has demonstrated quality in terms of medical monitoring. We value the quality of reception and care of our patients, and we also provide our patients with state-of-the-art equipment and a young, dynamic and competent medical team in a pleasant, clean environment that is conducive to their well-being for greater comfort during their stay until their recovery.",
+        "Description3": "The CMCB, concerned about quality and demanding, regularly reinforces its capacity for innovation in order to better serve its patients, the net plus ultra through the acquisition of state-of-the-art equipment, the deployment of new medical technologies associated with an efficient work organization to ensure a personalized and respectful health pathway for each patient.",
+        "Description4": "The health sector is in strong development and includes several types of intervention such as emergency consultations and hospitalizations. « The CMCB » has developed the quality of its services in order to allow its patients to benefit from a qualitative and fast care."
+    },
+    "home": {
+        "pageTitle": "Home"
+    }
+}

@@ -1,0 +1,15 @@
+<section class="gallery-image-viewer-wrapper">
+    <section class="gallery-image-viewer-slider">
+        <ngx-slick-carousel class="carousel gallery-image-viewer--carousel" #slickComponent [config]="slideConfig"
+            (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <!-- Slider Item -->
+            <img ngxSlickItem *ngFor="let image of images; let i = index" [src]="image" class="img-fluid doctor-img"
+                [alt]="'image-' + i">
+            <!-- /Slider Item -->
+        </ngx-slick-carousel>
+    </section>
+    <section class="gallery-image-viewer-sidebar">
+
+    </section>
+</section>

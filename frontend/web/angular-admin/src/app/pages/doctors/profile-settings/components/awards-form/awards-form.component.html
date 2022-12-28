@@ -1,0 +1,41 @@
+<!-- Awards -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Awards</h4>
+        <div class="awards-info">
+            <div *ngFor="let item of items" class="row form-row awards-cont">
+                <div class="col-12 {{ (item !== items[0])? 'col-md-10 col-lg-10': 'col-md-12 col-lg-12' }}">
+                    <div class="row form-row">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label>Awards</label>
+                                <input [(ngModel)]="item.award" placeholder="Humanitarian Award" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input [(ngModel)]="item.year" placeholder="July 2019" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea [(ngModel)]="item.description" placeholder="Description" rows="1" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="items && (item !== items[0])" class="col-12 col-md-2 col-lg-2">
+                    <label class="d-md-block d-sm-none d-none">&nbsp;</label>
+                    <a (click)="remove(item)" href="javascript:void(0)" class="btn btn-danger trash"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="add-more">
+            <a (click)="addSlot()" href="javascript:void(0);" class="add-award"><i class="fa fa-plus-circle"></i> Add
+                More</a>
+        </div>
+    </div>
+</div>
+<!-- /Awards -->

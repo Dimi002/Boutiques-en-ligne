@@ -1,0 +1,44 @@
+<div class="card-body">
+    <div *ngIf="isLoading" class="page-loader-wrapper">
+        <div class="lds-dual-ring"></div>
+        <span class="page-loading-msg mt-4 text-bold">Loading...</span>
+    </div>
+    <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-hover table-center datatable mb-0">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Doctor Email</th>
+                    <th>Doctor Phone</th>
+                    <th>Speciality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let specialists of specialist">
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);" class="avatar avatar-sm mr-2">
+                                <app-custom-image [src]="imageService.getCover(specialists?.userId?.userImagePath)" [alt]="specialists?.userId?.firstName" imgClass="avatar-img rounded-circle"></app-custom-image>
+                            </a>
+                            <a href="javascript:void(0);">Dr. {{ specialists?.userId?.firstName }} {{ specialists?.userId?.lastName }}</a>
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a [href]="'mailto:' + specialists?.userId?.email">{{ specialists?.userId?.email }}</a>
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a [href]="'tel:' + specialists?.userId?.phone">{{ specialists?.userId?.phone }}</a>
+                        </h2>
+                    </td>
+                    <td>
+                        <span *ngFor="let item of specialists?.specialitiesList" class="badge badge-success">{{ item }}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

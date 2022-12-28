@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="input-wrapper">
+    <div class="chip-item" *ngFor="let item of selectedItems;">
+      <span class="chip-text">{{item.title}}</span>
+      <i aria-hidden="true" class="close" (click)="removeItem(item.title, item.id)">&times;</i>
+    </div>
+    <div class="input-con">
+      <input type="text" [placeholder]="inputPlaceholder" [value]="inputValue" id="input-label" autocomplete="off"
+        class="form-control" (keyup)="getMatchList($event)" required>
+      <i *ngIf="!isEmptyMatchList()" class="spinner-wrapper">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </i>
+    </div>
+  </div>
+  <div *ngIf="!isEmptyMatchList()" class="custom-input-dropdown w-100 animated fadeIn">
+    <ul>
+      <div *ngFor="let item of machtList;">
+        <li (click)="addItem(item)" class="list-group-item" [ngClass]="{disabled: item.selected}">
+          {{item.title}}
+          <svg *ngIf="item.selected" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-check" viewBox="0 0 16 16">
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+          </svg>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li *ngFor="let menu of navItems" [routerLink]="[menu?.url]" routerLinkActive="active"
+                    (click)="menuActive = menu;"
+                    class="{{ (menu === menuActive)? 'active': '' }} {{authService.hasAnyRole(menu.roles)? '' : 'hide'}}">
+                    <span *ngIf="menu.title">{{ menu?.name }}</span>
+                    <a *ngIf="!menu.title" href="javascript:void(0);">
+                        <i class="{{ menu?.icon }}"></i>
+                        <span>{{ menu?.name }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" (click)="authService.logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div (click)="toggleSideBar();" class="sidebar-minimizer {{ !sideBarOpened? 'sidebar-minimizer-rotate': '' }}"
+        role="button"></div>
+</div>
+<!-- /Sidebar -->

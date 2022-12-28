@@ -1,0 +1,18 @@
+footer.footer {
+    div.footer-bottom {
+        div.copyright {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            div.copyright-text {
+                p {
+                    margin-top: 0.6rem;
+                }
+            }
+        }
+        div.terms {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}

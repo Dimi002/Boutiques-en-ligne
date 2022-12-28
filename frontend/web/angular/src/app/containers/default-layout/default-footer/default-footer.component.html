@@ -1,0 +1,141 @@
+<!-- Footer -->
+<footer class="footer">
+
+    <!-- Footer Top -->
+    <div class="footer-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-about">
+                        <div class="footer-logo">
+                            <app-logo (click)="navService.goTo('/home')" customClass="logo-white">
+                            </app-logo>
+                        </div>
+                        <div class="footer-about-content">
+                            <p> {{this.translations.Description}} </p>
+                            <div class="social-icon">
+                                <ul>
+                                    <li *ngIf="setting?.fb">
+                                        <a [href]="setting?.fb" target="_blank"><i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li *ngIf="setting?.twitter">
+                                        <a [href]="setting?.twitter" target="_blank"><i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li *ngIf="setting?.ln">
+                                        <a [href]="setting?.ln" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li *ngIf="setting?.insta">
+                                        <a [href]="setting?.insta" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Footer Widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-menu">
+                        <h2 class="footer-title">{{ this.translations.PourLesPatients}}</h2>
+                        <ul>
+                            <li><a (click)="navService.goTo('take-appointment')" href="javascript:void(0);"><i class="fas fa-angle-double-right"></i> {{ this.translations.ChercherUnDocteur}}</a></li>
+                            <li><a (click)="navService.goTo('take-appointment')" href="javascript:void(0);"><i class="fas fa-angle-double-right"></i> {{ this.translations.PrendreUnRDV}}</a></li>
+                        </ul>
+                    </div>
+                    <!-- /Footer Widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-menu">
+                        <h2 class="footer-title">{{ this.translations.PourLesDocteurs}}</h2>
+                        <ul>
+                            <li><a href="javascript:void(0);"><i class="fas fa-angle-double-right"></i>
+                                {{ this.translations.RendezVous}}</a></li>
+                            <li><a href="javascript:void(0);"><i class="fas fa-angle-double-right"></i> {{ this.translations.Connexion}}</a></li>
+                            <li><a href="javascript:void(0);"><i class="fas fa-angle-double-right"></i>
+                                {{ this.translations.Inscription}}</a></li>
+                            <li><a href="javascript:void(0);"><i class="fas fa-angle-double-right"></i> {{ this.translations.TableauDeBordDuDocteur}}</a></li>
+                        </ul>
+                    </div>
+                    <!-- /Footer Widget -->
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-contact">
+                        <h2 class="footer-title">{{ this.translations.ContactezNous}}</h2>
+                        <div class="footer-contact-info">
+                            <div class="footer-address">
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                <p> 199 Rue FOUCAULD AKWA <br/> BP: 293 Douala, Cameroun </p>
+                            </div>
+                            <p>
+                                <i class="fas fa-phone-alt"></i>
+                                +237 696 09 05 49
+                                <!-- {{ setting?.adresse ? setting?.adresse: '199 Rue FOUCAULD AKWA BP: 293 Douala, Cameroun' }} -->
+                            </p>
+                            <!-- <p>
+                                <i class="fas fa-phone-alt"></i>
+                                {{ setting?.tel ?? setting?.tel2 ?? '237 696 090 549' }}
+                            </p> -->
+                            <p class="mb-0">
+                                <i class="fas fa-envelope"></i>
+                                {{ setting?.email ?? setting?.email2 ?? 'cliniqueadresse@exemple.com' }}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- /Footer Widget -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Footer Top -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container-fluid">
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="copyright-text">
+                            <p class="mb-0"><a href="https://www.dimsoft.fr" target="_blank">By Dimsoft</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+
+                        <!-- Copyright Menu -->
+                        <div class="copyright-menu">
+                            <ul class="policy-menu">
+                                <li><a href="javascript:void(0);">{{ this.translations.TermesEtConditions}}</a></li>
+                                <li><a href="javascript:void(0);">{{ this.translations.Politique}}</a></li>
+                            </ul>
+                        </div>
+                        <!-- /Copyright Menu -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Copyright -->
+
+        </div>
+    </div>
+    <!-- /Footer Bottom -->
+
+</footer>
+<!-- /Footer -->

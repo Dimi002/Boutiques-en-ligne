@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card main-card">
+      <div class="card-body">
+        <div *ngIf="isLoading" class="page-loader-wrapper">
+          <div class="lds-dual-ring"></div>
+          <span class="page-loading-msg mt-4 text-bold">Loading...</span>
+        </div>
+        <div class="table-responsive">
+          <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-hover table-center datatable mb-0">
+            <thead>
+              <tr>
+                <th class="text-center"><i class="icon-key"></i></th>
+                <th>Name</th>
+                <th>Description</th>
+                <!-- <th class="text-center">Statut</th> -->
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of roles let i = index">
+                <td class="text-center" style="width: 5%;">
+                  {{ i+1 }}
+                </td>
+                <td>
+                  <h2 class="table-avatar">
+                    <a href="javascript:void(0);">{{ item?.roleName }} </a>
+                  </h2><br>
+                  <a href="javascript:void(0);"> created on {{ displayDate(item?.createdOn) }} </a>
+                </td>
+                <td>
+                  <h2 class="table-avatar">
+                    <a href="javascript:void(0);">{{ item?.roleDesc }}</a>
+                  </h2>
+                </td>
+                <!-- <td class="text-center" style="width: 20%;">
+
+                  <div class="btn-group">
+                    <button type="button"
+                      class="btn {{ item?.status === state?.STATE_DEACTIVATED? 'btn-secondary': 'btn-primary'}}  btn-sm dropdown-toggle dropdown-toggle-split"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <button type="button"
+                      class="btn {{ item?.status === state?.STATE_DEACTIVATED? 'btn-secondary': 'btn-primary'}}  btn-sm">{{
+                      item?.status === state?.STATE_DEACTIVATED?
+                      'Inactif': 'Actif' }}</button>
+                    <ul class="dropdown-menu dropdown-menu-start">
+                      <li
+                        *ngIf="item?.status === state?.STATE_ACTIVATED && authService.hasAnyPermission(['UPDATE_ROLE_STATUS'])"
+                        role="menuitem">
+                        <span class="badge badge-danger dropdown-item" (click)="desactivate(item)">Désactiver</span>
+                      </li>
+                      <li
+                        *ngIf="item?.status === state?.STATE_DEACTIVATED && authService.hasAnyPermission(['UPDATE_ROLE_STATUS'])"
+                        role="menuitem">
+                        <span class="badge badge-primary dropdown-item" (click)="activate(item)">Activer</span>
+                      </li>
+                      <li *ngIf="!authService.hasAnyPermission(['UPDATE_ROLE_STATUS'])" role="menuitem" placement="top">
+                        <span class="badge badge-danger dropdown-item danger-bg">
+                          <i class="fa fa-ban text-light m-0"></i>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                </td> -->
+                <td class="text-center" style="width: 5%;">
+                  <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle placement="top"
+                      class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split">
+                      <span class="caret"></span>
+                      <span class="sr-only">Split button!</span>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary">
+                      <i class="fa fa-cog"></i>
+                    </button>
+                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-left dropdown-menu-sm-start">
+                      <li *ngIf="authService.hasAnyPermission(['DELETE_ROLE'])" role="menuitem">
+                        <span class="badge badge-danger dropdown-item" (click)="delete(item)" placement="top">
+                          <span>Delete the row</span>
+                        </span>
+                      </li>
+                      <li *ngIf="authService.hasAnyPermission(['UPDATE_ROLE_INFOS'])" role="menuitem">
+                        <span class="badge badge-primary dropdown-item" placement="top" (click)="update(item)">
+                          <i class="fa fa-pencil text-dark"></i>
+                          <span>Edit the row</span>
+                        </span>
+                      </li>
+                      <li *ngIf="authService.hasAnyPermission(['VIEW_ROLE_PERMISSIONS'])" role="menuitem">
+                        <span class="badge badge-warning dropdown-item" placement="top"
+                          (click)="modifyPermissions(item)">
+                          <i class="fa fa-shield text-dark"></i>
+                          <span>Managing permissions</span>
+                        </span>
+                      </li>
+                      <li
+                        *ngIf="!authService.hasAnyPermission(['DELETE_ROLE','UPDATE_ROLE_INFOS','VIEW_ROLE_PERMISSIONS'])"
+                        role="menuitem" placement="top">
+                        <span class="badge badge-danger dropdown-item danger-bg">
+                          <i class="fa fa-ban text-light m-0"></i>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

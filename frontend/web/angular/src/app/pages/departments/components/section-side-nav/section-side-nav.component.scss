@@ -1,0 +1,54 @@
+section.side-menu {
+    padding: 3rem 0;
+    nav.side-menu-nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                border: 1px solid #f0f0f0;
+                border-radius: 5px;
+                padding-left: 1.2rem;
+                animation: grow-reverse .3s ease-in forwards;
+                &:hover {
+                    animation: grow .3s ease-in forwards;
+                    a {
+                        color: #ffff;
+                    }
+                }
+                &.active {
+                    animation: grow .3s ease-in forwards;
+                    a {
+                        color: #ffff;
+                    }
+                }
+                a {
+                    color: var(--custom-dark);
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+@keyframes grow {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(10px);
+        background-color: var(--custom-primary);
+    }
+}
+
+@keyframes grow-reverse {
+    from {
+        transform: translateX(10px);
+        background-color: var(--custom-primary);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

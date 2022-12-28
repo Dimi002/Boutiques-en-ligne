@@ -1,0 +1,41 @@
+<!-- Doctor Widget -->
+<section class="profile-widget" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+    <div class="doc-img">
+        <a href="javascript:void(0)">
+            <app-custom-image [src]="imageService.getCover(data?.userId?.userImagePath)" [alt]="data?.userId?.firstName"
+                imgClass="max-height-206"></app-custom-image>
+        </a>
+        <a href="javascript:void(0)" class="fav-btn">
+            <i class="far fa-bookmark"></i>
+        </a>
+    </div>
+    <div class="pro-content">
+        <h3 class="title" *ngIf="data?.userId?.firstName && data?.userId?.lastName">
+            <a href="javascript:void(0)">{{ data?.userId?.firstName }} {{ data?.userId?.lastName }}</a>
+            <i class="fas fa-check-circle verified"></i>
+        </h3>
+        <p class="short-biography" *ngIf="data?.biography">
+            {{ (data?.biography | slice:0:40) + '...' }}
+            <span class="speciality">{{ getSpecialities(data?.specialitiesList) }}</span>
+        </p>
+        <ul class="available-info">
+            <li class="available-info-item availability">
+                <i class="fa fas fa-calendar-alt availability-icon"></i>
+                {{this.translations.DisponibleLe}} <span>{{ getDisponibility() }}</span>
+            </li>
+            <li class="available-info-item" *ngIf="data?.yearOfExperience && this.translations.AnneeExperience">
+                <i class="fa fas fa-clock"></i> {{ data?.yearOfExperience }} {{this.translations.AnneeExperience}}
+            </li>
+            <li class="available-info-item" *ngIf="data?.city">
+                <i class="fas fa-map-marker-alt"></i> {{ data?.city }}
+            </li>
+            <li class="available-info-item" *ngIf="getGender(data?.gender)">
+                <i class="far fa-user"></i> {{ getGender(data?.gender) }}
+                <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" (click)="navService.goTo('/take-appointment/' + data?.specialistId )"
+            class="btn btn-block book-btn">{{this.translations.Reserver}} </a>
+    </div>
+</section>
+<!-- /Doctor Widget -->

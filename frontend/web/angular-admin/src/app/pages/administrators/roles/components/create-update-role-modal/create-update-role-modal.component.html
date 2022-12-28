@@ -1,0 +1,52 @@
+<div class="modal-header">
+  <h4 *ngIf="mode==='CREATE'" class="modal-title">Create a Role</h4>
+  <h4 *ngIf="mode==='UPDATE'" class="modal-title text-dark">Edit a Role</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" class="was-validated">
+    <div class="form-group">
+      <label class="form-col-form-label" for="role_name">Name</label>
+      <input formControlName="roleName" type="text" class="form-control" id="role_name" required>
+      <div class="invalid-feedback">
+        Please enter the name
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-col-form-label" for="role_description">Description</label>
+      <textarea formControlName="roleDesc" class="form-control" id="role_description" rows="4" required></textarea>
+      <div class="invalid-feedback">
+        Please enter the description
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary btn-brand" (click)="close()">
+    <i class="fa fa-times"></i>
+    <span>Cancel</span>
+  </button>
+  <button
+    *ngIf="mode==='CREATE'"
+    type="button"
+    class="btn btn-primary btn-brand"
+    (click)="create()"
+    [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['CREATE_ROLE'])">
+    <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+    <i *ngIf="!isLoading" class="fa fa-plus"></i>
+    <span>Create</span>
+  </button>
+  <button
+    *ngIf="mode==='UPDATE'"
+    type="button"
+    class="btn btn-primary btn-brand"
+    (click)="update()"
+    [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['UPDATE_ROLE_INFOS'])">
+    <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+    <i *ngIf="!isLoading" class="fa fa-save"></i>
+    <span>Register</span>
+  </button>
+</div>
+

@@ -1,0 +1,25 @@
+div.card {
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        fill: currentColor;
+        color: #979797;
+        content: "\f073";
+        display: block;
+        font-family: "Font Awesome 5 Free";
+        font-size: 16px;
+        font-weight: 400;
+        margin: auto;
+    }
+}
+
+form {
+    div.submit-section {
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 180.25px;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<section class="contact-form">
+    <app-section-title class="text-center" [data]="data"></app-section-title>
+    <!-- Contact Form -->
+    <form [formGroup]="form" class="contact-form">
+        <!-- Contact Infos -->
+        <section class="row form-row contact-informations">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input formControlName="nom" placeholder="{{this.translations.Nom}}" type="text" autocomplete="name" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input formControlName="email" placeholder="Email" type="email" autocomplete="email"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input formControlName="sujet" placeholder="{{this.translations.Objet}}" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea formControlName="message" placeholder="Message" class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12 submit-section">
+                <div>
+                    <button (click)="sendMail()" [disabled]="form.invalid || isLoading" type="submit"
+                        class="btn btn-primary submit-btn">
+                        <span class="spinner-border" role="status" *ngIf="isLoading">
+                            <span class="sr-only">Loading...</span>
+                        </span>
+                        <span *ngIf="!isLoading">{{ this.translations.Envoi }}</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- /Contact Infos -->
+    </form>
+    <!-- /Contact Form -->
+</section>    

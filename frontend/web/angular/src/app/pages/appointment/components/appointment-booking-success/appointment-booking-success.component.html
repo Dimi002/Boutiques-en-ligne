@@ -1,0 +1,29 @@
+<!-- Appointment Booking Success -->
+<section class="content success-page-cont">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+
+                <!-- Success Card -->
+                <div class="card success-card">
+                    <div class="card-body">
+                        <div class="success-cont">
+                            <i class="fas fa-check"></i>
+                            <h3>{{this.translations.RdvAccepte}}</h3>
+                            <p>{{this.translations.RdvAvec}} <strong>Dr. {{ appointment?.specialistId?.userId?.firstName }} {{ appointment?.specialistId?.userId?.lastName }}</strong><br>
+                                {{this.translations.Le}} <strong>{{ appointment?.appointmentDate | date:'mediumDate' }}
+                                    {{ getHour(appointment?.appointmentHour) }}</strong></p>
+                            <a (click)="navService.goTo('/home')" href="javascript:void(0);"
+                                class="btn btn-primary view-inv-btn">{{this.translations.PageAccueil}}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Success Card -->
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- /Appointment Booking Success -->

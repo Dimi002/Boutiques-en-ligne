@@ -1,0 +1,11 @@
+ngx-slick-carousel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0;
+    img.doctor-img {
+        height: inherit;
+        object-fit: cover;
+        object-position: center;
+    }
+}

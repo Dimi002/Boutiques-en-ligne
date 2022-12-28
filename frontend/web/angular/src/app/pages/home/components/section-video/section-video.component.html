@@ -1,0 +1,43 @@
+<section class="section section-video">
+    <section class="section section-video-title">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-center">
+                    <app-section-title class="text-center" [data]="data"></app-section-title>
+                    <app-cross-with-image class="bottom-right" bgImgClass="no-bg"></app-cross-with-image>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-video-description">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-11 col-center">
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+                            <app-video-ligthbox></app-video-ligthbox>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li data-aos="fade-left" data-aos-duration="2000">
+                                    <p class="video-description">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                        {{this.translations.Staff}}
+                                    </p>
+                                </li>
+                                <li data-aos="fade-left" data-aos-duration="3000">
+                                    <p class="video-description">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                        {{this.translations.Objectif}}
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-cross-with-image class="bottom-left" bgImgClass="no-bg"></app-cross-with-image>
+    </section>
+</section>

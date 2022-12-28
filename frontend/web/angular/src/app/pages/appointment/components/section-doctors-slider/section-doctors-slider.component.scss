@@ -1,0 +1,39 @@
+section.section-doctors-slider {
+    background-color: #ffff;
+    padding: 2rem 3rem 0rem 3rem;
+    div.row {
+        position: relative;
+        display: flex;
+        div.col-center {
+            margin: auto;
+            position: relative;
+            section.doctor-slider {
+                ngx-slick-carousel {
+                    max-height: 250px;
+                }
+            }
+        }
+        div.col {
+            padding: 0;
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-doctors-slider {
+        padding: 3rem 0.5rem 3rem;
+    }    
+}
+
+@media only screen and (max-width:767px) {
+    section.section-doctors-slider {
+        div.row {
+            div.col {
+                margin-bottom: 1rem;
+                width: 93%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }   
+}

@@ -1,0 +1,7 @@
+<div class="schedule-nav">
+    <ul class="nav nav-tabs nav-justified">
+        <li *ngFor="let item of navItems" class="nav-item">
+            <a (click)="onSelect(item)" class="nav-link {{ item === activeNavItem? 'active': '' }}" data-toggle="tab" href="javascript:void(0);">{{ item }}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,67 @@
+<div class="row d-flex">
+    <section class="section section-search section-left col-md-6">
+        <app-cross-with-image data-aos="fade-right" data-aos-delay="800" data-aos-duration="800" class="top"
+            bgImgClass="bg-center"></app-cross-with-image>
+        <app-cross-with-image data-aos="fade-left" data-aos-delay="800" data-aos-duration="800" class="bottom"
+            bgImgClass="no-bg"></app-cross-with-image>
+        <div class="container-fluid">
+            <div class="banner-wrapper" data-aos="zoom-in" data-aos-duration="1800">
+                <div class="banner-header text-center">
+                    <h1>{{ this.translations.ChercherUnDocteur}}</h1>
+                </div>
+
+                <!-- Search -->
+                <div class="search-box">
+                    <form [formGroup]="form">
+                        <div class="form-group search-info" id="input-wrapper">
+                            <span class="form-text">{{ this.translations.Exemple}}</span>
+                            <input type="text" formControlName="search" class="form-control" [(ngModel)]="keyword"
+                                placeholder="{{this.translations.PlaceHolder}}" (input)="search()" autocomplete="off">
+                            <i *ngIf="!isEmpty()" class="spinner-wrapper"><span class="spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span></i>
+                            <div *ngIf="!isEmpty()" class="custom-input-dropdown w-100 animated fadeIn">
+                                <ul>
+                                    <div *ngFor="let option of response" class="entry">
+                                        <app-custom-image [src]="imageService.getCover(option?.image)"
+                                            [alt]="option?.libelle" class="img-fluid avatar">
+                                        </app-custom-image>
+                                        <li (click)="navigate(option)">
+                                            <span>{{ option.libelle }}</span>
+                                            <span class="info">{{ option.type === 0 ? this.translations.Specialiste :
+                                                this.translations.Specialite
+                                                }}</span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /Search -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="col-md-5" data-aos="zoom-in" data-aos-duration="2000">
+        <app-cross-with-image></app-cross-with-image>
+    </section>
+</div>
+
+
+
+
+<!-- <div class="form-group {{style}}" id="input-wrapper">
+    <label for="input-label">{{ inputLabel }}</label>
+    <input (keyup)="getMatchList($event)" type="text" class="form-control" [value]="inputValue"
+        placeholder="{{ inputPlaceholder }}" id="input-label" autocomplete="off" required>
+    <i *ngIf="!isEmpty()" class="spinner-wrapper"><span class="spinner-border spinner-border-sm" role="status"
+            aria-hidden="true"></span></i>
+    <div *ngIf="!isEmpty()" class="custom-input-dropdown w-100 animated fadeIn">
+        <ul>
+            <div *ngFor="let option of machtList">
+                <li (click)="setInputValue($event, option.value)">{{ option.label }}</li>
+            </div>
+        </ul>
+    </div>
+</div> -->

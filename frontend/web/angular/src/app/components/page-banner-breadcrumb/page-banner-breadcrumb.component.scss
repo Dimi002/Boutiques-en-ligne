@@ -1,0 +1,98 @@
+section.page-banner {
+    background-color: #ffff;
+    position: relative;
+    overflow: hidden;
+    div.overlay {
+        background: rgba(48, 191, 100, 0.082);
+        position: absolute;
+        top: 0;left: 0;right: 0;bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+    app-cross-with-image.top-right {
+        position: absolute;
+        top: -20px;
+        right: -5px;
+        height: 28%;
+        width: 5%;
+        z-index: 0;
+        filter: blur(15px);
+    }
+    app-cross-with-image.right {
+        position: absolute;
+        bottom: 8%;
+        right: 17%;
+        height: 84%;
+        width: 12%;
+        z-index: 0;
+        filter: blur(10px);
+    }
+    app-cross-with-image.bottom-left {
+        position: absolute;
+        bottom: -15px;
+        left: -5px;
+        height: 28%;
+        width: 5%;
+        z-index: 0;
+        filter: blur(15px);
+    }
+    app-cross-with-image.bottom-left-center {
+        position: absolute;
+        bottom: -15px;
+        left: 33%;
+        height: 28%;
+        width: 5%;
+        z-index: 0;
+        filter: blur(15px);
+    }
+    app-cross-with-image.top-left {
+        position: absolute;
+        top: -20px;
+        left: 220px;
+        height: 28%;
+        width: 5%;
+        z-index: 0;
+        filter: blur(15px);
+    }
+    app-cross-with-image.top-center {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        height: 28%;
+        width: 5%;
+        z-index: 0;
+        filter: blur(15px);
+    }
+    div.banner-wrapper {
+        margin: 0;
+        padding: 3rem;
+        max-width: 100%;
+        background-color: transparent;
+        div.banner-header {
+            position: relative;
+            z-index: 2;
+            nav.page-breadcrumb {
+                li {
+                    a {
+                        color: var(--custom-dark);
+                        font-size: 1rem;
+                        &:hover {
+                            color: var(--custom-primary);
+                        }
+                    }
+                    &::before {
+                        color: var(--custom-dark);
+                        font-size: 1rem;
+                    }
+                }
+            }
+            h2 {
+                font-weight: bold;
+                text-align: left;
+                font-size: 2rem;
+                color: var(--custom-dark);
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+section.section-director-citation {
+    background-color: #ffff;
+    padding: 10rem 3rem 3rem 3rem;
+    div.row {
+        position: relative;
+        display: flex;
+        div.col-center {
+            margin: auto;
+            position: relative;
+            app-cross-with-image.bottom-right {
+                position: absolute;
+                right: -200px; bottom: -250px;
+                height: 300px;
+                width: 300px;
+                z-index: 0;
+                filter: blur(10px);
+                opacity: 0.2;
+            }
+            div.row {
+                border-radius: 20px;
+                overflow: hidden;
+                div.director-cover {
+                    padding: 0;
+                    margin: 0;
+                    border-radius: inherit;
+                    background-image: url('/assets/website/img/director.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    position: relative;
+                    div.director-cover-overlay {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: inherit;
+                        background-color: rgba(0, 0, 0, 0.116);
+                        z-index: 0;
+                    }
+                    h4 {
+                        font-size: 1.7rem;
+                        padding: 1rem;
+                        color: #ffff;
+                        text-align: center;
+                        font-weight: bold;
+                        width: 100%;
+                        z-index: 1;
+                    }
+                }
+                div.director-citation {
+                    margin: 0;
+                    border-top-right-radius: inherit;
+                    border-bottom-right-radius: inherit;
+                    border: 1px solid var(--custom-primary);
+                    border-left: 0;
+                    padding: 3rem;
+                    overflow: hidden;
+                    margin-left: -15px;
+                    p.citation {
+                        font-size: 1.15rem;
+                        text-align: justify;
+                        i.quote {
+                            font-size: 2rem;
+                            color: var(--custom-primary);
+                        }
+                        i.quote-left {
+                            margin-right: 5px;
+                        }
+                        i.quote-right {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        div.col {
+            padding: 0;
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-director-citation {
+        padding: 3rem 0.5rem 3rem;
+    }    
+}
+
+@media only screen and (max-width:767px) {
+    section.section-director-citation {
+        div.row {
+            div.col {
+                margin-bottom: 1rem;
+                width: 93%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            div.col-center {
+                div.row {
+                    div.director-cover {
+                        height: 300px;
+                        width: 90%;
+                        margin: auto;
+                        margin-bottom: 3rem;
+                    }
+                    div.director-citation {
+                        border-radius: inherit;
+                        width: 90%;
+                        margin: auto;
+                        border: 1px solid var(--custom-primary);
+                    }
+                }
+            }
+        }
+    }   
+}

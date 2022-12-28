@@ -1,0 +1,37 @@
+<section class="section section-specialities">
+    <div class="container-fluid">
+        <app-section-title class="text-center" [data]="data" data-aos="zoom-in" data-aos-duration="700"></app-section-title>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <!-- Slider -->
+                <div class="specialities-slider slider" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <ngx-slick-carousel class="carousel" #slickComponent [config]="slideConfig"
+                        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                        <!-- Slider Item -->
+                        <div ngxSlickItem *ngFor="let speicality of specialities" class="speicality-item text-center">
+                            <div class="speicality-img">
+                                <app-custom-image [src]="imageService.getCover(speicality?.specialityImagePath)" alt="Speciality"></app-custom-image>
+                                <h4>{{ speicality?.specialityName }}</h4>
+                                <div class="speicality-description">
+                                    <h4>{{ speicality?.specialityName }}</h4>
+                                    <span class="description">
+                                        {{ speicality?.specialityDesc }}
+                                    </span>
+                                    <div class="btn-wrapper">
+                                        <button (click)="navService.goTo('/departments/' + speicality?.specialityName)" class="btn btn-outlined see-more">
+                                           {{this.translations.SavoirPlus}}
+                                            <i class="fa fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Slider Item -->
+                    </ngx-slick-carousel>
+                </div>
+                <!-- Slider -->
+            </div>
+        </div>
+    </div>
+</section>

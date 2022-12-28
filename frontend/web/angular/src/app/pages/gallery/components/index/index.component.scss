@@ -1,0 +1,12 @@
+section.gallery {
+    .galery-content {
+        width: 80%;
+        margin: auto;
+    }
+} 
+
+@media screen and (max-width: 650px) {
+    .galery-content {
+        width: 100%;
+    }
+}

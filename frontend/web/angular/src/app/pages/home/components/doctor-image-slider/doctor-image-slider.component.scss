@@ -1,0 +1,30 @@
+ngx-slick-carousel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+    margin-bottom: 0;
+    margin-left: -2px;
+    border: 3px solid rgb(0 0 0 / 10%);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    app-custom-image.doctor-img {
+        height: inherit;
+        object-fit: cover;
+        object-position: center;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin: 0 !important;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    ngx-slick-carousel {
+        margin-left: 0;
+        border-radius: 0.25rem;
+        box-shadow: none;
+        img.doctor-img {
+            border-radius: 0.25rem;
+        }
+    }  
+}

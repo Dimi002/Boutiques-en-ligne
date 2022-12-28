@@ -1,0 +1,49 @@
+section.section-quick-appointment {
+    padding: 80px 3rem;
+    div.row {
+        position: relative;
+        display: flex;
+        app-cross-with-image {
+            position: absolute;
+            top: -215px;
+            height: 70px;
+            width: 128px;
+            filter: blur(0.5px);
+            z-index: -1;
+        }
+        app-cross-with-image.top-right {
+           right: 7%;  
+        }
+        app-cross-with-image.top-left {
+            left: 7%;
+        }
+        div.col-center {
+            margin: auto;
+        }
+        div.col {
+            padding: 0;
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-quick-appointment {
+        padding: 0 0.5rem;
+        div.row {
+            flex-direction: column-reverse;
+        }
+    }    
+}
+
+@media only screen and (max-width:767px) {
+    section.section-quick-appointment {
+        div.row {
+            div.col {
+                margin-bottom: 1rem;
+                width: 93%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }   
+}

@@ -1,0 +1,15 @@
+section.section-doctor-details-card {
+    background-color: #ffff;
+    padding: 0rem 3rem 2rem 3rem;
+    div.row {
+        position: relative;
+        display: flex;
+        div.col-center {
+            margin: auto;
+            position: relative;
+        }
+        div.col {
+            padding: 0;
+        }
+    }
+}

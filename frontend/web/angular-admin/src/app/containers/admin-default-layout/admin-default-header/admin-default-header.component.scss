@@ -1,0 +1,28 @@
+div.header {
+    div.header-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul.nav.user-menu {
+        padding-right: 1rem;
+
+        div.dropdown-menu-right.lang-dropdown {
+            min-width: 108px;
+
+            a:hover {
+                background: #f8f9fa;
+                color: black;
+            }
+        }
+
+        span.lang-key {
+            line-height: 1.5;
+            padding-left: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}

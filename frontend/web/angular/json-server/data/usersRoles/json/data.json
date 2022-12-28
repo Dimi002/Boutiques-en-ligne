@@ -1,0 +1,121 @@
+{
+    "usersroles": [{
+        "createdOn": "22/07/2023",
+        "lastUpdateOn": "23/08/2024",
+        "role": {
+            "createdOn": "17/11/2022",
+            "lastUpdateOn": "17/11/2022",
+            "roleDesc": "tout les droits",
+            "roleId": 1,
+            "roleName": "admin",
+            "rolePermissionList": "",
+            "status": 0,
+            "userRoleList": ""
+        },
+
+        "status": 0,
+        "user": {
+            "id": 1,
+            "password": "mFNaHB1T0WC4",
+            "clearPassword": "Garland Room",
+            "username": "groom0",
+            "firstName": "Garland",
+            "lastName": "Room",
+            "email": "groom0@columbia.edu",
+            "comment": "blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi",
+            "phone": "+1-378-225-9296",
+            "birthDate": "12/14/2021",
+            "userImagePath": "avatar.jpeg",
+            "status": 2,
+            "createdOn": "1/3/2022",
+            "lastUpdateOn": "7/12/2022"
+        },
+        "userRoleId": {
+            "role": {
+                "createdOn": "17/11/2022",
+                "lastUpdateOn": "17/11/2022",
+                "roleDesc": "tout les droits",
+                "roleId": 1,
+                "roleName": "admin",
+                "rolePermissionList": "",
+                "status": 0,
+                "userRoleList": ""
+            },
+            "user": {
+                "id": 1,
+                "password": "mFNaHB1T0WC4",
+                "clearPassword": "Garland Room",
+                "username": "groom0",
+                "firstName": "Garland",
+                "lastName": "Room",
+                "email": "groom0@columbia.edu",
+                "comment": "blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi",
+                "phone": "+1-378-225-9296",
+                "birthDate": "12/14/2021",
+                "userImagePath": "avatar.jpeg",
+                "status": 2,
+                "createdOn": "1/3/2022",
+                "lastUpdateOn": "7/12/2022"
+            }
+        }
+    }, {
+        "createdOn": "22/07/2023",
+        "lastUpdateOn": "23/08/2024",
+        "role": {
+            "createdOn": "17/11/2022",
+            "lastUpdateOn": "17/11/2022",
+            "roleDesc": "tout les droits",
+            "roleId": 2,
+            "roleName": "admin",
+            "rolePermissionList": "",
+            "status": 0,
+            "userRoleList": ""
+        },
+
+        "status": 0,
+        "user": {
+            "id": 2,
+            "password": "mFNaHB1T0WC4",
+            "clearPassword": "Garland Room",
+            "username": "groom0",
+            "firstName": "Garland",
+            "lastName": "Room",
+            "email": "groom0@columbia.edu",
+            "comment": "blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi",
+            "phone": "+1-378-225-9296",
+            "birthDate": "12/14/2021",
+            "userImagePath": "avatar.jpeg",
+            "status": 2,
+            "createdOn": "1/3/2022",
+            "lastUpdateOn": "7/12/2022"
+        },
+        "userRoleId": {
+            "role": {
+                "createdOn": "17/11/2022",
+                "lastUpdateOn": "17/11/2022",
+                "roleDesc": "tout les droits",
+                "roleId": 2,
+                "roleName": "admin",
+                "rolePermissionList": "",
+                "status": 0,
+                "userRoleList": ""
+            },
+            "user": {
+                "id": 2,
+                "password": "mFNaHB1T0WC4",
+                "clearPassword": "Garland Room",
+                "username": "groom0",
+                "firstName": "Garland",
+                "lastName": "Room",
+                "email": "groom0@columbia.edu",
+                "comment": "blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi",
+                "phone": "+1-378-225-9296",
+                "birthDate": "12/14/2021",
+                "userImagePath": "avatar.jpeg",
+                "status": 2,
+                "createdOn": "1/3/2022",
+                "lastUpdateOn": "7/12/2022"
+            }
+        }
+    }]
+}

@@ -1,0 +1,53 @@
+<!-- Add Time Slot Modal -->
+<div class="modal-header">
+    <h5 class="modal-title">Add Time Slots</h5>
+    <button type="button" (click)="close()" class="close btn btn-circle btn-outline" data-dismiss="modal"
+        aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+    </button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="hours-info">
+            <div *ngFor="let slot of slots" class="row form-row hours-cont">
+                <div class="col-12 {{ (slot !== slots[0])? 'col-md-10 col-lg-10': 'col-md-12 col-lg-12' }}">
+                    <div class="row form-row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>Start Time</label>
+                                <select [(ngModel)]="slot.startAt" [ngModelOptions]="{standalone: true}"
+                                    class="form-control" (change)="checkValidSelect(slot)">
+                                    <option *ngFor="let option of times">{{ option.time }}</option>
+                                    <option selected>-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>End Time</label>
+                                <select [(ngModel)]="slot.endAt" [ngModelOptions]="{standalone: true}"
+                                    class="form-control" (change)="checkValidSelect(slot)">
+                                    <option *ngFor="let option of times">{{ option.time }}</option>
+                                    <option selected>-</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="slots && (slot !== slots[0])" class="col-12 col-md-2">
+                    <label class="d-md-block d-sm-none d-none">&nbsp;</label>
+                    <a (click)="removeSlot(slot)" href="javascript:void(0)" class="btn btn-danger trash"><i
+                            class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div (click)="addSlot()" class="add-more my-3">
+            <a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+        </div>
+        <div class="submit-section text-center">
+            <button type="submit" (click)="saveChanges()" class="btn btn-primary submit-btn">Save Changes</button>
+        </div>
+    </form>
+</div>
+<!-- /Add Time Slot Modal -->

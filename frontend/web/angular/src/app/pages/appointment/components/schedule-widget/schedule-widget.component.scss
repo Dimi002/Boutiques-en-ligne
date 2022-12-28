@@ -1,0 +1,39 @@
+section.card.booking-schedule.schedule-widget {
+    position: relative;
+    div.schedule-header {
+        position: sticky;
+        top: 152px;
+        z-index: 2;
+        background: #fff;
+        div.day-slot {
+            li.week-day-slot.selected {
+                background-color: var(--custom-primary);
+                color: #ffff;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                span.slot-date {
+                    color: var(--custom-dark);
+                }
+                transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.4s ease;
+            }
+            li.week-day-slot {
+                cursor: pointer;
+            }
+        }
+    }
+    div.schedule-cont {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+}
+@media only screen and (max-width:575px) {
+    section.card.booking-schedule.schedule-widget {
+        position: relative;
+        div.schedule-header {
+            top: 0;
+        }
+        div.schedule-cont {
+            overflow-y: overlay;
+        }
+    }
+}

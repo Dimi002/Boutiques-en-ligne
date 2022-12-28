@@ -1,0 +1,163 @@
+<div class="container custom-class">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-start fw-bold">{{title}}</h5>
+      <form [formGroup]="form" class="was-validated">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="firstName">First name</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-user"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="First name" id="firstName"
+                  formControlName="firstName" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="lastName">Last name</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-user"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="Last name" id="lastName" formControlName="lastName"
+                  required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-user"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="Username" id="username" formControlName="username"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="phone">Phone</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <span>+237</span>
+                </button>
+                <input type="text" class="form-control" placeholder="phone number" id="phone" formControlName="phone"
+                  required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="email">Email</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-envelope"></i>
+                </button>
+                <input type="email" class="form-control" placeholder="Email" id="email" formControlName="email"
+                  required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="birthDate">birthDate</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-calendar"></i>
+                </button>
+                <input type="date" class="form-control" placeholder="birthDate" id="birthDate"
+                  formControlName="birthDate">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="form-group has-success has-feedback">
+              <label for="comment">Comment</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-comment"></i>
+                </button>
+                <textarea class="form-control" placeholder="Leave a comment here..." id="comment" rows="4"
+                  formControlName="comment" style="height: 100px">
+              </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="id==0">
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="password">Password</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-solid fa-lock"></i>
+                </button>
+                <input class="form-control" placeholder="password" id="password" formControlName="password"
+                  [type]="togglePasswordOptions?.passwordType" required>
+                <button type="button" class="btn btn-secondary" (click)="toggleViewPasswordBtn()">
+                  <i class="fa {{ togglePasswordOptions?.passwordType === 'password'? 'fa-eye': 'fa-eye-slash' }}"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-6">
+            <div class="form-group has-success has-feedback">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fa fa-solid fa-lock"></i>
+                </button>
+                <input class="form-control" placeholder="Confirm Password" id="confirmPassword"
+                  formControlName="confirmPassword" [type]="togglePasswordOptions?.confirmPasswordType" required>
+                <button type="button" class="btn btn-secondary" (click)="toggleViewConfirmPasswordBtn()">
+                  <i
+                    class="fa {{ togglePasswordOptions?.confirmPasswordType === 'password'? 'fa-eye': 'fa-eye-slash' }}"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-4 col-sm-12 col-lg-4">
+            <div class="form-check form-switch">
+              <label class="form-check-label" for="admin">Administrator</label>
+              <input class="form-check-input" type="checkbox" id="admin" [(ngModel)]="admin"
+                [ngModelOptions]="{standalone: true}" [disabled]="mode==='UPDATE'">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12 col-lg-4">
+            <div class="form-check form-switch">
+              <label class="form-check-label" for="specialist">Specialist</label>
+              <input class="form-check-input" type="checkbox" id="specialist" [(ngModel)]="specialist"
+                [ngModelOptions]="{standalone: true}" [disabled]="mode==='UPDATE'">
+            </div>
+          </div>
+        </div>
+        <button *ngIf="mode==='CREATE'" type="submit" class="btn btn-primary float-end mt-1" (click)="create()"
+          [disabled]="form.invalid || isLoading">
+          <span>Create User</span>
+          <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status"
+              aria-hidden="true"></span></i>
+        </button>
+
+        <button *ngIf="mode==='UPDATE'" type="submit" class="btn btn-primary float-end mt-1" (click)="update()">
+          <span>Update User</span>
+          <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status"
+              aria-hidden="true"></span></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

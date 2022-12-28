@@ -1,0 +1,7 @@
+<section class="gallery-header-list">
+    <ul class="gallery-list">
+        <li *ngFor="let item of galleryItems" (click)="onSelectGalleryItem(item)" [class]="item.selected? 'active': ''">
+            <a href="javascript:void(0);" class="{{ item.selected? 'selected': '' }}"> {{ item?.name }}</a>
+        </li>
+    </ul>
+</section>

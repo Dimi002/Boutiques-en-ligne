@@ -1,0 +1,60 @@
+<!-- Header -->
+<header class="header">
+    <nav class="navbar navbar-expand-lg header-nav">
+        <div class="navbar-header">
+            <a id="mobile_btn" href="javascript:void(0);">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+            <a href="javascript:void(0);" class="navbar-brand logo">
+                <app-logo (click)="navService.goTo('/home')"></app-logo>
+            </a>
+        </div>
+        <div class="main-menu-wrapper">
+            <div class="menu-header">
+                <a href="javascript:void(0);" class="menu-logo">
+                    <app-logo (click)="navService.goTo('/home')" customClass="logo-mobile"></app-logo>
+                </a>
+                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <ul class="main-nav">
+                <li *ngFor="let menu of navItems" [routerLink]="menu?.url" routerLinkActive="active" (click)="menuActive = menu;" class="{{ (menu.children && menu.children.length > 0)? 'has-submenu': '' }} {{ (menu === menuActive)? 'active': '' }}">
+                    <a href="javascript:void(0)">{{ getMenuName(menu?.name) }} <i *ngIf="(menu.children && menu.children.length > 0)" class="fas fa-chevron-down"></i></a>
+                    <ul *ngIf="(menu.children && menu.children.length > 0)" class="submenu">
+                        <li *ngFor="let submenu of menu.children" [routerLink]="submenu?.url" routerLinkActive="active" class="{{ (submenu.children && submenu.children.length > 0)? 'has-submenu': '' }} {{ (submenu === menuActive)? 'active': '' }}">
+                            <a href="javascript:void(0)" (click)="menuActive = submenu;">{{ submenu?.name }} <i *ngIf="(submenu.children && submenu.children.length > 0)" class="fas fa-chevron-down"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul class="nav header-navbar-rht">
+            <!-- Lang Picker -->
+            <li class="nav-item dropdown has-arrow logged-item">
+                <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <span>
+                        <app-flag [name]="currentLang"></app-flag>
+                        <span class="lang-key">{{ currentLang }}</span>
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a (click)="changeLanguage('fr')" class="dropdown-item" href="javascript:void(0);">
+                        <app-flag name="fr"></app-flag>
+                        <span class="lang-key">FR</span>
+                    </a>
+                    <a (click)="changeLanguage('en')" class="dropdown-item" href="javascript:void(0);">
+                        <app-flag name="en"></app-flag>
+                        <span class="lang-key">EN</span>
+                    </a>
+                </div>
+            </li>
+            <!-- /Lang Picker -->
+        </ul>
+    </nav>
+</header>
+<!-- /Header -->

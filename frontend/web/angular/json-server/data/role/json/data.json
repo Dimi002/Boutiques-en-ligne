@@ -1,0 +1,39 @@
+{
+    "roles": [{
+        "createdOn": "17/11/2022",
+        "lastUpdateOn": "17/11/2022",
+        "roleDesc": "tout les droits",
+        "roleId": 1,
+        "roleName": "admin",
+        "rolePermissionList": "",
+        "status": 0,
+        "userRoleList": ""
+    }, {
+        "createdOn": "17/11/2022",
+        "lastUpdateOn": "17/11/2022",
+        "roleDesc": "tout les droits",
+        "roleId": 2,
+        "roleName": "admin",
+        "rolePermissionList": "",
+        "status": 1,
+        "userRoleList": ""
+    }, {
+        "createdOn": "17/11/2022",
+        "lastUpdateOn": "17/11/2022",
+        "roleDesc": "tout les droits",
+        "roleId": 3,
+        "roleName": "admin",
+        "rolePermissionList": "",
+        "status": 2,
+        "userRoleList": ""
+    }, {
+        "createdOn": "17/11/2022",
+        "lastUpdateOn": "17/11/2022",
+        "roleDesc": "tout les droits",
+        "roleId": 4,
+        "roleName": "admin",
+        "rolePermissionList": "",
+        "status": 0,
+        "userRoleList": ""
+    }]
+}

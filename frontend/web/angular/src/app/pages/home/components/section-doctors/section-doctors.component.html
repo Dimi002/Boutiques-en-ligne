@@ -1,0 +1,18 @@
+<section class="section section-doctor">
+    <div class="container-fluid">
+        <app-section-title class="text-center" [data]="data"></app-section-title>
+        <div class="row">
+            <div class="col-center col-md-11">
+                <section class="doctor-slider slider">
+                    <ngx-slick-carousel class="carousel" #slickComponent [config]="slideConfig"
+                        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                        <app-doctor-widget ngxSlickItem *ngFor="let doctor of doctors" [data]="doctor">
+                        </app-doctor-widget>
+                    </ngx-slick-carousel>
+                </section>
+                <app-cross-with-image class="bottom-right" bgImgClass="no-bg"></app-cross-with-image>
+            </div>
+        </div>
+    </div>
+</section>

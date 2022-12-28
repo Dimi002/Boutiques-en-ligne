@@ -1,0 +1,38 @@
+<div class="header-addresses">
+    <div *ngFor="let address of websiteAddresses.addresses" class="header-address website-addresses">
+        <i class="fas fa-map-marker-alt"></i>
+        <a href="javascript:void(0);">{{ setting?.adresse ?? websiteAddresses.addresses[0] }}</a>
+    </div>
+    <div *ngIf="setting && (setting?.tel || setting?.tel2)">
+        <div *ngIf="setting?.tel" class="header-address website-phone-numbers">
+            <i class="fa fa-phone"></i>
+            <a href="tel:{{ setting?.tel }}">{{ setting?.tel }}</a>
+        </div>
+        <div *ngIf="setting?.tel2" class="header-address website-phone-numbers">
+            <i class="fa fa-phone"></i>
+            <a href="tel:{{ setting?.tel2 }}">{{ setting?.tel2 }}</a>
+        </div>
+    </div>
+    <div *ngIf="!setting">
+        <div *ngFor="let phone of websiteAddresses?.phones" class="header-address website-phone-numbers">
+            <i class="fa fa-phone"></i>
+            <a href="tel:{{ phone }}">{{ phone }}</a>
+        </div>
+    </div>
+    <div *ngIf="setting && (setting.email || setting?.email2)">
+        <div *ngIf="setting?.email" class="header-address website-emails">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:{{ setting?.email }}">{{ setting?.email }}</a>
+        </div>
+        <div *ngIf="setting?.email2" class="header-address website-emails">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:{{ setting?.email2 }}">{{ setting?.email2 }}</a>
+        </div>
+    </div>
+    <div *ngIf="!setting">
+        <div *ngFor="let email of websiteAddresses?.emails" class="header-address website-emails">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:{{ email }}">{{ email }}</a>
+        </div>
+    </div>
+</div>

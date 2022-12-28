@@ -1,0 +1,122 @@
+:host {
+    display: block;
+}
+
+div.video-viewer-container {
+    height: 100%;
+    width: 100%;
+
+    div.video-viewer-preview {
+        height: 100%;
+        width: 95%;
+        margin: auto;
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #707070;
+        cursor: pointer;
+
+        app-custom-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.video-cover {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.video-overlay {
+            background: rgba(0, 0, 0, 0.233);
+            z-index: 1;
+            animation-name: background-fade-reverse;
+            animation-duration: 0.5s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
+        i.fa-play-circle {
+            position: absolute;
+            bottom: 39%;
+            right: 45%;
+            z-index: 1;
+            font-size: 3.7rem;
+            color: var(--custom-primary);
+            animation-name: scaling-reverse;
+            animation-duration: 0.5s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
+        &:hover {
+            i.fa-play-circle {
+                animation-name: scaling;
+                animation-duration: 0.5s;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+            }
+
+            div.video-overlay {
+                animation-name: background-fade;
+                animation-duration: 0.5s;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+            }
+
+            border: 0px;
+            transition: border 0.5s linear;
+        }
+    }
+}
+
+@keyframes scaling {
+    from {
+        transform: scale(1);
+        color: var(--custom-primary);
+        box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+    }
+
+    to {
+        transform: scale(1.3);
+        color: var(--custom-primary-tint);
+        box-shadow: none;
+    }
+}
+
+@keyframes scaling-reverse {
+    from {
+        transform: scale(1.3);
+        color: var(--custom-primary-tint);
+        box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+    }
+
+    to {
+        transform: scale(1);
+        color: var(--custom-primary);
+        box-shadow: none;
+    }
+}
+
+@keyframes background-fade {
+    from {
+        background: rgba(0, 0, 0, 0.459);
+    }
+
+    to {
+        background: rgba(0, 0, 0, 0.055);
+    }
+}
+
+@keyframes background-fade-reverse {
+    from {
+        background: rgba(0, 0, 0, 0.055);
+    }
+
+    to {
+        background: rgba(0, 0, 0, 0.459);
+    }
+}

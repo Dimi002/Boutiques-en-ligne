@@ -1,0 +1,34 @@
+<section class="section-mapa-description">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-center card col-md-10" data-aos="flip-right" data-aos-duration="2000">
+                <app-section-secondary-title data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000" class="text-left" [data]="data"></app-section-secondary-title>
+                <ul data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
+                    <li>
+                        <p class="mapa-item">
+                            <i class="fas fa-chevron-circle-right"></i>
+                            {{this.translations.Cerebrale}}
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mapa-item">
+                            <i class="fas fa-chevron-circle-right"></i>
+                            {{this.translations.Insuffisance}}
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mapa-item">
+                            <i class="fas fa-chevron-circle-right"></i>
+                            {{this.translations.Cardiaque}}
+                        </p>
+                    </li>
+                </ul>
+                <div class="col-md-4 submit-section" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
+                    <div class="form-group">
+                        <button (click)="navService.goTo('/take-appointment')" type="submit" class="btn btn-primary btn-block submit-btn">{{this.translations.PrendreUnRDV}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

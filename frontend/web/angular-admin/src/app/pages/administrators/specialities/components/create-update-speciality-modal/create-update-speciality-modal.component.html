@@ -1,0 +1,80 @@
+<div class="custom-class">
+  <form [formGroup]="form" class="was-validated">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-lg-6">
+        <div class="form-group has-success has-feedback">
+          <label for="SpecialityName">Speciality name</label>
+          <div class="input-group">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-user"></i>
+            </button>
+            <input type="text" class="form-control" placeholder="Speciality name" id="SpecialityName"
+              formControlName="specialityName" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-lg-6">
+        <div class="form-group has-success has-feedback">
+          <label for="specialistCommonName">Specialist's name</label>
+          <div class="input-group">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-user"></i>
+            </button>
+            <input type="text" class="form-control" placeholder="Specialist's namey" id="specialistCommonName"
+              formControlName="specialistCommonName" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <div class="form-group has-success has-feedback">
+          <label for="specialityImagePath">Speciality Image</label>
+          <div class="input-group">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-image"></i>
+            </button>
+            <input (change)="selectFile($event)" [(ngModel)]="modelImage" type="file" class="form-control"
+              placeholder="speciality image" id="specialityImagePath" formControlName="specialityImagePath">
+            <button type="button" class="btn btn-primary mt-10" (click)="showImage()" *ngIf="specialistImage.file">
+              <i class="fa fa-eye"></i>
+            </button>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <div class="form-group has-success has-feedback">
+          <label for="comment">Short description</label>
+          <div class="input-group">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-comment"></i>
+            </button>
+            <textarea class="form-control" placeholder="Leave a description here..." id="specialityDesc" rows="4"
+              formControlName="specialityDesc" style="height: 100px">
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <div class="form-group has-success has-feedback">
+          <label for="comment">Long Description</label>
+          <div class="reach-text-container h-500">
+            <app-reach-text [placeholder]="placeholder" [editor]="editor" [toolbar]="toolbar"
+              [colorPresets]="colorPresets" [outputValue]="reachTextBinded"
+              (emitReachTextContent)="reachTextContentMessage($event)"></app-reach-text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary float-end mt-1" (click)="save()"
+      [disabled]="form.invalid || isLoading">
+      <span>Save</span>
+      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+    </button>
+  </form>
+</div>

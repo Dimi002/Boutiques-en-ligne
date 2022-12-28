@@ -1,0 +1,8 @@
+<div class="animated fadeIn role-list-wrapper">
+  <button type="button" class="btn btn-primary" (click)="create()">
+    <i class="fa fa-plus"></i>
+    <span>Create</span>
+  </button>
+  <app-display-role (createOrDeleteOrUpdateItemEvent)="getRoles('refresh')" [roles]="roles" [isLoading]="isLoading"
+    [dtTrigger]="dtTrigger"></app-display-role>
+</div>

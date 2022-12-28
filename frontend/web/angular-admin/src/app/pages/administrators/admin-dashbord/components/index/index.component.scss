@@ -1,0 +1,14 @@
+div.row {
+    div.card-header {
+        display: flex;
+        li.refresh-icon {
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+}

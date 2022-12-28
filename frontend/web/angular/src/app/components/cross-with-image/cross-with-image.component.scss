@@ -1,0 +1,68 @@
+section.section.section-right {
+    position: relative;
+    margin-left: 3%;
+    height: 100%;
+    width: 100%;
+    section.background-color {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--custom-primary);
+    }
+    section.background-image {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: url('/assets/website/img/doctors/doctor-thumb-13.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    div.squarre {
+        position: absolute;
+        height: 25%;
+        width: 27%;
+        background-color: #f9f9f9;
+        &.top-left {
+            top: 0;
+            left: 0;
+        }
+        &.top-right {
+            top: 0;
+            right: 0;
+        }
+        &.bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        &.bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+@media only screen and (max-width: 767.98px) {
+    section.section.section-right {
+        display: block;
+        section.background-image {
+            background-position: center !important;
+        }
+    }
+}
+.bg-center {
+    background-position: center !important;
+}
+.bg-left {
+    background-position: left !important;
+}
+.bg-right {
+    background-position: right !important;
+}
+.bg-bottom {
+    background-position: bottom !important;
+}
+.no-bg {
+    background: none !important;
+}

@@ -1,0 +1,17 @@
+div {
+  button {
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    z-index: 9999;
+    span {
+      font-size: large;
+      color: #fff;
+    }
+  }
+}

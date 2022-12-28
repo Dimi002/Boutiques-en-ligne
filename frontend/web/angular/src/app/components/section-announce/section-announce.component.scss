@@ -1,0 +1,61 @@
+section.section-announce {
+    color: #ffff ;
+    background-color: #ffff;
+    padding: 2rem 0 2rem 0;
+    div.row {
+        div.col-center {
+            margin: auto;
+            padding: 3rem 4rem 3rem 4rem;
+            background-image: url('/assets/website/img/features/feature-02.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            div.overlay {
+                background: rgba(0, 0, 0, 0.521);
+                position: absolute;
+                top: 0;left: 0;right: 0;bottom: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+            }
+            app-section-secondary-title {
+                position: relative;
+                z-index: 1;
+            }
+            li {
+                list-style: none;
+                font-size: 1rem;
+                position: relative;
+                z-index: 1;
+                p.announce-item {
+                    text-align: left;
+                    i {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+            div.submit-section {
+                button {
+                    background-color: var(--custom-primary);
+                    i {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-announce {
+        div.row {
+            div.col-center {
+                padding: 1rem 2rem 1rem 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="card-body">
+    <div *ngIf="isLoading" class="page-loader-wrapper">
+        <div class="lds-dual-ring"></div>
+        <span class="page-loading-msg mt-4 text-bold">Loading...</span>
+    </div>
+    <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-hover table-center datatable mb-0">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Patient Phone</th>
+                    <th>Patient email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients">
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);">{{ patient?.patientName }} </a>
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);">{{ patient?.patientPhone }}</a>
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);">{{ patient?.patientEmail }}</a>
+                        </h2>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

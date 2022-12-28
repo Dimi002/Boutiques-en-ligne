@@ -1,0 +1,9 @@
+<div class="animated fadeIn user-list-wrapper">
+  <button *ngIf="authService.hasAnyPermission(['CREATE_USER'])" type="button" class="btn btn-primary"
+    (click)="create()">
+    <i class="fa fa-plus"></i>
+    <span>Create</span>
+  </button>
+  <app-display-users (createOrDeleteOrUpdateItemEvent)="getUsers('refresh')" [users]="users" [initialUsers]="users"
+    [isLoading]="isLoading" [dtTrigger]="dtTrigger"></app-display-users>
+</div>

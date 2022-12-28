@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+    <div class="NgxEditor__Wrapper row">
+      <ngx-editor-menu
+      [editor]="editor"
+      [toolbar]="toolbar"
+      [colorPresets]="colorPresets"
+      >
+    </ngx-editor-menu>
+      <ngx-editor
+        formControlName="longDescription"
+        [editor]="editor"
+        [placeholder]="placeholder"
+        [outputFormat]="outputFormat"
+        [ngModel]="outputValue"
+        (focusOut)="getHTML()"
+      ></ngx-editor>
+    </div>
+</form>

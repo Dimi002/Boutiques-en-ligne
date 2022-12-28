@@ -1,0 +1,88 @@
+div.card {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    min-height: 120px;
+    box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+    div.director-cover {
+        padding: 0;
+        margin: 0;
+        border-bottom-right-radius: inherit;
+        border-top-right-radius: inherit;
+        overflow: hidden;
+        background-position: top !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        min-width: 40%;
+        div.director-cover-overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+            background-color: rgba(0, 0, 0, 0.205);
+            z-index: 0;
+        }
+        app-custom-image {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            border-radius: inherit;
+            overflow: hidden;
+        }
+        h4 {
+            font-size: 0.9rem;
+            padding: 0.2rem;
+            color: #ffff;
+            text-align: center;
+            font-weight: 500;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    div.doctors-slider {
+        margin: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: 1px solid var(--custom-primary);
+        border-left: 0;
+        padding: 0.5rem 1rem 0.5rem 1.5rem;
+        overflow: hidden;
+        margin-left: -15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        p.description {
+            font-size: 0.75rem;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            a.view-btn {
+                width: 110px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0.4rem;
+                margin-bottom: 0.4rem;
+                border-radius: 1rem;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+.minimal-height {
+    min-height: 100px !important;
+    box-shadow: none !important;
+}

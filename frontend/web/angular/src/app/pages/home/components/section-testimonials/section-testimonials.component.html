@@ -1,0 +1,13 @@
+<section class="section section-testimonials">
+    <div class="container-fluid">
+        <app-section-title class="text-center" [data]="data"></app-section-title>
+        <div class="row">
+            <div class="col-center col-md-11">
+                <section class="testimonials-list">
+                    <app-testimonial-widget *ngFor="let item of testimonials" [testimonial]="item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"></app-testimonial-widget>
+                </section>
+                <app-cross-with-image class="bottom-right" bgImgClass="no-bg"></app-cross-with-image>
+            </div>
+        </div>
+    </div>
+</section>

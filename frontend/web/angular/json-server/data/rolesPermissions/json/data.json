@@ -1,0 +1,81 @@
+{
+    "rolesPermission": [{
+            "createdOn": "22/01/2023",
+            "lastUpdateOn": "23/10/2030",
+            "rolePermissionId": {
+                "permission": {
+                    "createdOn": "23/10/2030",
+                    "lastUpdateOn": "23/10/2030",
+                    "permissionDesc": "admin",
+                    "permissionId": 1,
+                    "permissionName": "admin",
+                    "rolePermissionList": "",
+                    "status": 0
+                },
+                "role": {
+                    "createdOn": "17/11/2022",
+                    "lastUpdateOn": "17/11/2022",
+                    "roleDesc": "tout les droits",
+                    "roleId": 1,
+                    "roleName": "admin",
+                    "rolePermissionList": "",
+                    "status": 0,
+                    "userRoleList": ""
+                }
+            },
+            "status": 0
+        },
+        {
+            "createdOn": "22/01/2023",
+            "lastUpdateOn": "23/10/2030",
+            "rolePermissionId": {
+                "permission": {
+                    "createdOn": "23/10/2030",
+                    "lastUpdateOn": "23/10/2030",
+                    "permissionDesc": "user",
+                    "permissionId": 2,
+                    "permissionName": "user",
+                    "rolePermissionList": "",
+                    "status": 0
+                },
+                "role": {
+                    "createdOn": "17/11/2022",
+                    "lastUpdateOn": "17/11/2022",
+                    "roleDesc": "tout les droits",
+                    "roleId": 2,
+                    "roleName": "user",
+                    "rolePermissionList": "",
+                    "status": 0,
+                    "userRoleList": ""
+                }
+            },
+            "status": 1
+        },
+        {
+            "createdOn": "22/01/2023",
+            "lastUpdateOn": "23/10/2030",
+            "rolePermissionId": {
+                "permission": {
+                    "createdOn": "23/10/2030",
+                    "lastUpdateOn": "23/10/2030",
+                    "permissionDesc": "admin",
+                    "permissionId": 3,
+                    "permissionName": "admin",
+                    "rolePermissionList": "",
+                    "status": 0
+                },
+                "role": {
+                    "createdOn": "17/11/2022",
+                    "lastUpdateOn": "17/11/2022",
+                    "roleDesc": "tout les droits",
+                    "roleId": 3,
+                    "roleName": "admin",
+                    "rolePermissionList": "",
+                    "status": 0,
+                    "userRoleList": ""
+                }
+            },
+            "status": 2
+        }
+    ]
+}

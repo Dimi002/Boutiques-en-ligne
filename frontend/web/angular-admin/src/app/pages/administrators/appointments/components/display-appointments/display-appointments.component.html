@@ -1,0 +1,58 @@
+<div class="card-body">
+    <div *ngIf="isLoading" class="page-loader-wrapper">
+        <div class="lds-dual-ring"></div>
+        <span class="page-loading-msg mt-4 text-bold">Loading...</span>
+    </div>
+    <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+            class="table table-hover table-center datatable mb-0">
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Purpose</th>
+                    <th>Patient Name</th>
+                    <th>Patient Phone</th>
+                    <th>Appointment Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of appointments">
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);" class="avatar avatar-sm mr-2">
+                                <app-custom-image
+                                    [src]="imageService.getCover(appointment?.specialistId?.userId?.userImagePath)"
+                                    [alt]="appointment?.specialistId?.userId?.firstName"
+                                    imgClass="avatar-img rounded-circle"></app-custom-image>
+                            </a>
+                            <a href="javascript:void(0);">Dr. {{ appointment?.specialistId?.userId?.firstName }} {{
+                                appointment?.specialistId?.userId?.lastName }}</a>
+                        </h2>
+                    </td>
+                    <td>{{ appointment?.patientMessage }}</td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);">{{ appointment?.patientName }}</a>
+                        </h2>
+                    </td>
+                    <td>
+                        <h2 class="table-avatar">
+                            <a href="javascript:void(0);">{{ appointment?.patientPhone }}</a>
+                        </h2>
+                    </td>
+                    <td>{{ appointment?.appointmentDate | date:'fullDate' }}<span class="d-block text-info">
+                            {{ getHour(appointment?.appointmentHour + '') }} minutes</span>
+                    </td>
+                    <td>
+                        <div class="status-toggle">
+                            <span
+                                class="badge badge-pill {{ appointment?.state === 'ACCEPTED'? 'bg-success': appointment?.state === 'PENDING'? 'bg-warning': 'bg-danger' }} inv-badge">{{
+                                appointment?.state }}</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

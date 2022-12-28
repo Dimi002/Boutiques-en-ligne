@@ -1,0 +1,50 @@
+<!-- Take Appointment Page Header -->
+<!--app-section-page-header [data]="data"></app-section-page-header-->
+<!-- /Take Appointment Page Header -->
+
+<!-- Appointment Booking Verify -->
+<section class="content success-page-cont">
+  <div class="container-fluid">
+      <div class="row justify-content-center">
+          <div class="col-lg-6">
+              <!-- Success Card -->
+              <div class="card success-card">
+                  <div class="card-body">
+                      <div class="success-cont">
+                          <h3 class="confirmation-message">
+                              {{ this.translations.Confirmation }}
+                          </h3>
+                          <app-doctors-slider-widget [data]="this.appointment?.specialistId"
+                              [showDetailButton]="false"></app-doctors-slider-widget>
+                          <p>
+                              <strong>{{this.translations.HeureProgrammee}} <span>{{ appointment?.appointmentDate |
+                                      date:'mediumDate' }} {{ getHour(appointment?.appointmentHour + "")
+                                      }}</span></strong>
+                          </p>
+                          <p>
+                              <strong> {{this.translations.Rappel}}</strong>
+                          </p>
+                          <ul class="appointment-notification-modes">
+                              <li>
+                                  <label for="mail"> {{this.translations.Mail}}</label>
+                                  <input type="checkbox" name="mail" id="mail" checked disabled>
+                              </li>
+                              <li>
+                                  <label for="message"> {{this.translations.Message}}</label>
+                                  <input type="checkbox" name="message" id="message" checked disabled>
+                              </li>
+                          </ul>
+                          <a (click)="saveChanges()" href="javascript:void(0);" class="btn btn-primary view-inv-btn">
+                              <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status"
+                                      aria-hidden="true"></span></i>
+                              <span *ngIf="!isLoading">{{this.translations.ConfirmezLeRDV}}</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <!-- /Success Card -->
+          </div>
+      </div>
+  </div>
+</section>
+<!-- /Appointment Booking Verify -->

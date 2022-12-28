@@ -1,0 +1,19 @@
+<!-- Department Page -->
+<section class="department-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-section col-md-3">
+                <app-section-side-nav (departmentChange)="activeDepartment = $event" [departments]="departments"
+                    [activeDepartment]="activeDepartment"></app-section-side-nav>
+            </div>
+            <main class="col-section col-md-9">
+                <app-section-department-desc [activeDepartment]="activeDepartment"></app-section-department-desc>
+            </main>
+        </div>
+    </div>
+</section>
+<app-section-mapa-description></app-section-mapa-description>
+<app-section-specialities></app-section-specialities>
+<app-section-testimonials></app-section-testimonials>
+<app-section-director-citation></app-section-director-citation>
+<!-- /Department Page -->

@@ -1,0 +1,1 @@
+Feature: Fixer une plage horaire pour les rendez vous par semaine

@@ -1,0 +1,19 @@
+<section class="section section-quick-appointment">
+    <div class="container-fluid">
+        <app-section-title class="text-center" [data]="data" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></app-section-title>
+        <div class="row">
+            <app-cross-with-image class="top-right" bgImgClass="no-bg" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500"></app-cross-with-image>
+            <app-cross-with-image class="top-left" bgImgClass="no-bg" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500"></app-cross-with-image>
+            <div class="col-center col-md-11">
+                <div class="row">
+                    <div class="col col-md-9" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+                        <app-quick-appointment-form (specialityChange)="getSpecialitySpecialists($event)" (specialistChange)="filterSpecialist($event)" [doctors]="doctors" [specialities]="specialities"></app-quick-appointment-form>
+                    </div>
+                    <div class="col col-md-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <app-doctor-image-slider [doctors]="doctorsImages"></app-doctor-image-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

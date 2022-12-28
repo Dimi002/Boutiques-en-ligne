@@ -1,0 +1,12 @@
+div.role-list-wrapper {
+    button {
+        display: flex;
+        margin: 1rem 0 1rem auto;
+        justify-content: space-around;
+        align-items: center;
+
+        i {
+            margin-right: 7px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<img *ngIf="_src !== ''; else loading;" [src]="_src" [class]="imgClass" [alt]="alt">
+
+<ng-template #loading>
+  <div class="img-box">
+    <img [class]="imgClass" src="/assets/website/img/doctors/doctor-placeholder.jpg">
+  </div>
+</ng-template>

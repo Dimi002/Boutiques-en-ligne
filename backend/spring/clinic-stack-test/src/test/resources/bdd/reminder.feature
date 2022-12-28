@@ -1,0 +1,2 @@
+Feature: Notifier le specialiste et le patient pour un rendez imminent
+Le systeme doit pouvoir envoyer des messages et des mails au specialiste et au patient a l_approche de l_heure d_un rendez vous accepter

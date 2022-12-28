@@ -1,0 +1,92 @@
+<div class="card card-table mb-0">
+    <div class="card-body">
+        <div class="table-responsive">
+            <div *ngIf="isLoading" class="page-loader-wrapper">
+                <div class="lds-dual-ring"></div>
+                <span class="page-loading-msg mt-4 text-bold">Loading...</span>
+            </div>
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-center datatable mb-0">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Appt Date</th>
+                        <th>Purpose</th>
+                        <th class="text-center">State</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of appointments">
+                        <td>
+                            <h2 class="table-avatar">
+                                <a href="javascript:void(0);">{{ item?.patientName }}
+                                    <span>{{ item?.patientPhone }}</span>
+                                    <span>{{ item?.patientEmail }}</span>
+                                </a>
+                            </h2>
+                        </td>
+                        <td>{{ item?.appointmentDate | date:'fullDate' }}<span class="d-block text-info">
+                                {{ getHour(item?.appointmentHour) }} minutes</span></td>
+                        <td>{{ item?.patientMessage }}</td>
+
+                        <td class="text-center"
+                            *ngIf="item?.state !== this.states.accept  &&  item?.state !== this.states.cancel">
+                            <span class="badge badge-warning">{{ item?.state }}</span>
+                        </td>
+                        <td class="text-center " *ngIf="item?.state === this.states.accept">
+                            <span class="badge badge-success">{{ item?.state }}</span>
+                        </td>
+                        <td class="text-center " *ngIf="item?.state === this.states.cancel">
+                            <span class="badge bg-danger">{{ item?.state }}</span>
+                        </td>
+
+                        <td class="text-right"
+                            *ngIf="item?.state != this.states.accept  &&  item?.state != this.states.cancel">
+                            <div class="table-action">
+                                <a (click)="detail(item)" href="javascript:void(0);" class="btn btn-sm bg-info-light">
+                                    <i class="far fa-eye"></i> View
+                                </a>
+
+                                <a (click)="confirm(item, this.states.accept)" href="javascript:void(0);"
+                                    class="btn btn-sm bg-success-light">
+                                    <i class="fas fa-check"></i> Accept
+                                </a>
+                                <a (click)="confirm(item, this.states.cancel)" href="javascript:void(0);"
+                                    class="btn btn-sm bg-danger-light">
+                                    <i class="fas fa-times"></i> Cancel
+                                </a>
+                            </div>
+                        </td>
+
+                        <td class="text-right" *ngIf="item?.state === this.states.cancel">
+                            <div class="table-action">
+                                <a (click)="detail(item)" href="javascript:void(0);" class="btn btn-sm bg-info-light">
+                                    <i class="far fa-eye"></i> View
+                                </a>
+
+                                <a (click)="confirm(item, this.states.accept)" href="javascript:void(0);"
+                                    class="btn btn-sm bg-success-light">
+                                    <i class="fas fa-check"></i> Accept
+                                </a>
+                            </div>
+                        </td>
+
+                        <td class="text-right" *ngIf="item?.state === this.states.accept">
+                            <div class="table-action">
+                                <a (click)="detail(item)" href="javascript:void(0);" class="btn btn-sm bg-info-light">
+                                    <i class="far fa-eye"></i> View
+                                </a>
+
+
+                                <a (click)="confirm(item, this.states.cancel)" href="javascript:void(0);"
+                                    class="btn btn-sm bg-danger-light">
+                                    <i class="fas fa-times"></i> Cancel
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

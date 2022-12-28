@@ -1,0 +1,13 @@
+<div class="card {{ !showDetailButton? 'minimal-height': '' }}" (click)="onSelect()">
+    <div class="director-cover">
+        <app-custom-image [src]="imageService.getCover(data?.userId?.userImagePath)" [alt]="data?.userId?.firstName"></app-custom-image>
+        <div class="director-cover-overlay"></div>
+        <h4>{{ data?.userId?.firstName }} {{ data?.userId?.lastName }}</h4>
+    </div>
+    <div class="doctors-slider">
+        <p class="description">
+            <span>{{ getSpecialities(data?.specialitiesList) }}</span>
+            <a *ngIf="showDetailButton" (click)="onSelect()" href="javascript:void(0)" class="btn btn-block view-btn {{ data.selected? 'selected': '' }}">{{this.translations.Choisir}}</a>
+        </p>
+    </div>
+</div>

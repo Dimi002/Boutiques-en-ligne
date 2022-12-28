@@ -1,0 +1,10 @@
+<section class="about-us-detail">
+    <div class="row {{ index % 2 === 0 ? 'img-right': 'img-left'}}">
+        <div class="col-md-4 cover" [style.backgroundImage]="'url(' + aboutUsDetail?.img + ')'" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+            <app-cross-with-image class="bottom-right" bgImgClass="no-bg"></app-cross-with-image>
+        </div>
+        <div class="col-md-8 description" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+            <p class="about-description" [innerHTML]="aboutUsDetail?.description"></p>
+        </div>
+    </div>
+</section>

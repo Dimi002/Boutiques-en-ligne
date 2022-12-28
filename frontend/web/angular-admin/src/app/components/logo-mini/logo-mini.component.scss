@@ -1,0 +1,19 @@
+a.navbar-brand.logo {
+    display: flex !important;
+    align-items: center;
+    flex-direction: row !important;
+    line-height: inherit !important;
+    i {
+        font-size: 2em;
+        color: var(--custom-primary);
+    }
+}
+a:hover {
+    color: black;
+}
+a.logo-white {
+    color: white;
+}
+a.logo-white:hover {
+    color: white;
+}

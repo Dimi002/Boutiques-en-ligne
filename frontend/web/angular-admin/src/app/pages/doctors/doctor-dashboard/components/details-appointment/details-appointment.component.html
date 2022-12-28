@@ -1,0 +1,68 @@
+<!-- Appointment Details Modal -->
+<div class="modal-header">
+    <h5 class="modal-title">Appointment Details</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <ul class="info-details">
+        <li>
+            <div class="details-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="title">Date & Hour</h5>
+                        <span class="text">{{ appointment?.appointmentDate | date:'fullDate' }} {{ getHour(appointment?.appointmentHour) }} minutes</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-right">
+                            <button type="button" class="btn {{ appointment.state === states.accept? 'btn-success': (appointment.state === states.cancel? 'btn-danger': 'btn-warning') }} btn-outline btn-sm"
+                                id="topup_status">{{ appointment.state }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="details-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="title">Patient Name</h5>
+                        <span class="text">{{ appointment?.patientName }}</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="details-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="title">Patient Email</h5>
+                        <span class="text"><a href="mailto:{{ appointment?.patientEmail }}">{{ appointment?.patientEmail }}</a></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="details-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="title">Patient Phone</h5>
+                        <span class="text"><a href="tel:{{ appointment?.patientPhone }}">{{ appointment?.patientPhone }}</a></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="details-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="title">Purpose</h5>
+                        <span class="text">{{ appointment.patientMessage }}</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- /Appointment Details Modal -->

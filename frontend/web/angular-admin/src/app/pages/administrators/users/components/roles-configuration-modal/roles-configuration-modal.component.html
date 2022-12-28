@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h4 class="modal-title text-dark">Roles</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <span>Roles</span>
+          <label class="switch switch-label switch-pill switch-success float-right">
+            <input type="checkbox" (change)="toggleSelectAllRolesBtn($event)" [(ngModel)]="isAllRolesSelected"
+              [disabled]="!roles || roles.length <= 0" class="switch-input">
+            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+          </label>
+        </div>
+        <div
+          class="card-body authorization-inner {{ isLoadingRoles? 'd-flex align-items-center justify-content-center': '' }}">
+          <div *ngIf="isLoadingRoles" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div *ngIf="!isLoadingRoles && roles.length===0" class="text-center">
+            <span class="text-danger">
+              <i class="fa fa-ban"></i>
+              Empty list
+              <i class="fa fa-ban"></i>
+            </span>
+          </div>
+          <a *ngFor="let item of roles" class="dropdown-item pr-0" href="javascript:void(0);" [tooltip]="item?.roleDesc"
+            placement="top">
+            {{ item?.roleName }}
+            <label class="switch switch-label switch-pill switch-success float-right">
+              <input type="checkbox" (change)="checkRole(item)" [(ngModel)]="item.checked" class="switch-input" checked>
+              <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+            </label>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary btn-brand" (click)="close()">
+    <i class="fa fa-times"></i>
+    <span>Cancel</span>
+  </button>
+  <button type="button" class="btn btn-success btn-brand" (click)="save()">
+    <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+    <i *ngIf="!isLoading" class="fa fa-save"></i>
+    <span>Register</span>
+  </button>
+</div>

@@ -1,0 +1,115 @@
+{
+    "menu": {
+        "Accueil": "Accueil",
+        "Consultations": "Consultations",
+        "Departements": "Départements",
+        "Galerie": "Galerie",
+        "AProposDeNous": "À propos de nous",
+        "ContactezNous": "Contactez-Nous"
+    },
+    "footer": {
+        "PourLesDocteurs": "Pour les Médecins",
+        "RendezVous": "Rendez-Vous",
+        "Connexion": "Se Connecter",
+        "Inscription": "S'inscrire",
+        "TableauDeBordDuDocteur": "Tableau de Bord du Médecin",
+        "TermesEtConditions": "Termes et Conditions",
+        "Politique": "Politique",
+        "PourLesPatients": "Pour les Patients",
+        "ChercherUnDocteur": "Chercher un Médecin",
+        "PrendreUnRDV": "Prendre Un Rendez-Vous",
+        "Description": "La Clinique Médico-chirurgicale Le Berceau en abrégé CMCB est située à Douala à 199 Rue Foulcault à Akwa, face Direction générale Nextel ou face Hôtel le Ndé et à 200 mètres de la Direction Générale MTN."
+    },
+    "search": {
+        "ChercherUnDocteur": "Rechercher un Médecin, Prendre un Rendez-Vous",
+        "PlaceHolder": "Recherche de Médecins, de Maladies, etc.",
+        "Exemple": "Ex : Contrôle Dentaire ou de Sucre etc.",
+        "Rechercher": "Rechercher",
+        "Specialite": "Spécialité",
+        "Specialiste": "Spécialiste"
+    },
+    "appointment": {
+        "SelectionDeSpecialite": "Choisir une Spécialité",
+        "SelectionDeMedecin": "Choisir un Médécin",
+        "Heure": "Heure",
+        "HeureOuverTureFermeture": "Entre: ",
+        "NomComplet": "Noms et Prénoms",
+        "Telephone": "Téléphone",
+        "Email": "Email",
+        "BesoinsDuPatient": "Décrire vos besoins",
+        "PrendreUnRDV": "Prendre un Rendez-Vous",
+        "RdvAccepte": "Rendez-vous pris avec succès!",
+        "RdvAvec": "Rendez-vous pris avec",
+        "Le": "le",
+        "PageAccueil": "Retour à l'Accueil !",
+        "Confirmation": "Confirmez le rendez-vous dans notre clinique avec le docteur",
+        "HeureProgrammee": "Votre rendez-vous sera programmé à ",
+        "Rappel": "Vous recevrez un rappel à travers les canaux suivants",
+        "Mail": "Un Mail",
+        "Message": "Un Message téléphonique",
+        "ConfirmezLeRDV": "Confirmez le rendez-vous",
+        "HeuresDeTravail": "Heures De Travail",
+        "Titre": "Prendre Un Rendez-Vous Rapide",
+        "TitreConfirmationDeRDV": "Veuillez Confirmer Le Rendez-Vous",
+        "Choisir": "Choisir",
+        "PrendreUnRdvAvec": "Prendre Rendez-Vous Avec Un",
+        "RemplissageInfo": "Remplissez vos informations personnelles pour prendre rendez-vous",
+        "ChoisirPlage": "Choisir une heure pour le rendez-vous",
+        "ErreurPasDeDocteurSelectionne": "Veuillez sélectionner un docteur !"
+    },
+    "doctorWidget": {
+        "Reserver": "Réserver Maintenant",
+        "DisponibleLe": "Disponible le",
+        "AnneeExperience": "Année(s) d'experience"
+    },
+    "contact": {
+        "Nom": "Nom",
+        "Objet": "Objet",
+        "Envoi": "ENVOYER LE MESSAGE"
+    },
+    "speciality": {
+        "SavoirPlus": "En Savoir Plus",
+        "TitreDeSection": "La Clinique Et Ses Spécialités"
+    },
+    "mapa": {
+        "Cerebrale": "Cérébrales (Hémiplégie);",
+        "Insuffisance": "Rename (Insuffisance);",
+        "Cardiaque": "Cardiaque (Insuffisance et Infactus);",
+        "MapaTitre": "Qu'est-ce que la MAPA ?",
+        "MapaDescription": "La MAPA (Mesure Ambulatoire  de la Pression Artérielle) permet un dépistage et un meilleur traitement de l'hypertension artérielle qui est la maladie cardio-vasculaire la plus fréquente et souvent la plus grave et par complication:"
+    },
+    "video": {
+        "Staff": " Notre staff intervient avec beaucoup de professionnalisme afin de vous dispenser des soins que ce soit pour : enfants, adultes jusqu’aux personnes âgées et aux personnes handicapées.",
+        "Objectif": "Ils contribuent avec professionnalisme au maintien des personnes dans un état psychologique de qualité depuis leur accueil jusqu’à leur rétablissement complet.",
+        "Titre": "Ce Que Nous Faisons",
+        "Description": "Notre mission première est d’accueillir et de prodiguer des soins aux patients; De veiller à leur confort et leur bien-être en vue de maintenir et d’améliorer leur état de santé."
+    },
+    "sectionDirecteur": {
+        "MotDuDirecteur": " Notre staff intervient avec beaucoup de professionnalisme afin de vous dispenser des soins que ce soit pour : enfants, adultes jusqu’aux personnes âgées et aux personnes handicapées. Ils contribuent avec professionnalisme au maintien des personnes dans un état psychologique de qualité depuis leur accueil jusqu’à leur rétablissement complet.Notre mission première est d’accueillir et de prodiguer des soins aux patients; De veiller à leur confort et leur bien-être en vue de maintenir et d’améliorer leur état de santé.",
+        "TitreSectionDirecteur": "Mot Du Directeur De La Clinique"
+    },
+    "sectionMedecin": {
+        "NosMedecins": "Nos Médecins"
+    },
+    "temoignage": {
+        "TitreSectionTemoignage": "Ce Que Disent Nos Patients"
+    },
+    "sectionAvailable": {
+        "Titre": "Fonctions Disponibles Dans Notre Clinique",
+        "Description": "Il est établi depuis longtemps qu'un lecteur sera distrait par le contenu lisible d'une page lorsqu'il regarde sa mise en page."
+    },
+    "sectionAnounce": {
+        "Hotler": "Hotler de pression arterielle ;",
+        "HotlerRyth": "Hotler rythmique ;",
+        "Titre": "Desormais Maintenant"
+    },
+    "aboutUs": {
+        "Description1": "La Clinique Médico-Chirurgicale le Berceau « SAS » (CMCB « SAS »), établissement médico-chirurgical privé existe à Douala au Cameroun depuis 2021 par arrêté N° 2227/MINSANTE/SG/DOSTS/SDOS/SFSP du 03 Juin 2021. Arrêté signé par la Ministre de la santé. La Clinique Médico-chirurgicale Le Berceau en abrégé CMCB est située à Douala à 199 Rue Foulcault à Akwa, face Direction générale Nexttel ou face Hôtel le Ndé et à 200 mètres de la Direction Générale MTN.",
+        "Description2": "Opérationnel, La clinique depuis sa création fait  preuve de qualité en matière de suivi médical. Nous valorisons la qualité  d’accueil et de prise en charge des patients.Nous mettons également à  la disposition de nos patients  un équipement à la pointe de la technologie et ainsi qu’une équipe médicale jeune, dynamique et compétente dans un cadre agréable, propre et propice à leur  bien- être pour un meilleur confort durant leur séjour jusqu’à leur rétablissement.",
+        "Description3": "La CMCB, soucieuse de qualité  et exigeante renforce régulièrement sa  capacité d’innovation  afin de mieux servir ses patients, le net plus ultra via l’acquisition d’équipements de pointe, le déploiement de nouvelles technologies médicales associés à une organisation de travail efficiente pour leur assurer un parcours santé personnalisé et respectueux de chacun.",
+        "Description4": "Secteur en fort développement, la santé comprend plusieurs types d’intervention comme les consultations d’urgences et les Hospitalisations. « La CMCB » a développé la qualité de ses services afin de permettre à ses patients de bénéficier d’une prise en charge qualitative et rapide."
+    },
+    "home": {
+        "pageTitle": "Accueil"
+    }
+}

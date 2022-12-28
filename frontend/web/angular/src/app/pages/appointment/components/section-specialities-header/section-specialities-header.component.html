@@ -1,0 +1,7 @@
+<section class="specialities-header-list">
+    <ul class="specialities-list">
+        <li *ngFor="let item of specialities" (click)="onSelectSpeciality(item)">
+            <a href="javascript:void(0);" class="{{ item.selected? 'selected': '' }}"> {{ item?.specialityName }}</a>
+        </li>
+    </ul>
+</section>

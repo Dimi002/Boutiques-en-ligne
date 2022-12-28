@@ -1,0 +1,32 @@
+div.modal-header {
+    button.close {
+        i {
+            color: #a0a0a0;
+            font-size: 17px;
+            height: 20px;
+            line-height: 20px;
+            opacity: 1;
+            width: 20px;
+            z-index: 99;
+        }
+        i:hover {
+            color: #ff4877;
+        }
+    }
+}
+div.modal-body {
+    div.submit-section {
+        button.submit-btn {
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            min-width: 120px;
+        }
+    }
+    div.add-more {
+        a {
+            color: var(--custom-primary);
+            text-decoration: none;
+        }
+    }
+}

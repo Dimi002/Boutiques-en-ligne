@@ -1,0 +1,41 @@
+section.about-us-detail {
+    width: 90%;
+    margin: 4rem auto;
+    div.row {
+        display: flex;
+        &.img-left {
+            flex-direction: row;
+        }
+        &.img-right {
+            flex-direction: row-reverse;
+        }
+        div.cover {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            min-height: 210px;
+            position: relative;
+            app-cross-with-image.bottom-right {
+                position: absolute;
+                bottom: -15px;
+                right: -18px;
+                height: 28%;
+                width: 18%;
+                z-index: 0;
+            }
+        }
+        div.description {
+            &::first-letter {
+                font-size: 2rem;
+                color: var(--custom-primary);
+                font-family: 'Font Awesome 5 Free';
+            }
+            padding: 1rem 1rem 1rem 2rem;
+            p {
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+        }
+    }
+}

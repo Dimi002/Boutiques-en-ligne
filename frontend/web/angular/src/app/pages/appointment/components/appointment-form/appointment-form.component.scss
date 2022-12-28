@@ -1,0 +1,43 @@
+div.card {
+    border-top: 3px solid var(--custom-primary);
+    margin-bottom: 0;
+    height: 100%;
+    form.quick-appointment-form {
+        section.appointment-informations, section.patient-informations {
+            margin-bottom: 1.5rem;
+            div.form-group {
+                label {
+                    font-weight: bold;
+                    color: #858585;
+                }
+            }
+        }
+        section.patient-informations, section.purpose-informations {
+            div.form-group {
+                input::placeholder, textarea::placeholder {
+                    font-weight: bold;
+                }
+                input.form-control, textarea.form-control {
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    border-radius: 0;
+                }
+            }
+        }
+        section.purpose-informations {
+            div.col-md-6.submit-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:767px) {
+    div.card {
+        box-shadow: none;
+    }  
+}

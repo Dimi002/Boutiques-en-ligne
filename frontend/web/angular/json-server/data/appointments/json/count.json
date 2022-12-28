@@ -1,0 +1,9 @@
+{
+    "count": [{
+        "allAceptTodayPatientDate": "7/12/2025",
+        "allCancelTodayPatientDate": "7/12/2025",
+        "allAceptTodayPatient": 1,
+        "allPatient": 10,
+        "allCancelTodayPatient": 5
+    }]
+}

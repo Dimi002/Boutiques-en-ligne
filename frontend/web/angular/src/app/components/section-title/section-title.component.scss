@@ -1,0 +1,26 @@
+div.section-header {
+    z-index: 1;
+    section.title-wrapper {
+        position: relative;
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 2rem;
+        div.underline {
+            position: absolute;
+            width: 85px;
+            height: 10px;
+            background-color: var(--custom-primary);
+            left: 2px;
+            bottom: -8px;
+            border-radius: 20px;
+        }
+        h2 {
+            font-weight: bold;
+        }
+    }
+    p {
+        font-size: 1.15rem;
+        font-weight: bold;
+        margin-top: 3rem;
+    }
+}

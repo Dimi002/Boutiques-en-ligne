@@ -1,0 +1,62 @@
+<!-- Main Wrapper -->
+<div class="main-wrapper login-body">
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="loginbox">
+                <div class="login-left">
+                    <div class="overlay"></div>
+                    <app-logo customClass="logo-white-blue"></app-logo>
+                </div>
+                <div class="login-right">
+                    <div class="login-right-wrap">
+                        <h1>Login</h1>
+                        <p class="account-subtitle">Access to our dashboard</p>
+
+                        <!-- Form -->
+                        <form>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text h-100">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
+                                <input [(ngModel)]="loginData.login" [ngModelOptions]="{standalone: true}" type="email"
+                                    class="form-control" placeholder="Username / Email">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text h-100">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                                <input [(ngModel)]="loginData.password" [ngModelOptions]="{standalone: true}"
+                                    placeholder="Password" [type]="passwordType" class="form-control"
+                                    autocomplete="current-password">
+                                <div class="input-group-append" (click)="toggleViewPasswordBtn()">
+                                    <span class="input-group-text h-100"><i
+                                            class="fa {{ passwordType === 'password'? 'fa-eye': 'fa-eye-slash' }}"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button (click)="login()" [disabled]="isLoading" class="btn btn-primary btn-block" type="submit">
+                                    <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span></i>
+                                    <span *ngIf="!isLoading">Login</span>
+                                </button>
+                            </div>
+                        </form>
+                        <!-- /Form -->
+
+                        <!--div class="text-center forgotpass" (click)="sendEmailResetPassord()"><a
+                                href="javascript:void(0);">Forgot Password?</a></div-->
+                        <div class="login-or">
+                            <span class="or-line"></span>
+                            <span class="span-or">C<span class="last-letter">M</span>CB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main Wrapper -->

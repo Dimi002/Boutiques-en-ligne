@@ -1,0 +1,79 @@
+<!-- Header -->
+<div class="header">
+
+    <!-- Logo -->
+    <div class="header-left">
+        <app-logo *ngIf="sideBarOpened" (click)="navService.goTo('/home/admin-dashboard')"></app-logo>
+        <app-logo-mini *ngIf="!sideBarOpened" (click)="navService.goTo('/home/admin-dashboard')"></app-logo-mini>
+    </div>
+    <!-- /Logo -->
+
+    <a (click)="sideBarOpened = !sideBarOpened" href="javascript:void(0);" id="toggle_btn">
+        <i class="fe fe-text-align-left"></i>
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <a class="mobile_btn" id="mobile_btn">
+        <i class="fa fa-bars"></i>
+    </a>
+    <!-- /Mobile Menu Toggle -->
+
+    <!-- Header Right Menu -->
+    <ul class="nav user-menu menu-align">
+        <!-- Lang Picker -->
+        <!--li ngbDropdown class="nav-item dropdown has-arrow logged-item">
+            <a ngbDropdownToggle href="javascript:void(0);" class="dropdown-toggle nav-link"
+                id="dropdownLangMenuButton">
+                <span>
+                    <app-flag [name]="currentLang"></app-flag>
+                    <span class="lang-key">{{ currentLang }}</span>
+                </span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu lang-dropdown dropdown-menu-right"
+                aria-labelledby="dropdownLangMenuButton">
+                <a ngbDropdownItem (click)="changeLanguage('fr')" class="dropdown-item" href="javascript:void(0);">
+                    <app-flag name="fr"></app-flag>
+                    <span class="lang-key">FR</span>
+                </a>
+                <a ngbDropdownItem (click)="changeLanguage('en')" class="dropdown-item" href="javascript:void(0);">
+                    <app-flag name="en"></app-flag>
+                    <span class="lang-key">EN</span>
+                </a>
+            </div>
+        </li-->
+        <!-- /Lang Picker -->
+
+        <!-- User Menu -->
+        <li ngbDropdown class="nav-item dropdown has-arrow mr-3">
+            <a ngbDropdownToggle href="javascript:void(0);" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <span class="user-img">
+                    <app-custom-image [src]="userImagePath" alt="User Image" imgClass="rounded-circle">
+                    </app-custom-image>
+                </span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-user-menu">
+                <div class="user-header">
+                    <div class="avatar avatar-sm">
+                        <app-custom-image [src]="userImagePath" alt="User Image" imgClass="rounded-circle">
+                        </app-custom-image>
+                    </div>
+                    <div class="user-text">
+                        <h6>{{ (currentUser?.firstName + ' ' + currentUser?.lastName | slice:0:8) + '.' }}</h6>
+                        <p class="text-muted mb-0">Administrator</p>
+                    </div>
+                </div>
+                <a ngbDropdownItem (click)="navService.goTo('/home/admin-profile-settings')" class="dropdown-item"
+                    href="javascript:void(0)">My Profile</a>
+                <a ngbDropdownItem (click)="navService.goTo('/home/admin-settings')" class="dropdown-item"
+                    href="javascript:void(0)">Settings</a>
+                <a ngbDropdownItem (click)="authService.logout()" class="dropdown-item"
+                    href="javascript:void(0)">Logout</a>
+            </div>
+        </li>
+        <!-- /User Menu -->
+
+    </ul>
+    <!-- /Header Right Menu -->
+
+</div>
+<!-- /Header -->

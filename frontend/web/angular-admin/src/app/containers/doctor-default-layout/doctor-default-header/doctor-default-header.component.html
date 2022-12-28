@@ -1,0 +1,78 @@
+<!-- Header -->
+<header class="header">
+    <nav class="navbar navbar-expand-lg header-nav">
+        <div class="navbar-header">
+            <app-logo (click)="navService.goTo('/home/doctor-dashboard')"></app-logo>
+        </div>
+        <div class="main-menu-wrapper">
+            <div class="menu-header">
+                <a href="javascript:void(0);" class="menu-logo">
+                    <img src="assets/website/img/logo.png" class="img-fluid" alt="Logo">
+                </a>
+                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <ul class="nav header-navbar-rht">
+
+            <!-- Lang Picker -->
+            <!--li ngbDropdown class="nav-item dropdown has-arrow logged-item">
+                <a ngbDropdownToggle href="javascript:void(0);" class="dropdown-toggle nav-link"
+                    id="dropdownLangMenuButton">
+                    <span>
+                        <app-flag [name]="currentLang"></app-flag>
+                        <span class="lang-key">{{ currentLang }}</span>
+                    </span>
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu lang-dropdown dropdown-menu-right"
+                    aria-labelledby="dropdownLangMenuButton">
+                    <a ngbDropdownItem (click)="changeLanguage('fr')" class="dropdown-item" href="javascript:void(0);">
+                        <app-flag name="fr"></app-flag>
+                        <span class="lang-key">FR</span>
+                    </a>
+                    <a ngbDropdownItem (click)="changeLanguage('en')" class="dropdown-item" href="javascript:void(0);">
+                        <app-flag name="en"></app-flag>
+                        <span class="lang-key">EN</span>
+                    </a>
+                </div>
+            </li-->
+            <!-- /Lang Picker -->
+
+            <!-- User Menu -->
+            <li ngbDropdown class="nav-item dropdown has-arrow">
+                <a ngbDropdownToggle href="javascript:void(0)" class="dropdown-toggle nav-link"
+                    id="dropdownUserMenuMenuButton">
+
+                    <span class="user-img">
+                        <app-custom-image [src]="userImagePath" alt="User Image" imgClass="rounded-circle">
+                        </app-custom-image>
+                    </span>
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right dropdown-user-menu"
+                    aria-labelledby="dropdownUserMenuMenuButton">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <app-custom-image [src]="userImagePath" alt="User Image" imgClass="rounded-circle">
+                            </app-custom-image>
+                        </div>
+                        <div class="user-text">
+                            <h6>{{ (currentUser?.firstName + ' ' + currentUser?.lastName | slice:0:8) + '.' }}</h6>
+                            <p class="text-muted mb-0">Doctor</p>
+                        </div>
+                    </div>
+                    <a ngbDropdownItem (click)="navService.goTo('/home/doctor-dashboard')" class="dropdown-item"
+                        href="javascript:void(0)">Dashboard</a>
+                    <a ngbDropdownItem (click)="navService.goTo('/home/doctor-profile-settings')" class="dropdown-item"
+                        href="javascript:void(0)">Profile Settings</a>
+                    <a ngbDropdownItem (click)="authService.logout()" class="dropdown-item"
+                        href="javascript:void(0)">Logout</a>
+                </div>
+            </li>
+            <!-- /User Menu -->
+        </ul>
+    </nav>
+</header>
+
+<!--app-doctor-default-sidebar [navItems]="navItems"></app-doctor-default-sidebar-->
+<!-- /Header -->

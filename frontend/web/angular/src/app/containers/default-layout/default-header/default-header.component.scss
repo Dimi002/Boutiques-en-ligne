@@ -1,0 +1,34 @@
+header.header {
+    position: sticky;
+    top: -1px;
+    z-index: 1001;
+    nav {
+        ul.nav {
+            justify-content: flex-end;
+            flex-grow: 0.1;
+            li {
+                div.dropdown-menu-right {
+                    min-width: 108px;
+                }
+                span.lang-key {
+                    line-height: 1.5;
+                    padding-left: 10px;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        ul.main-nav {
+            li {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+        div.main-menu-wrapper {
+            margin-left: auto;
+            flex-grow: 0;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+<div class="card">
+    <div class="card-body">
+        <!-- Social Form -->
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Facebook URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </span>
+                            </div>
+                            <input #facebookUrl formControlName="facebook" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="facebookUrl.value" target="_blank">{{ facebookUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Twitter URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon2">
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                            </div>
+                            <input #twitterUrl formControlName="twitter" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="twitterUrl.value" target="_blank">{{ twitterUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Instagram URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon3">
+                                    <i class="fab fa-instagram"></i>
+                                </span>
+                            </div>
+                            <input #instagramUrl formControlName="instagram" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="instagramUrl.value" target="_blank">{{ instagramUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Pinterest URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon4">
+                                    <i class="fab fa-dribbble"></i>
+                                </span>
+                            </div>
+                            <input #pinterestUrl formControlName="pinterest" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="pinterestUrl.value" target="_blank">{{ pinterestUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Linkedin URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon5">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </span>
+                            </div>
+                            <input #linkedinUrl formControlName="linkedin" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="linkedinUrl.value" target="_blank">{{ linkedinUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Youtube URL</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text h-100" id="basic-addon6">
+                                    <i class="fab fa-youtube"></i>
+                                </span>
+                            </div>
+                            <input #youtubeUrl formControlName="youtube" type="text" class="form-control">
+                        </div>
+                        <small class="form-text">
+                            <a [href]="youtubeUrl.value" target="_blank">{{ youtubeUrl.value }}</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-section">
+                <button (click)="saveChanges()" type="submit" class="btn btn-primary submit-btn">
+                    <span> Save Changes </span>
+                    <i *ngIf="isLoading">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </i>
+                </button>
+            </div>
+        </form>
+        <!-- /Social Form -->
+    </div>
+</div>

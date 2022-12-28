@@ -1,0 +1,81 @@
+{
+    "specialities": [{
+        "specialityName": "AVOBENZONE, OCTOCRYLENE, OXYBENZONE",
+        "specialistCommonName": "Bismuth subsalicylate",
+        "specialityDesc": "unleash front-end systems",
+        "specialityImagePath": "Storage/Images/1665402814577-chirurgie.jpeg",
+        "id": 1
+    }, {
+        "specialityName": "chlorpromazine hydrochloride",
+        "specialistCommonName": "Prenatal with Ferrous Fum and Folic Acid",
+        "specialityDesc": "deliver world-class relationships",
+        "specialityImagePath": "Storage/Images/1665401493558-pediatrie.jpeg",
+        "id": 2
+    }, {
+        "specialityName": "Allopurinol",
+        "specialistCommonName": "ACETAMINOPHEN AND DIPHENHYDRAMINE HYDROCHLORIDE",
+        "specialityDesc": "architect dot-com ROI",
+        "specialityImagePath": "Storage/Images/1665403275772-Traumatologie.jpeg",
+        "id": 3
+    }, {
+        "specialityName": "Donepezil hydrochloride",
+        "specialistCommonName": "Venlafaxine",
+        "specialityDesc": "streamline best-of-breed bandwidth",
+        "specialityImagePath": "Storage/Images/1665402280755-diabetologie.jpeg",
+        "id": 4
+    }, {
+        "specialityName": "Carduus marianus, Chelidonium majus, Solidago virgaurea, Taraxacum officinalis, Chinchona officinalis, Hydrastis canadensis, Nux vomica",
+        "specialistCommonName": "Metoclopramide",
+        "specialityDesc": "grow real-time eyeballs",
+        "specialityImagePath": "Storage/Images/1665402996459-dermatologie.jpeg",
+        "id": 5
+    }, {
+        "specialityName": "Johnson Grass Pollen",
+        "specialistCommonName": "Fexofenadine hydrochloride",
+        "specialityDesc": "engineer dynamic infomediaries",
+        "specialityImagePath": "Storage/Images/1665402996459-dermatologie.jpeg",
+        "id": 6
+    }, {
+        "specialityName": "Quetiapine fumarate",
+        "specialistCommonName": "Bryonia, Arsenicum Iodatum, Baryta Carbonica, Alumina, Calendula Officinalis, Sulphuricum Acidum, Symphytum Officinale",
+        "specialityDesc": "deliver compelling users",
+        "specialityImagePath": "Storage/Images/1665401826095-urologie.jpeg",
+        "id": 7
+    }, {
+        "specialityName": "CANIS LUPUS FAMILIARIS MILK",
+        "specialistCommonName": "ACONITUM NAPELLUS, ARNICA MONTANA, LEDUM PALUSTRE TWIG, MAGNESIUM PHOSPHATE, DIBASIC TRIHYDRATE, TOXICODENDRON PUBESCENS LEAF, and VISCUM ALBUM FRUITING TOP",
+        "specialityDesc": "e-enable leading-edge systems",
+        "specialityImagePath": "Storage/Images/1665403275772-Traumatologie.jpeg",
+        "id": 8
+    }, {
+        "specialityName": "Chinese Elm",
+        "specialistCommonName": "Cefazolin",
+        "specialityDesc": "utilize ubiquitous web-readiness",
+        "specialityImagePath": "Storage/Images/1665403549033-Hépato-gastro-entérologie.jpeg",
+        "id": 9
+    }, {
+        "specialityName": "Simethicone",
+        "specialistCommonName": "haloperidol",
+        "specialityDesc": "incubate viral convergence",
+        "specialityImagePath": "Storage/Images/1665403658041-neurochirurgie.jpeg",
+        "id": 10
+    }, {
+        "specialityName": "Ethyl Alcohol",
+        "specialistCommonName": "Titanium Dioxide",
+        "specialityDesc": "generate innovative deliverables",
+        "specialityImagePath": "Storage/Images/1665402996459-dermatologie.jpeg",
+        "id": 11
+    }, {
+        "specialityName": "Trandolapril",
+        "specialistCommonName": "Octreotide Acetate",
+        "specialityDesc": "evolve granular systems",
+        "specialityImagePath": "Storage/Images/1665406200640-medecin-generalist.jpeg",
+        "id": 12
+    }, {
+        "specialityName": "EPINEPHRINE",
+        "specialistCommonName": "Ciprofloxacin",
+        "specialityDesc": "envisioneer bleeding-edge solutions",
+        "specialityImagePath": "Storage/Images/1665403658041-neurochirurgie.jpeg",
+        "id": 13
+    }]
+}

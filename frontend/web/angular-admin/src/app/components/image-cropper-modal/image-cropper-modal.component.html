@@ -1,0 +1,18 @@
+<div class="modal-body">
+    <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="4 / 4"
+        [format]="croppedImageFormat"
+        [resizeToWidth]="resizeToWidth"
+        [resizeToHeight]="resizeToHeight"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+    ></image-cropper>
+
+    <div class="submit-section text-center">
+        <button type="submit" (click)="saveChanges()" class="btn btn-primary submit-btn">Save Changes</button>
+    </div>
+</div>

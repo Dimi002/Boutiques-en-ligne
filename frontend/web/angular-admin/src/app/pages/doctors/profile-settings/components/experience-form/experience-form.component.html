@@ -1,0 +1,48 @@
+<!-- Experience -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Experience</h4>
+        <div class="experience-info">
+            <div *ngFor="let item of items" class="row form-row experience-cont">
+                <div class="col-12 {{ (item !== items[0])? 'col-md-10 col-lg-10': 'col-md-12 col-lg-12' }}">
+                    <div class="row form-row">
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label>Hospital Name</label>
+                                <input [(ngModel)]="item.hospitalName" placeholder="Glowing Smiles Family Dental Clinic" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label>From</label>
+                                <input [(ngModel)]="item.from" placeholder="2010" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label>To</label>
+                                <input [(ngModel)]="item.to" placeholder="Present (5 years)" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <input [(ngModel)]="item.designation" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="items && (item !== items[0])" class="col-12 col-md-2 col-lg-2">
+                    <label class="d-md-block d-sm-none d-none">&nbsp;</label>
+                    <a (click)="remove(item)" href="javascript:void(0)" class="btn btn-danger trash"><i
+                            class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="add-more">
+            <a (click)="addSlot()" href="javascript:void(0);" class="add-experience"><i class="fa fa-plus-circle"></i>
+                Add More</a>
+        </div>
+    </div>
+</div>
+<!-- /Experience -->

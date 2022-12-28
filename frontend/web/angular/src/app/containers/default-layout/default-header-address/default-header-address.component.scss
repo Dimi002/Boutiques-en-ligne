@@ -1,0 +1,41 @@
+div.header-addresses {
+    min-height: 35px;
+    background-color: var(--custom-primary);
+    color: #FFFFFF;
+    padding: 10px 0;
+    font-size: .9rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    div.header-address {
+        text-align: center;
+        display: block;
+        min-width: 323px;
+        padding: 5px;
+        i {
+            color: #FFFFFF;
+            margin-right: 7px;
+            &.fa-phone {
+                transform: rotate(83deg);
+            }
+        }
+        a {
+            color: #FFFFFF !important;
+        }
+        &:hover {
+            i {
+                color: #273948;
+                margin-right: 3.5px;
+            }
+            a {
+                color: #273948 !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    
+}

@@ -1,0 +1,136 @@
+section.section-doctor-details-card {
+    div.row {
+        div.col-center {
+            margin: auto;
+            position: relative;
+            div.card.doctor-details {
+                box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+                div.row.photo-biography {
+                    div.contact-infos {
+                        div.photo {
+                            position: relative;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: top;
+                            overflow: hidden;
+                            min-height: 200px;
+                            border-radius: 5px;
+                            box-shadow: 2px 2px 13px rgb(0 0 0 / 10%);
+                            app-custom-image {
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                            }
+                        }
+                        div.contact {
+                            margin: 0;
+                            padding: 0;
+                            ul {
+                                margin: 0;
+                                padding: 0;
+                                li.list-item {
+                                    list-style: none;
+                                    font-size: 1rem;
+                                    position: relative;
+                                    z-index: 1;
+                                    margin-top: 1rem;
+                                    p {
+                                        padding: 0 1rem;
+                                        color: var(--custom-dark);
+                                        font-size: 0.9rem;
+                                        i {
+                                            margin-right: 1rem;
+                                            border: 1px solid currentColor;
+                                            padding: 3px;
+                                            border-radius: 50%;
+                                            &.phone {
+                                                transform: rotate(90deg);
+                                            }
+                                        }
+                                        a {
+                                            text-align: center;
+                                            word-break: break-all;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    div.biography {
+                        div.doctor-name-and-speciality {
+                            h4 {
+                                font-size: 1.8rem;
+                                font-weight: bold;
+                                color: black;
+                                margin-bottom: 1.7rem;
+                                span {
+                                    margin-left: 5px;
+                                    font-size: 1rem;
+                                    color: var(--custom-primary);
+                                    font-weight: 500;
+                                    &::before {
+                                        content: '.';
+                                    }
+                                }
+                            }
+                            section.biography {
+                                h6.biograpy-title {
+                                    font-size: 1.25rem;
+                                    font-weight: 600;
+                                    color: black;
+                                    margin-bottom: 0.5rem;
+                                }
+                                p.biography-desc {
+                                    font-size: 1rem;
+                                    color: var(--custom-dark);
+                                }
+                            }
+                        }
+                    }
+                }
+                div.row.schedule-planning {
+                    section.doctor-planning {
+                        h6.doctor-planning-title {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            color: black;
+                            margin-bottom: 1rem;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+                div.row.appointment-form-wrapper {
+                    section.patient-appointment-form {
+                        h6.patinent-appointment-form-title {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            color: black;
+                            margin-bottom: 1rem;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.section-doctor-details-card {
+        padding: 0rem 0.5rem 3rem;
+    }    
+}
+
+@media only screen and (max-width:767px) {
+    section.section-doctor-details-card {
+        div.row {
+            div.col {
+                margin-bottom: 1rem;
+                width: 93%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }   
+}

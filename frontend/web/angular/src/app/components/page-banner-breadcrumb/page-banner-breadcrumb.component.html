@@ -1,0 +1,32 @@
+<section class="page-banner">
+    <div class="overlay"></div>
+    <app-cross-with-image class="top-right" bgImgClass="no-bg"></app-cross-with-image>
+    <app-cross-with-image class="right" bgImgClass="no-bg" [bgSrc]="(breadcrumbs && breadcrumbs.length > 0)? breadcrumbs[breadcrumbs.length - 1]?.cover: ''"></app-cross-with-image>
+    <app-cross-with-image class="bottom-left" bgImgClass="no-bg"></app-cross-with-image>
+    <app-cross-with-image class="bottom-left-center" bgImgClass="no-bg"></app-cross-with-image>
+    <app-cross-with-image class="top-left" bgImgClass="no-bg"></app-cross-with-image>
+    <app-cross-with-image class="top-center" bgImgClass="no-bg"></app-cross-with-image>
+    <div class="container-fluid">
+        <div class="breadcrumb-bar banner-wrapper">
+            <div class="banner-header text-left">
+                <div class="row align-items-center">
+                    <div class="col-md-12 col-12">
+                        <nav aria-label="breadcrumb" class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li *ngFor="let menu of breadcrumbs ; let i = index;" aria-current="page"
+                                    (click)="navService.goTo(menu?.url)"
+                                    class="breadcrumb-item {{ (breadcrumbs && breadcrumbs.length === i + 1)? 'active': '' }}">
+                                    <a href="javascript:void(0);">{{ menu?.label }}</a>
+                                </li>
+                            </ol>
+                        </nav>
+                        <h2 class="breadcrumb-title">{{ (breadcrumbs && breadcrumbs.length >
+                            0)?
+                            breadcrumbs[breadcrumbs.length - 1]?.label: '' }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

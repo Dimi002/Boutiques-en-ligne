@@ -1,0 +1,32 @@
+<section class="section-announce">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-center card col-md-10">
+                <div class="overlay"></div>
+                <app-section-secondary-title class="text-left" [data]="data"></app-section-secondary-title>
+                <ul>
+                    <li>
+                        <p class="announce-item">
+                            <i class="fas fa-chevron-circle-right"></i>
+                            {{this.translations.Hotler}}
+                        </p>
+                    </li>
+                    <li>
+                        <p class="announce-item">
+                            <i class="fas fa-chevron-circle-right"></i>
+                            {{this.translations.HotlerRyth}}
+                        </p>
+                    </li>
+                </ul>
+                <div class="col-md-3 submit-section">
+                    <div class="form-group">
+                        <button (click)="navService.goTo('/take-appointment')" type="submit" class="btn btn-primary btn-block submit-btn">
+                            {{this.translations.SavoirPlus}}
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

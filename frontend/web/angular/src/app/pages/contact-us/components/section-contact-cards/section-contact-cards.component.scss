@@ -1,0 +1,41 @@
+section.contact-cards {
+    padding: 70px 0 0;
+    width: 90%;
+    margin: auto;
+    div.section-content {
+        div.service-item {
+            background-color: #ffff;
+            padding: 20px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+            height: auto;
+            div.service-icon {
+                padding-right: 1rem;
+                i {
+                    font-size: 2rem;
+                    &.fa-phone {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            div.content-infos {
+                flex-grow: 1;
+                h5 {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    text-transform: uppercase;
+                    h5.planing-hours {
+                        display: inline-flex;
+                        margin-bottom: 0 !important;
+                        margin-left: 0.7rem;
+                        color: var(--custom-primary);
+                    }
+                }
+                p a {
+                    display: block;
+                }
+            }
+        }
+    }
+}
