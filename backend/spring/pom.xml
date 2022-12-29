@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.dimsoft</groupId>
-	<artifactId>clinic-stack-parent</artifactId>
+	<groupId>com.ibrasoft</groupId>
+	<artifactId>store-stack-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>clinic-stack-parent</name>
-	<description>Clinic stack parent server App</description>
+	<name>store-stack-parent</name>
+	<description>Store stack parent server App</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -64,8 +64,8 @@
 		</dependencies>
 	</dependencyManagement>
 	<modules>
-		<module>clinic-stack-prod</module>
-		<module>clinic-stack-test</module>
+		<module>store-stack-prod</module>
+		<module>store-stack-test</module>
 	</modules>
 	<build>
 		<plugins>
