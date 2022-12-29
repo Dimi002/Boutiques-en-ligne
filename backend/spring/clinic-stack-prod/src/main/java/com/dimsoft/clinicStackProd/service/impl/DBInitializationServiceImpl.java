@@ -23,10 +23,7 @@ import com.dimsoft.clinicStackProd.beans.Speciality;
 import com.dimsoft.clinicStackProd.beans.User;
 import com.dimsoft.clinicStackProd.beans.UserRole;
 import com.dimsoft.clinicStackProd.beans.UserRoleId;
-<<<<<<< HEAD
-=======
 import com.dimsoft.clinicStackProd.exceptions.ClinicException;
->>>>>>> 6cd5615b4dfd93dd13becf87976574be3fc10502
 import com.dimsoft.clinicStackProd.exceptions.InvalidInputException;
 import com.dimsoft.clinicStackProd.models.SpecialityModel;
 import com.dimsoft.clinicStackProd.rbac.models.AuthorityModel;
@@ -578,19 +575,7 @@ public class DBInitializationServiceImpl implements DBInitializationService {
 	}
 
 	public void initSettings() {
-		Setting stettings;
-		try {
-			stettings = settingService.getSetting();
-			if (stettings == null) {
-				Setting newSettings = new Setting(clinicLogoLocation, clinicOpeningHour, clinicClosingHour,
-						defaultClinicEmail, clinicSecondaryEmail, defaultClinicAddress, defaultClinicPhone,
-						clinicSecondaryPhone, clinicLinkedInLink, clinicFbLink, clinicTwitterLink, clinicInstaLink,
-						clinicVideoLink, clinicVideoCoverLocation);
-				settingService.createOrUpdate(newSettings);
-			}
-		} catch (InvalidInputException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 }
