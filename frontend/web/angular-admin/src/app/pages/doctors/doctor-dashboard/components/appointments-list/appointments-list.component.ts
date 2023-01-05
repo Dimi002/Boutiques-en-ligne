@@ -1,7 +1,10 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { Appointment, AppointmentControllerService, User } from 'src/app/generated';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { NotificationService } from 'src/app/services/notification.service';
+import { CreateUpdateProduitsModalComponent } from '../create-update-produits-modal/create-update-produits-modal.component';
 
 @Component({
   selector: 'app-appointments-list',
@@ -26,13 +29,32 @@ export class AppointmentsListComponent implements OnInit, OnDestroy {
 
   constructor(
     public appointmentService: AppointmentControllerService,
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    public modalService: BsModalService,
+    public notificationService: NotificationService,
   ) { }
 
   ngOnInit(): void {
     this.getAllAppts();
     this.getTodayAppts();
     this.getUpcomingAppts();
+  }
+
+  createProduit() {
+
+    const initialState = { mode: 'CREATE' }
+    const bsModalRef: BsModalRef = this.modalService.show(CreateUpdateProduitsModalComponent, { initialState, class: 'modal-primary modal-md' });
+    bsModalRef?.onHidden?.subscribe(() => {
+      const createdSuccesfully = bsModalRef.content.isSuccess;
+      const isError = bsModalRef.content.isError;
+      if (createdSuccesfully) {
+        this.notificationService.success('Produits successfully created!');
+        this.getAllAppts();
+      }
+      if (isError) {
+        this.notificationService.danger('Creation failed, an unknown error occurred');
+      }
+    })
   }
 
   getAllAppts(event?: any, loading?: boolean): void {

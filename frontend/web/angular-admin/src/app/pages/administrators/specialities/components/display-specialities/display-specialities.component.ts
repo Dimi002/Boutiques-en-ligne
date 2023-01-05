@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ConfirmationModalComponent } from 'src/app/components/confirmation-modal/confirmation-modal.component';
 import { ImageService } from 'src/app/services/image.service';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { NotificationService } from 'src/app/services/notification.service';
+import { CreateUpdateSpecialityModalComponent } from '../create-update-speciality-modal/create-update-speciality-modal.component';
 
 @Component({
   selector: 'app-display-specialities',
@@ -20,6 +22,7 @@ export class DisplaySpecialitiesComponent implements OnInit, OnDestroy {
     private modalService: BsModalService,
     private navigationService: NavigationService,
     public imageService: ImageService,
+    private notificationService: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -33,18 +36,35 @@ export class DisplaySpecialitiesComponent implements OnInit, OnDestroy {
     };
   }
 
+
   public detail(item: any): void {
   }
 
   public delete(item: any): void {
-    const initialState = { data: { title: 'Delete speciality', message: `Are you sure ? the ${item.specialityName} item will be deleted` } };
+    const initialState = { data: { title: 'Delete Boutique', message: `Are you sure ? the ${item.boutiqueName} item will be deleted` } };
     const bsModalRef = this.modalService.show(ConfirmationModalComponent, { initialState, class: 'modal-danger modal-sm' });
     bsModalRef?.onHide?.subscribe(() => {
       const agree = bsModalRef?.content?.agree;
       if (agree) {
-        if(agree && agree ===true) {
-          this.deleteEvent.emit(item.id);
+        if (agree && agree === true) {
+          this.deleteEvent.emit(item.specialistId);
         }
+      }
+    })
+  }
+
+  public update = (item: any) => {
+    const initialState = { mode: 'UPDATE' }
+    const bsModalRef: BsModalRef = this.modalService.show(CreateUpdateSpecialityModalComponent, { initialState, class: 'modal-primary modal-md' });
+    bsModalRef?.onHidden?.subscribe(() => {
+      const createdSuccesfully = bsModalRef.content.isSuccess;
+      const isError = bsModalRef.content.isError;
+      if (createdSuccesfully) {
+        this.notificationService.success('Boutique successfully Update!');
+        //this.getAllAppts();
+      }
+      if (isError) {
+        this.notificationService.danger('Creation failed, an unknown error occurred');
       }
     })
   }

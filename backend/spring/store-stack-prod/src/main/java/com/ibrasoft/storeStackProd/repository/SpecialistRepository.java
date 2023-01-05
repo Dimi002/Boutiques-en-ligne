@@ -40,6 +40,8 @@ public interface SpecialistRepository extends JpaRepository<Specialist, Integer>
 
 	Specialist findByUserIdId(Integer userId);
 
+	Specialist findByBoutiqueName(String name);
+
 	@Transactional
 	@Modifying
 	@Query("UPDATE Specialist s SET s.socialMediaLinks = :socialMediaLinks WHERE s.specialistId = :specialistId")

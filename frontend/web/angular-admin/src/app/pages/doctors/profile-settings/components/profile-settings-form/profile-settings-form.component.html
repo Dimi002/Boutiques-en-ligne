@@ -13,15 +13,12 @@
                                 <div class="form-group">
                                     <div class="change-avatar">
                                         <div class="profile-img">
-                                            <img src="{{ this.profileImageUrl? this.profileImageUrl: 'assets/website/img/doctors/doctor-placeholder.jpg' }}"
-                                                alt="User Image">
+                                            <img src="{{ this.profileImageUrl? this.profileImageUrl: 'assets/website/img/stores.jpg' }}" alt="User Image">
                                         </div>
                                         <div class="upload-img">
                                             <div class="change-photo-btn">
                                                 <span><i class="fa fa-upload"></i> Upload Photo</span>
-                                                <input formControlName="profileImage" type="file" class="upload"
-                                                    id="profile-image" accept="image/jpg,image/jpeg,image/png,image/gif"
-                                                    (change)="selectFile($event)">
+                                                <input formControlName="profileImage" type="file" class="upload" id="profile-image" accept="image/jpg,image/jpeg,image/png,image/gif" (change)="selectFile($event)">
                                             </div>
                                             <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
                                                 2MB</small>
@@ -36,8 +33,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <i class="fa fa-user"></i>
                                         </button>
-                                        <input type="text" class="form-control" placeholder="First name" id="firstName"
-                                            formControlName="firstName" required>
+                                        <input type="text" class="form-control" placeholder="First name" id="firstName" formControlName="firstName" required>
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +44,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <i class="fa fa-user"></i>
                                         </button>
-                                        <input type="text" class="form-control" placeholder="Last name" id="lastName"
-                                            formControlName="lastName" required>
+                                        <input type="text" class="form-control" placeholder="Last name" id="lastName" formControlName="lastName" required>
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +57,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <i class="fa fa-user"></i>
                                         </button>
-                                        <input type="text" class="form-control" placeholder="Username" id="username"
-                                            formControlName="username" required>
+                                        <input type="text" class="form-control" placeholder="Username" id="username" formControlName="username" required>
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +68,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <span>+237</span>
                                         </button>
-                                        <input type="text" class="form-control" placeholder="phone number" id="phone"
-                                            formControlName="phone" required>
+                                        <input type="text" class="form-control" placeholder="phone number" id="phone" formControlName="phone" required>
                                     </div>
                                 </div>
                             </div>
@@ -88,8 +81,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <i class="fa fa-envelope"></i>
                                         </button>
-                                        <input type="email" class="form-control" placeholder="Email" id="email"
-                                            formControlName="email" required>
+                                        <input type="email" class="form-control" placeholder="Email" id="email" formControlName="email" required>
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +92,7 @@
                                         <button type="button" class="btn btn-secondary">
                                             <i class="fa fa-calendar"></i>
                                         </button>
-                                        <input type="date" class="form-control" placeholder="birthDate" id="birthDate"
-                                            formControlName="birthDate">
+                                        <input type="date" class="form-control" placeholder="birthDate" id="birthDate" formControlName="birthDate">
                                     </div>
                                 </div>
                             </div>
@@ -125,8 +116,7 @@
                     <h4 class="card-title">About Me</h4>
                     <div class="form-group mb-0">
                         <label>Biography</label>
-                        <textarea [(ngModel)]="biography" class="form-control" rows="5"
-                            formControlName="biography"></textarea>
+                        <textarea [(ngModel)]="biography" class="form-control" rows="5" formControlName="biography"></textarea>
                     </div>
                     <small class="form-text text-muted">Note : Type & Press enter to add your
                         biography</small>
@@ -165,23 +155,7 @@
         <!-- /Contact Details -->
 
         <!-- Services and Specialization -->
-        <div class="card services-card" formGroupName="spacializationInfos">
-            <div class="card-body">
-                <h4 class="card-title">Specialization</h4>
-                <div class="form-group mb-0">
-                    <label>Specialization </label>
 
-                    <app-custom-multiple-select [inputValue]="inputValue"
-                        [inputPlaceholder]="inputPlaceholderSpecilisation" [machtList]="machtList"
-                        [selectedItems]="selectedItems" (typingInputEvent)="getItemList($event)"
-                        (deleteOptionEvent)="deleteItem($event)" (selectOptionEvent)="selectItem($event)">
-                    </app-custom-multiple-select>
-
-                    <small class="form-text text-muted">Note : Type & Press enter to add new
-                        specialization</small>
-                </div>
-            </div>
-        </div>
         <!-- /Services and Specialization -->
 
         <!-- Education -->

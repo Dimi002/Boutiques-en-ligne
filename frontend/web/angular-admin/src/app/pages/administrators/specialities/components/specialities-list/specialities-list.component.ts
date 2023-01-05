@@ -1,10 +1,12 @@
 import { ImageService } from 'src/app/services/image.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Speciality, SpecialityControllerService } from 'src/app/generated';
+import { Specialist, SpecialistControllerService, Speciality, SpecialityControllerService } from 'src/app/generated';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { EXCEPTION } from 'src/app/utils/constants';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { CreateUpdateSpecialityModalComponent } from '../create-update-speciality-modal/create-update-speciality-modal.component';
 
 @Component({
   selector: 'app-specialities-list',
@@ -13,14 +15,16 @@ import { EXCEPTION } from 'src/app/utils/constants';
 })
 export class SpecialitiesListComponent implements OnInit, OnDestroy {
   public specialitiesDtTrigger: Subject<any> = new Subject<any>();
-  public items: Speciality[] = [];
+  public items: any[] = [];
   public isLoading: boolean = false;
 
   constructor(
     public navigationService: NavigationService,
     private specialityService: SpecialityControllerService,
+    private specialistService: SpecialistControllerService,
     private notificationService: NotificationService,
     private imageService: ImageService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -28,13 +32,43 @@ export class SpecialitiesListComponent implements OnInit, OnDestroy {
   }
 
   public create = () => {
-    this.navigationService.goTo('/home/admin-specialities/newSpeciality/0');
+    const initialState = { mode: 'CREATE' }
+    const bsModalRef: BsModalRef = this.modalService.show(CreateUpdateSpecialityModalComponent, { initialState, class: 'modal-primary modal-md' });
+    bsModalRef?.onHidden?.subscribe(() => {
+      const createdSuccesfully = bsModalRef.content.isSuccess;
+      const isError = bsModalRef.content.isError;
+      if (createdSuccesfully) {
+        this.notificationService.success('Boutique successfully created!');
+        //this.getAllAppts();
+      }
+      if (isError) {
+        this.notificationService.danger('Creation failed, an unknown error occurred');
+      }
+    })
   }
+
+  public update = () => {
+    const initialState = { mode: 'UPDATE' }
+    const bsModalRef: BsModalRef = this.modalService.show(CreateUpdateSpecialityModalComponent, { initialState, class: 'modal-primary modal-md' });
+    bsModalRef?.onHidden?.subscribe(() => {
+      const createdSuccesfully = bsModalRef.content.isSuccess;
+      const isError = bsModalRef.content.isError;
+      if (createdSuccesfully) {
+        this.notificationService.success('Boutique successfully created!');
+        //this.getAllAppts();
+      }
+      if (isError) {
+        this.notificationService.danger('Creation failed, an unknown error occurred');
+      }
+    })
+  }
+
+
 
   public delete = (itemId: number) => {
     this.isLoading = true;
-    this.specialityService.deleteSpecialityUsingGET(itemId).toPromise().then(res => {
-      this.notificationService.success("This speciality was deleted succefully !")
+    this.specialistService.deleteBoutiqueUsingPOST(itemId).toPromise().then(res => {
+      this.notificationService.success("La boutique a ete suprime avec succes !")
       this.items = []
       this.loadSpecialities('refresh')
     }).catch(err => {
@@ -51,15 +85,18 @@ export class SpecialitiesListComponent implements OnInit, OnDestroy {
   }
 
   private loadSpecialities(refresh?: any) {
-    this.isLoading = true;
-    this.specialityService.getAllActivatedSpecialitiesUsingGET().toPromise()
-      .then((specialities?: Speciality[]) => {
-        this.items = specialities!;
-      }).finally(() => {
-        this.isLoading = false;
-        if (!refresh)
-          this.specialitiesDtTrigger.next('');
-      })
+    // this.isLoading = true;
+    // this.specialistService.getAllBoutiqueUsingPOST().toPromise().then(res => {
+    //   this.items = res
+    // }).catch(err => {
+    //   this.notificationService.danger(EXCEPTION.NO_INTERNET_CONNECTION);
+    // }).finally(() => {
+    //   this.isLoading = false;
+    //   if (!refresh)
+    //     this.specialitiesDtTrigger.next('');
+    // })
+
+    // decommente
   }
 
   public ngOnDestroy(): void {

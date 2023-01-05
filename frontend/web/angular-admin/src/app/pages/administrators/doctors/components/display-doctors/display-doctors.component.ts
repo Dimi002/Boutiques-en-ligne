@@ -36,6 +36,10 @@ export class DisplayDoctorsComponent implements OnInit, OnDestroy {
   public cancel(item: any): void {
   }
 
+  confirm(a: any, b: any) {
+
+  }
+
   public ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }

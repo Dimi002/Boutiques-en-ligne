@@ -17,6 +17,7 @@ export interface Appointment {
     appointmentId?: number;
     createdOn?: Date;
     lastUpdateOn?: Date;
+    originalAppointmentHour?: string;
     patientEmail?: string;
     patientMessage?: string;
     patientName?: string;

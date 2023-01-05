@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    redirectTo: 'home/doctor-dashboard',
+    redirectTo: 'home/boutique-dashboard',
     pathMatch: 'full'
   },
   {
@@ -31,37 +31,25 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'doctor-dashboard',
+        path: 'boutique-dashboard',
         loadChildren: () =>
           import('./pages/doctors/doctor-dashboard/doctor.module').then((m) => m.DoctorModule),
         canActivate: [AuthGuard, SpecialistGuard]
       },
       {
-        path: 'doctor-appointments',
-        loadChildren: () =>
-          import('./pages/doctors/appointments/appointments.module').then((m) => m.AppointmentsModule),
-        canActivate: [AuthGuard, SpecialistGuard]
-      },
-      {
-        path: 'doctor-schedule-timing',
-        loadChildren: () =>
-          import('./pages/doctors/schedule-timing/schedule-timing.module').then((m) => m.ScheduleTimingModule),
-        canActivate: [AuthGuard, SpecialistGuard]
-      },
-      {
-        path: 'doctor-profile-settings',
+        path: 'boutique-profile-settings',
         loadChildren: () =>
           import('./pages/doctors/profile-settings/profile-settings.module').then((m) => m.ProfileSettingsModule),
         canActivate: [AuthGuard, SpecialistGuard]
       },
       {
-        path: 'doctor-social-media',
+        path: 'boutique-social-media',
         loadChildren: () =>
           import('./pages/doctors/social-media/social-media.module').then((m) => m.SocialMediaModule),
         canActivate: [AuthGuard, SpecialistGuard]
       },
       {
-        path: 'doctor-change-password',
+        path: 'boutique-change-password',
         loadChildren: () =>
           import('./pages/doctors/change-password/change-password.module').then((m) => m.ChangePasswordModule),
         canActivate: [AuthGuard, SpecialistGuard]
@@ -82,21 +70,9 @@ const routes: Routes = [
         canActivate: [AuthGuard, AdminGuard]
       },
       {
-        path: 'admin-appointments',
-        loadChildren: () =>
-          import('./pages/administrators/appointments/appointments.module').then((m) => m.AppointmentsModule),
-        canActivate: [AuthGuard, AdminGuard]
-      },
-      {
-        path: 'admin-doctors',
+        path: 'admin-produits',
         loadChildren: () =>
           import('./pages/administrators/doctors/doctors.module').then((m) => m.DoctorsModule),
-        canActivate: [AuthGuard, AdminGuard]
-      },
-      {
-        path: 'admin-patients',
-        loadChildren: () =>
-          import('./pages/administrators/patients/patients.module').then((m) => m.PatientsModule),
         canActivate: [AuthGuard, AdminGuard]
       },
       {
@@ -106,7 +82,7 @@ const routes: Routes = [
         canActivate: [AuthGuard, AdminGuard]
       },
       {
-        path: 'admin-specialities',
+        path: 'admin-boutique',
         loadChildren: () =>
           import('./pages/administrators/specialities/specialities.module').then((m) => m.SpecialitiesModule),
         canActivate: [AuthGuard, AdminGuard]

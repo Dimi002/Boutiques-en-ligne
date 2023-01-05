@@ -57,22 +57,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/register").permitAll()
                 // Swagger UI route protection
-                // .antMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/v2/api-docs").permitAll()
+                .antMatchers(HttpMethod.POST, "/v2/api-docs").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
                 // .access("hasRole('USER') or hasRole('ADMIN') or hasRole('SPECIALIST')")
 
                 // Users routes protection
-                .antMatchers("/users/getAllUser").hasRole("GET_ALL_USERS")
-                .antMatchers("/users/updateUser").hasRole("UPDATE_USER_INFOS")
-                .antMatchers("/users/deleteUser/*").hasRole("DELETE_USER")
-                .antMatchers("/users/findUserById/*").hasRole("FIND_USER")
-                .antMatchers("/users/updateUserPassword").hasRole("UPDATE_PASSWORD")
-                .antMatchers("/users/rememberUserPassword/*").permitAll()
-                .antMatchers("/users/rememberUserPassword/**").permitAll()
-                .antMatchers("/users/createUser").hasRole("CREATE_USER")
-                .antMatchers("/users/updateAdminOrSpecialist").hasRole("UPDATE_ADMIN_OR_SPECIALIST")
-                .antMatchers("/users/createAdminOrSpecialist").hasRole("CREATE_ADMIN_OR_SPECIALIST")
-                .antMatchers("/users/updateImage/*").hasRole("UPDATE_IMAGE")
-                .antMatchers("/users/updateUserStatus").hasRole("UPDATE_USER_STATUS")
+                // .antMatchers("/users/getAllUser").hasRole("GET_ALL_USERS")
+                // .antMatchers("/users/updateUser").hasRole("UPDATE_USER_INFOS")
+                // .antMatchers("/users/deleteUser/*").hasRole("DELETE_USER")
+                // .antMatchers("/users/updateUserPassword").hasRole("UPDATE_PASSWORD")
+                // .antMatchers("/users/rememberUserPassword/*").permitAll()
+                // .antMatchers("/users/rememberUserPassword/**").permitAll()
+                // .antMatchers("/users/createUser").hasRole("CREATE_USER")
+                // .antMatchers("/users/updateAdminOrSpecialist").hasRole("UPDATE_ADMIN_OR_SPECIALIST")
+                // .antMatchers("/users/createAdminOrSpecialist").hasRole("CREATE_ADMIN_OR_SPECIALIST")
+                // .antMatchers("/users/updateImage/*").hasRole("UPDATE_IMAGE")
+                // .antMatchers("/users/updateUserStatus").hasRole("UPDATE_USER_STATUS")
 
                 // Roles routes protection
                 .antMatchers("/roles/getAllRole").hasRole("GET_ALL_ROLES")
@@ -145,7 +148,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/setting/createOrUpdate").hasRole("CREATE_OR_UPDATE_SETTING")
                 .antMatchers("/setting/delete/*").hasRole("DELETE_SETTING")
 
-                // Specialist route protection 
+                // Specialist route protection
                 .antMatchers("/specialists/getAllSpecialist").permitAll()
                 .antMatchers("/specialists/getAllActiveSpecialist").permitAll()
                 .antMatchers("/specialists/createSpecialist").hasRole("CREATE_SPECIALIST")
@@ -195,7 +198,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/search/records/*").permitAll()
                 .anyRequest().authenticated();
-                // .anyRequest().permitAll();
+        // .anyRequest().permitAll();
     }
 
     @Bean

@@ -1,5 +1,10 @@
 package com.ibrasoft.storeStackProd.service.impl;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,22 +13,32 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ibrasoft.storeStackProd.beans.SocialMediaLinks;
 import com.ibrasoft.storeStackProd.beans.Specialist;
 import com.ibrasoft.storeStackProd.beans.User;
 import com.ibrasoft.storeStackProd.exceptions.ClinicException;
+import com.ibrasoft.storeStackProd.models.Boutique;
 import com.ibrasoft.storeStackProd.repository.PlaningRepository;
 import com.ibrasoft.storeStackProd.repository.SpecialistRepository;
 import com.ibrasoft.storeStackProd.repository.SpecialistSpecialityRepository;
+import com.ibrasoft.storeStackProd.repository.UserRepository;
 import com.ibrasoft.storeStackProd.service.SpecialistService;
+import com.ibrasoft.storeStackProd.service.UserService;
 import com.ibrasoft.storeStackProd.util.Constants;
 import com.ibrasoft.storeStackProd.util.JsonSerializer;
+
+import javafx.scene.image.Image;
 
 @Service
 @Transactional
 public class SpecialistServiceImpl implements SpecialistService {
+
+    @Value("${application.upload-directory}")
+    private String userBucketPath;
 
     @Autowired
     SpecialistRepository specialistRepository;
@@ -33,6 +48,9 @@ public class SpecialistServiceImpl implements SpecialistService {
 
     @Autowired
     PlaningRepository planingRepository;
+
+    @Autowired
+    UserRepository userService;
 
     @Override
     public Specialist createOrUpdateSpecialist(Specialist specialist) throws ClinicException {
@@ -152,4 +170,68 @@ public class SpecialistServiceImpl implements SpecialistService {
             specialist.getSpecialistSpecialitiesList();
         return listSpecialists;
     }
+
+    @Override
+    public Specialist createBoutique(Boutique boutique) throws ClinicException, IOException {
+
+        String path = userBucketPath;
+        String fileName = boutique.getBoutiqueImage().getOriginalFilename();
+        String ExtensionFileName = fileName.substring(fileName.indexOf(".") + 1, fileName.length());
+        if (ExtensionFileName.equals("PNG") || ExtensionFileName.equals("png") || ExtensionFileName.equals("jpeg")
+                || ExtensionFileName.equals("JPEG") || ExtensionFileName.equals("jpg")
+                || ExtensionFileName.equals("JPG")
+                || ExtensionFileName.equals("gif") || ExtensionFileName.equals("GIF") || ExtensionFileName.equals("gif")
+                || ExtensionFileName.equals("GIF") || ExtensionFileName.equals("svg")
+                || ExtensionFileName.equals("SVG")) {
+            Files.copy(boutique.getBoutiqueImage().getInputStream(),
+                    Paths.get(path + File.separator + boutique.getBoutiqueImage().getOriginalFilename()),
+                    StandardCopyOption.REPLACE_EXISTING);
+        } else {
+            throw new ClinicException("le fichier selectionne n'est pas une photo  ou n'a pas la bonne extension");
+        }
+
+        if (specialistRepository.findByBoutiqueName(boutique.getBoutiqueName()) == null) {
+            String id = boutique.getBoutiqueUser().substring(boutique.getBoutiqueUser().indexOf(":") + 1,
+                    boutique.getBoutiqueUser().length());
+            Integer idnew = Integer.parseInt(id);
+            Optional<User> user = userService.findById(idnew);
+            Specialist specialist = new Specialist();
+            specialist.setBoutiqueDescription(boutique.getBoutiqueDescription());
+            specialist.setBoutiqueName(boutique.getBoutiqueName());
+            specialist.setBoutiqueQuater(boutique.getBoutiqueQuater());
+            specialist.setBoutiqueImage(fileName);
+            specialist.setUserId(user.get());
+
+            specialistRepository.save(specialist);
+            return specialist;
+        } else {
+            throw new ClinicException("le nom de boutique est deja utilise");
+        }
+
+    }
+
+    @Override
+    public Specialist updateBoutique(Specialist boutique) {
+        Specialist specialist = new Specialist();
+        specialist.setBoutiqueDescription(boutique.getBoutiqueDescription());
+        specialist.setBoutiqueImage(boutique.getBoutiqueImage());
+        specialist.setBoutiqueQuater(boutique.getBoutiqueQuater());
+        specialist.setBoutiqueImage(boutique.getBoutiqueImage());
+
+        specialistRepository.save(specialist);
+        return specialist;
+    }
+
+    @Override
+    public Specialist deleteBoutique(Integer boutiqueId) {
+        Specialist specialist = findBySpecialistId(boutiqueId);
+        specialistRepository.delete(specialist);
+        return specialist;
+    }
+
+    @Override
+    public List<Specialist> getAllBoutique() {
+        return specialistRepository.findAll();
+    }
+
 }

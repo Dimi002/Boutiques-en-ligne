@@ -64,6 +64,16 @@ public class Specialist implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdateOn;
 
+    ///////// Boutique
+    @Column(name = "boutique_name")
+    private String boutiqueName;
+    @Column(name = "boutique_image")
+    private String boutiqueImage;
+    @Column(name = "boutique_quater")
+    private String boutiqueQuater;
+    @Column(name = "boutique_description")
+    private String boutiqueDescription;
+
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private User userId;
@@ -224,5 +234,41 @@ public class Specialist implements Serializable {
 
     public void setSpecialitiesList(List<String> specialitiesList) {
         this.specialitiesList = specialitiesList;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public String getBoutiqueName() {
+        return boutiqueName;
+    }
+
+    public void setBoutiqueName(String boutiqueName) {
+        this.boutiqueName = boutiqueName;
+    }
+
+    public String getBoutiqueImage() {
+        return boutiqueImage;
+    }
+
+    public void setBoutiqueImage(String boutiqueImage) {
+        this.boutiqueImage = boutiqueImage;
+    }
+
+    public String getBoutiqueQuater() {
+        return boutiqueQuater;
+    }
+
+    public void setBoutiqueQuater(String boutiqueQuater) {
+        this.boutiqueQuater = boutiqueQuater;
+    }
+
+    public String getBoutiqueDescription() {
+        return boutiqueDescription;
+    }
+
+    public void setBoutiqueDescription(String boutiqueDescription) {
+        this.boutiqueDescription = boutiqueDescription;
     }
 }

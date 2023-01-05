@@ -1,67 +1,15 @@
-<app-dashboard-total #dashboardTotal></app-dashboard-total>
 <div class="row">
-    <div class="col-md-12">
-
-        <!-- Recent Orders -->
-        <div class="card card-table">
-            <div class="card-header">
-                <h4 class="card-title">Clients Messages</h4>
-                <li class="refresh-icon">
-                    <img (click)="getAllContacts('refresh')" src="assets/admin/img/refresh.png" height="30" width="30" alt="refresh">
-                </li>
-            </div>
-            <app-display-contacts [contacts]="contacts" [dtTrigger]="contactsDtTrigger" [isLoading]="isLoadingContactsMessages">
-            </app-display-contacts>
-        </div>
-        <!-- /Recent Orders -->
-
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6 d-flex">
+    <div class="col-md-12 d-flex">
 
         <!-- Recent Orders -->
         <div class="card card-table flex-fill">
             <div class="card-header">
-                <h4 class="card-title">Doctors List</h4>
+                <h4 class="card-title">Produits List</h4>
                 <li class="refresh-icon">
                     <img (click)="getAllSpecialists('refresh')" src="assets/admin/img/refresh.png" height="30" width="30" alt="refresh">
                 </li>
             </div>
             <app-display-doctors [specialist]="specialist" [dtTrigger]="doctorsDtTrigger" [isLoading]="isLoadingSpecialists"></app-display-doctors>
-        </div>
-        <!-- /Recent Orders -->
-
-    </div>
-    <div class="col-md-6 d-flex">
-
-        <!-- Feed Activity -->
-        <div class="card  card-table flex-fill">
-            <div class="card-header">
-                <h4 class="card-title">Patients List</h4>
-                <li class="refresh-icon">
-                    <img (click)="getAllPatients('refresh')" src="assets/admin/img/refresh.png" height="30" width="30" alt="refresh">
-                </li>
-            </div>
-            <app-display-patients [patients]="patients" [dtTrigger]="patientsDtTrigger" [isLoading]="isLoadingPatients"></app-display-patients>
-        </div>
-        <!-- /Feed Activity -->
-
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-
-        <!-- Recent Orders -->
-        <div class="card card-table">
-            <div class="card-header">
-                <h4 class="card-title">Appointments List</h4>
-                <li class="refresh-icon">
-                    <img (click)="getAllAppointments('refresh')" src="assets/admin/img/refresh.png" height="30" width="30" alt="refresh">
-                </li>
-            </div>
-            <app-display-appointments [appointments]="appointments" [dtTrigger]="apptDtTrigger" [isLoading]="isLoadingAppts">
-            </app-display-appointments>
         </div>
         <!-- /Recent Orders -->
 

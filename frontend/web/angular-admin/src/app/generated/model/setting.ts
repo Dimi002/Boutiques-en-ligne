@@ -24,6 +24,7 @@ export interface Setting {
     tel?: string;
     tel2?: string;
     twitter?: string;
+    valid?: boolean;
     video?: string;
     videoCover?: string;
 }

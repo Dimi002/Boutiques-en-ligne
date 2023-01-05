@@ -1,21 +1,16 @@
 <div class="row">
     <div class="col-md-12">
-        <h3 class="mb-4 title">Patient Appoinments</h3>
+        <h3 class="mb-4 title">List Produits</h3>
         <div class="appointment-tab">
 
             <!-- Appointment Tab -->
             <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
                 <li class="nav-item">
-                    <a (click)="activeTab = 1" class="nav-link {{ (activeTab === 1) ? 'active': '' }}"
-                        href="javascript:void(0);" data-toggle="tab">All</a>
+                    <a (click)="activeTab = 1" class="nav-link {{ (activeTab === 1) ? 'active': '' }}" href="javascript:void(0);" data-toggle="tab">All</a>
                 </li>
-                <li class="nav-item">
-                    <a (click)="activeTab = 2" class="nav-link {{ (activeTab === 2) ? 'active': '' }}"
-                        href="javascript:void(0);" data-toggle="tab">Today</a>
-                </li>
-                <li class="nav-item">
-                    <a (click)="activeTab = 3" class="nav-link {{ (activeTab === 3) ? 'active': '' }}"
-                        href="javascript:void(0);" data-toggle="tab">Upcoming</a>
+
+                <li class="nav-item active nouveau">
+                    <a class="nav-link" href="javascript:void(0);" (click)="createProduit()" data-toggle="tab"> Nouveau Produit</a>
                 </li>
                 <li class="refresh-icon">
                     <img (click)="refresh('refresh')" src="/assets/admin/img/refresh.png" height="30" width="30" alt="refresh">
@@ -26,27 +21,10 @@
             <div class="tab-content">
                 <!-- All Appointment Tab -->
                 <div class="tab-pane {{ (activeTab === 1) ? 'show active': '' }}" id="all-appointments">
-                    <app-display-appointments [dtTrigger]="allApptDtTrigger" [appointments]="allAppts" [isLoading]="isLoadingAllAppts"
-                        (onAppointmentStateChange)="getAllAppts($event)">
+                    <app-display-appointments [dtTrigger]="allApptDtTrigger" [appointments]="allAppts" [isLoading]="isLoadingAllAppts" (onAppointmentStateChange)="getAllAppts($event)">
                     </app-display-appointments>
                 </div>
-                <!-- /All Appointment Tab -->
 
-                <!-- Today Appointment Tab -->
-                <div class="tab-pane {{ (activeTab === 2) ? 'show active': '' }}" id="today-appointments">
-                    <app-display-appointments [dtTrigger]="todayApptDtTrigger" [appointments]="todayAppts" [isLoading]="isLoadingTodayAppts"
-                        (onAppointmentStateChange)="getTodayAppts($event)">
-                    </app-display-appointments>
-                </div>
-                <!-- /Today Appointment Tab -->
-
-                <!-- Upcoming Appointment Tab -->
-                <div class="tab-pane {{ (activeTab === 3) ? 'show active': '' }}" id="upcoming-appointments">
-                    <app-display-appointments [dtTrigger]="upcomingApptDtTrigger" [appointments]="upcommingAppts" [isLoading]="isLoadingUpcommingAppts"
-                        (onAppointmentStateChange)="getUpcomingAppts($event)">
-                    </app-display-appointments>
-                </div>
-                <!-- /Upcoming Appointment Tab -->
             </div>
         </div>
     </div>

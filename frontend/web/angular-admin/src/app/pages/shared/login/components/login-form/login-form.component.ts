@@ -46,11 +46,11 @@ export class LoginFormComponent implements OnInit {
         this.notificationService.success('You are successfully connected');
       }
       if (this.authService.hasAnyRole(['ADMIN']) && this.authService.hasAnyRole(['SPECIALIST'])) {
-        this.navigationService.goTo('home/doctor-dashboard');
+        this.navigationService.goTo('home/boutique-dashboard');
         this.notificationService.success('You are successfully connected');
       }
       if (this.authService.hasAnyRole(['SPECIALIST']) && !this.authService.hasAnyRole(['ADMIN'])) {
-        this.navigationService.goTo('home/doctor-dashboard');
+        this.navigationService.goTo('home/boutique-dashboard');
         this.notificationService.success('You are successfully connected');
       }
     }).catch(error => {

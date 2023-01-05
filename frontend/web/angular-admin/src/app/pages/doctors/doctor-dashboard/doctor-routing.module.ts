@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     component: IndexComponent,
     data: {
-      title: 'Doctor Dashboard'
+      title: 'Boutique Dashboard'
     }
   }
 ];

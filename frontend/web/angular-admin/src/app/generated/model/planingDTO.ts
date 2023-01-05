@@ -11,10 +11,10 @@
  */
 import { Specialist } from './specialist';
 
-export interface PlaningDTO {
-    planDay?: number;
+export interface PlaningDTO { 
     endTime?: string;
     id?: number;
+    planDay?: number;
     specialist?: Specialist;
     startTime?: string;
 }

@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CustomImageComponent implements OnInit {
   public _src: string | undefined = '';
-  public defaultSrc: string = 'assets/website/img/doctors/doctor-placeholder.jpg';
+  public defaultSrc: string = 'assets/website/img/stores.jpg';
 
   @Input() alt: string | undefined = 'image';
   @Input() imgClass: string | undefined = '';

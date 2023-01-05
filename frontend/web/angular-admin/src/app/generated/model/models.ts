@@ -1,5 +1,6 @@
 export * from './agGridResponse';
 export * from './appointment';
+export * from './boutique';
 export * from './contact';
 export * from './contactDTO';
 export * from './fileSystemResource';
@@ -24,6 +25,7 @@ export * from './settingDTO';
 export * from './socialMediaLinks';
 export * from './sort';
 export * from './specialist';
+export * from './specialistDTO';
 export * from './specialistSpeciality';
 export * from './specialistSpecialityId';
 export * from './specialistSpecialityMin';

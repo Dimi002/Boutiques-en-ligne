@@ -17,14 +17,17 @@ import { ProfileTotalBaseComponent } from './components/profile-total/profile-to
 import { HttpLoaderFactory } from 'src/app/configs/http-loader-factory';
 import { AppointmentControllerService } from 'src/app/generated';
 import { DetailsAppointmentComponent } from './components/details-appointment/details-appointment.component';
+import { CreateUpdateProduitsModalComponent } from './components/create-update-produits-modal/create-update-produits-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [IndexComponent, ProfileTotalBaseComponent, ProfileTotalComponent, AppointmentsListComponent, DisplayAppointmentsComponent, DetailsAppointmentComponent],
+  declarations: [IndexComponent, ProfileTotalBaseComponent, ProfileTotalComponent, AppointmentsListComponent, DisplayAppointmentsComponent, DetailsAppointmentComponent, CreateUpdateProduitsModalComponent],
   imports: [
     CommonModule,
     DoctorRoutingModule,
     SlickCarouselModule,
     SharedComponentsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

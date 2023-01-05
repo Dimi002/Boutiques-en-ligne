@@ -5,10 +5,14 @@ div.row {
     ul.nav-tabs {
         li.refresh-icon {
             margin-left: auto;
-
             img {
                 cursor: pointer;
             }
         }
     }
+}
+
+.nouveau {
+    cursor: pointer;
+    margin-left: auto;
 }

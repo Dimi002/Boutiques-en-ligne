@@ -6,7 +6,7 @@
                 <app-custom-image [src]="userImagePath" alt="User Image"></app-custom-image>
             </a>
             <div class="profile-det-info">
-                <h3>Dr. {{currentUser?.firstName}}</h3>
+                <h3>Boutique {{currentUser?.firstName}}</h3>
                 <div class="patient-details" *ngIf="specialitiesList.length > 0">
                     <h5 class="mb-0">{{specialitiesListAsString}}</h5>
                 </div>
@@ -16,8 +16,7 @@
     <div class="dashboard-widget">
         <nav class="dashboard-menu">
             <ul>
-                <li *ngFor="let menu of navItems[0]?.children" [routerLink]="[menu?.url]" routerLinkActive="active"
-                    class="{{ (menu === menuActive)? 'active': '' }} {{authService.hasAnyRole(menu.roles)? '' : 'hide'}}">
+                <li *ngFor="let menu of navItems[0]?.children" [routerLink]="[menu?.url]" routerLinkActive="active" class="{{ (menu === menuActive)? 'active': '' }} {{authService.hasAnyRole(menu.roles)? '' : 'hide'}}">
                     <a (click)="menuActive = menu;" href="javascript:void(0);">
                         <i class="fas {{ menu?.icon }}"></i>
                         <span>{{ menu?.name }}</span>

@@ -1,14 +1,14 @@
 <div class="container-fluid">
-  <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-primary" (click)="create()">
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" (click)="create()">
       <i class="fa fa-plus"></i>
-      <span>Create Speciality</span>
+      <span>Create Boutique</span>
     </button>
-  </div>
-  <!-- Recent Orders -->
-  <div class="card card-table">
-    <app-display-specialities [items]="items" [dtTrigger]="specialitiesDtTrigger" [isLoading]="isLoading" (deleteEvent)="delete($event)">
-    </app-display-specialities>
-  </div>
+    </div>
+    <!-- Recent Orders -->
+    <div class="card card-table">
+        <app-display-specialities [items]="items" [dtTrigger]="specialitiesDtTrigger" [isLoading]="isLoading" (deleteEvent)="delete($event)">
+        </app-display-specialities>
+    </div>
 </div>
 <!-- /Recent Orders -->

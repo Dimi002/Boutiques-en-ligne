@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Editor, Toolbar, Validators as ReachTextValidators } from 'ngx-editor';
 import { DisplayImageModalComponent } from 'src/app/components/display-image-modal/display-image-modal.component';
+import { Boutique, Specialist, SpecialistControllerService, User, UserControllerService } from 'src/app/generated';
 import { SpecialityControllerService } from 'src/app/generated/api/specialityController.service';
 import { Speciality } from 'src/app/generated/model/speciality';
 import { UploadResponse } from 'src/app/generated/model/uploadResponse';
@@ -28,6 +29,10 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
 
   public specialityToCreate: Speciality = {};
   public specialityToUpdate: Speciality = {};
+
+  public spect: Specialist = {}
+
+  public file: any;
 
   public specialistImage: { file: File | null, url: string } = {
     file: null,
@@ -65,21 +70,28 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
 
   public form: FormGroup = this.fb.group({});
 
+  public currentUser: User = this.authService.getUser();
+
+  public items: User[] = []
+
 
   constructor(
     public modalService: BsModalService,
     private fb: FormBuilder,
     public specialityService: SpecialityControllerService,
+    public specialistService: SpecialistControllerService,
     public imageUploadService: ImageService,
     public notificationService: NotificationService,
     public authService: AuthenticationService,
     public navigationService: NavigationService,
-    private activatedroute: ActivatedRoute
+    private activatedroute: ActivatedRoute,
+    private userService: UserControllerService
   ) { }
 
   ngOnInit(): void {
     this._init();
     this.initForm();
+    this.getAllUser()
   }
 
 
@@ -110,12 +122,12 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
 
   public initForm(): void {
     this.form = this.fb.group({
-      id: [],
-      specialityName: ['', Validators.required],
-      specialistCommonName: ['', Validators.required],
-      specialityDesc: [''],
-      longDescription: [''],
-      specialityImagePath: this.mode === MODAL_MODE.update ? [''] : ['', Validators.required],
+      boutiqueName: ['', Validators.required],
+      boutiqueQuater: ['', Validators.required],
+      boutiqueImage: ['', Validators.required],
+      boutiqueUser: ['', Validators.required],
+      boutiqueDescription: [''],
+      // specialityImagePath: this.mode === MODAL_MODE.update ? [''] : ['', Validators.required],
     });
     if (this.mode === MODAL_MODE.update && this.id) {
       this.specialityService.findSpecialityByIdUsingGET(this.id).toPromise().then((speciality?: Speciality) => {
@@ -140,6 +152,53 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
     }
   }
 
+  public saveSpeciality(): void {
+    const specialist: any = this.form.value;
+    const ss: Boutique = {
+      boutiqueDescription: specialist.boutiqueDescription,
+      boutiqueImage: this.file,
+      boutiqueName: specialist.boutiqueName,
+      boutiqueQuater: specialist.boutiqueQuater,
+      boutiqueUser: specialist.boutiqueUser
+    }
+    this.specialistService.createBoutiqueUsingPOST(specialist).toPromise().then(
+      res => {
+        if (res) {
+          this.isLoading = false;
+          this.form.reset();
+          this.notificationService.success("Création éffectuée avec succès");
+        }
+      }
+    ).catch(
+      error => {
+        if (error?.stringErrorCode == 501 && error?.errorText == EXCEPTION.SPECIALITY_NAME_ALREADY_EXIST) {
+          this.notificationService.danger(EXCEPTION.SPECIALITY_NAME_ALREADY_EXIST);
+        } else if (error?.stringErrorCode == 502 && error?.errorText == EXCEPTION.SPECIALITY_ALREADY_DELETED) {
+          this.notificationService.danger(EXCEPTION.SPECIALITY_ALREADY_DELETED);
+        } else {
+          this.notificationService.danger(EXCEPTION.NO_INTERNET_CONNECTION);
+        }
+        this.isLoading = false;
+      }
+    ).finally(
+      () => {
+        this.isLoading = false;
+      }
+    )
+  }
+
+  public getAllUser(refresh?: any) {
+    this.isLoading = true;
+    this.userService.getAllUserUsingGET().toPromise().then(res => {
+      this.items = res
+    }).catch(err => {
+      this.notificationService.danger(EXCEPTION.NO_INTERNET_CONNECTION);
+    }).finally(() => {
+      this.isLoading = false;
+    })
+
+  }
+
   public showImage = () => {
     if (this.specialistImage.file) {
       this.imageUploadService.toBase64(this.specialistImage.file)
@@ -161,48 +220,48 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
   }
 
 
-  public save(): void {
-    let item: Speciality = this.form.value;
-    item.longDescription = this.specialityToCreate.longDescription = this.reachTextResponse;
-    this.specialityToCreate.specialityName = item.specialityName;
-    this.specialityToCreate.specialistCommonName = item.specialistCommonName;
-    this.specialityToCreate.specialityDesc = item.specialityDesc;
-    if (this.mode === MODAL_MODE.update) item.id = this.specialityToUpdate.id;
+  // public save(): void {
+  //   let item: Speciality = this.form.value;
+  //   item.longDescription = this.specialityToCreate.longDescription = this.reachTextResponse;
+  //   this.specialityToCreate.specialityName = item.specialityName;
+  //   this.specialityToCreate.specialistCommonName = item.specialistCommonName;
+  //   this.specialityToCreate.specialityDesc = item.specialityDesc;
+  //   if (this.mode === MODAL_MODE.update) item.id = this.specialityToUpdate.id;
 
 
-    if (item.specialityDesc?.length! > 500) {
-      this.notificationService.danger("This description is more than 500 characters")
-    } else if (!this.modelImage && this.mode === MODAL_MODE.create) {
-      this.notificationService.danger("Please provide an image to this speciality")
-    } else {
-      this.isLoading = true;
-      if (this.specialistImage.file) {
-        this.imageUploadService.upload([this.specialistImage.file]).toPromise()
-          .then((res?: UploadResponse[]) => {
-            if (res) {
-              item = { ...item, specialityImagePath: res[0].uploadLocation };
+  //   if (item.specialityDesc?.length! > 500) {
+  //     this.notificationService.danger("This description is more than 500 characters")
+  //   } else if (!this.modelImage && this.mode === MODAL_MODE.create) {
+  //     this.notificationService.danger("Please provide an image to this speciality")
+  //   } else {
+  //     this.isLoading = true;
+  //     if (this.specialistImage.file) {
+  //       this.imageUploadService.upload([this.specialistImage.file]).toPromise()
+  //         .then((res?: UploadResponse[]) => {
+  //           if (res) {
+  //             item = { ...item, specialityImagePath: res[0].uploadLocation };
 
-              if (this.mode === MODAL_MODE.create) { this.saveSpeciality(item); }
-              else { this.updateSpeciality(item); }
-            }
+  //             if (this.mode === MODAL_MODE.create) { this.saveSpeciality(item); }
+  //             else { this.updateSpeciality(item); }
+  //           }
 
-          }).catch(err => {
-            const message = this.mode === MODAL_MODE.create ? 'Unable to create this speciality' : 'Unable to update this speciality';
-            this.notificationService.danger(message);
-          }).finally(
-            () => {
-              this.isLoading = false;
-            }
-          )
-      } else {
-        if (this.mode === MODAL_MODE.create) { this.saveSpeciality(item); }
-        else {
-          item.specialityImagePath = this.specialityToUpdate.specialityImagePath
-          this.updateSpeciality(item);
-        }
-      }
-    }
-  }
+  //         }).catch(err => {
+  //           const message = this.mode === MODAL_MODE.create ? 'Unable to create this speciality' : 'Unable to update this speciality';
+  //           this.notificationService.danger(message);
+  //         }).finally(
+  //           () => {
+  //             this.isLoading = false;
+  //           }
+  //         )
+  //     } else {
+  //       if (this.mode === MODAL_MODE.create) { this.saveSpeciality(item); }
+  //       else {
+  //         item.specialityImagePath = this.specialityToUpdate.specialityImagePath
+  //         this.updateSpeciality(item);
+  //       }
+  //     }
+  //   }
+  // }
 
   public updateSpeciality = (item: Speciality): void => {
     this.specialityService.updateSpecialityUsingPOST(item).toPromise().then(
@@ -235,56 +294,22 @@ export class CreateUpdateSpecialityModalComponent implements OnInit, OnDestroy {
     )
   }
 
-  public saveSpeciality(item: Speciality): void {
-    this.specialityService.createUsingPOST3(item).toPromise().then(
-      res => {
-        if (res) {
-          this.isLoading = false;
-          this.form.reset();
-          this.navigationService.goTo('/home/admin-specialities/');
-          this.notificationService.success("Création éffectuée avec succès");
-        }
-      }
-    ).catch(
-      error => {
-        if (error?.stringErrorCode == 501 && error?.errorText == EXCEPTION.SPECIALITY_NAME_ALREADY_EXIST) {
-          this.notificationService.danger(EXCEPTION.SPECIALITY_NAME_ALREADY_EXIST);
-        } else if (error?.stringErrorCode == 502 && error?.errorText == EXCEPTION.SPECIALITY_ALREADY_DELETED) {
-          this.notificationService.danger(EXCEPTION.SPECIALITY_ALREADY_DELETED);
-        } else {
-          this.notificationService.danger(EXCEPTION.NO_INTERNET_CONNECTION);
-        }
-        this.isLoading = false;
-      }
-    ).finally(
-      () => {
-        this.isLoading = false;
-      }
-    )
-  }
-
   public selectFile(event: any): void {
-    const file: File = event.target.files[0];
-    const image64 = this.imageUploadService.toBase64(file)
-
-    const validationStatus: boolean = this.validateFile(file);
-    if (!validationStatus) {
-      this.notificationService.danger('Please select an image!');
-      this.specialistImage.file = new File([], '');
-      this.specialistImage.url = '';
-      return;
-    }
-    this.specialistImage.file = file;
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => {
-      this.specialistImage.url = fileReader.result as string;
-    };
+    this.file = event.target.files[0];
   }
 
   public validateFile(file: File): boolean {
     const pattern: string[] = ['image/png', 'image/jpg', 'image/jpeg'];
     return pattern.includes(file.type);
+  }
+  public create() {
+
+  }
+  public update() {
+
+  }
+  public close(): void {
+    this.modalService.hide();
   }
 
 }

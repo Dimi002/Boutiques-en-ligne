@@ -1,80 +1,74 @@
-<div class="custom-class">
-  <form [formGroup]="form" class="was-validated">
-    <div class="row">
-      <div class="col-md-6 col-sm-12 col-lg-6">
-        <div class="form-group has-success has-feedback">
-          <label for="SpecialityName">Speciality name</label>
-          <div class="input-group">
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-user"></i>
-            </button>
-            <input type="text" class="form-control" placeholder="Speciality name" id="SpecialityName"
-              formControlName="specialityName" required>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12 col-lg-6">
-        <div class="form-group has-success has-feedback">
-          <label for="specialistCommonName">Specialist's name</label>
-          <div class="input-group">
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-user"></i>
-            </button>
-            <input type="text" class="form-control" placeholder="Specialist's namey" id="specialistCommonName"
-              formControlName="specialistCommonName" required>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="form-group has-success has-feedback">
-          <label for="specialityImagePath">Speciality Image</label>
-          <div class="input-group">
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-image"></i>
-            </button>
-            <input (change)="selectFile($event)" [(ngModel)]="modelImage" type="file" class="form-control"
-              placeholder="speciality image" id="specialityImagePath" formControlName="specialityImagePath">
-            <button type="button" class="btn btn-primary mt-10" (click)="showImage()" *ngIf="specialistImage.file">
-              <i class="fa fa-eye"></i>
-            </button>
-          </div>
-          <div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="form-group has-success has-feedback">
-          <label for="comment">Short description</label>
-          <div class="input-group">
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-comment"></i>
-            </button>
-            <textarea class="form-control" placeholder="Leave a description here..." id="specialityDesc" rows="4"
-              formControlName="specialityDesc" style="height: 100px">
-            </textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="form-group has-success has-feedback">
-          <label for="comment">Long Description</label>
-          <div class="reach-text-container h-500">
-            <app-reach-text [placeholder]="placeholder" [editor]="editor" [toolbar]="toolbar"
-              [colorPresets]="colorPresets" [outputValue]="reachTextBinded"
-              (emitReachTextContent)="reachTextContentMessage($event)"></app-reach-text>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary float-end mt-1" (click)="save()"
-      [disabled]="form.invalid || isLoading">
-      <span>Save</span>
-      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+<div class="modal-header">
+    <h4 *ngIf="mode==='CREATE'" class="modal-title">Create a Boutique</h4>
+    <h4 *ngIf="mode==='UPDATE'" class="modal-title text-dark">Edit a Boutique</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
     </button>
-  </form>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" class="was-validated">
+        <div class="form-group">
+            <label class="form-col-form-label" for="boutique_name">Boutique name</label>
+            <input formControlName="boutiqueName" type="text" class="form-control" id="boutique_name" required>
+            <div class="invalid-feedback">
+                Please enter the Boutique name
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="boutique_user">User </label>
+            <select formControlName="boutiqueUser" type="text" class="form-control" id="boutique_user" required>
+                <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+                <i *ngIf="!isLoading" class="fa fa-plus"></i>
+                <option *ngFor="let item of items">{{item.username}}:{{item.id}}</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select the User
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="boutique_price">Quater</label>
+            <input formControlName="boutiqueQuater" type="text" class="form-control" id="boutique_quater" required>
+            <div class="invalid-feedback">
+                Please enter the Quater
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="change-avatar">
+                <div class="profile-img">
+                    <img src="" alt="Product Image" width="300" hiegth="200">
+                </div>
+                <div class="upload-img">
+                    <div class="change-photo-btn">
+                        <span><i class="fa fa-upload"></i> Upload Photo</span>
+                        <input formControlName="boutiqueImage" type="file" class="upload" id="boutique-image" accept="image/jpg,image/jpeg,image/png,image/gif" (change)="selectFile($event)">
+                    </div>
+                    <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
+                  2MB</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="boutique_description">Description</label>
+            <textarea formControlName="boutiqueDescription" class="form-control" id="boutique_description" rows="4" required></textarea>
+            <div class="invalid-feedback">
+                Please enter the description
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-brand" (click)="close()">
+      <i class="fa fa-times"></i>
+      <span>Cancel</span>
+    </button>
+    <button *ngIf="mode==='CREATE'" type="button" class="btn btn-primary btn-brand" (click)="saveSpeciality()" [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['CREATE_ROLE'])">
+      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+      <i *ngIf="!isLoading" class="fa fa-plus"></i>
+      <span>Create</span>
+    </button>
+    <button *ngIf="mode==='UPDATE'" type="button" class="btn btn-primary btn-brand" (click)="update()" [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['UPDATE_ROLE_INFOS'])">
+      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+      <i *ngIf="!isLoading" class="fa fa-save"></i>
+      <span>Register</span>
+    </button>
 </div>

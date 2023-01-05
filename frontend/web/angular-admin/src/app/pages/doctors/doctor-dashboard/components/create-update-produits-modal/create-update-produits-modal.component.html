@@ -1,0 +1,70 @@
+<div class="modal-header">
+    <h4 *ngIf="mode==='CREATE'" class="modal-title">Create a Product</h4>
+    <h4 *ngIf="mode==='UPDATE'" class="modal-title text-dark">Edit a Product</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" class="was-validated">
+        <div class="form-group">
+            <label class="form-col-form-label" for="produit_name">Name</label>
+            <input formControlName="produitName" type="text" class="form-control" id="produit_name" required>
+            <div class="invalid-feedback">
+                Please enter the Product name
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="produit_price">Product price</label>
+            <input formControlName="produitPrice" type="text" class="form-control" id="produit_price" required>
+            <div class="invalid-feedback">
+                Please enter the Product price
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="produit_quantity">Quantity</label>
+            <input formControlName="produitQuantity" type="text" class="form-control" id="produit_quantity" required>
+            <div class="invalid-feedback">
+                Please enter the Quantity
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="change-avatar">
+                <div class="profile-img">
+                    <img src="{{ this.profileImageUrl? this.profileImageUrl: 'assets/website/img/stores.jpg' }}" alt="Product Image" width="300" hiegth="200">
+                </div>
+                <div class="upload-img">
+                    <div class="change-photo-btn">
+                        <span><i class="fa fa-upload"></i> Upload Photo</span>
+                        <input formControlName="profileImage" type="file" class="upload" id="profile-image" accept="image/jpg,image/jpeg,image/png,image/gif" (change)="selectFile($event)">
+                    </div>
+                    <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of
+                  2MB</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="role_description">Description</label>
+            <textarea formControlName="roleDesc" class="form-control" id="role_description" rows="4" required></textarea>
+            <div class="invalid-feedback">
+                Please enter the description
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-brand" (click)="close()">
+      <i class="fa fa-times"></i>
+      <span>Cancel</span>
+    </button>
+    <button *ngIf="mode==='CREATE'" type="button" class="btn btn-primary btn-brand" (click)="create()" [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['CREATE_ROLE'])">
+      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+      <i *ngIf="!isLoading" class="fa fa-plus"></i>
+      <span>Create</span>
+    </button>
+    <button *ngIf="mode==='UPDATE'" type="button" class="btn btn-primary btn-brand" (click)="update()" [disabled]="form.invalid || isLoading || !authService.hasAnyPermission(['UPDATE_ROLE_INFOS'])">
+      <i *ngIf="isLoading"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></i>
+      <i *ngIf="!isLoading" class="fa fa-save"></i>
+      <span>Register</span>
+    </button>
+</div>

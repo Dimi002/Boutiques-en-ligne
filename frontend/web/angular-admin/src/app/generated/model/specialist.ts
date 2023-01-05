@@ -18,6 +18,10 @@ import { User } from './user';
 export interface Specialist { 
     appointmentsList?: Array<Appointment>;
     biography?: string;
+    boutiqueDescription?: string;
+    boutiqueImage?: string;
+    boutiqueName?: string;
+    boutiqueQuater?: string;
     city?: string;
     createdOn?: Date;
     gender?: string;

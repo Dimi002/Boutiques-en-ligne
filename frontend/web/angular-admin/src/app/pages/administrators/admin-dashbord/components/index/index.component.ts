@@ -44,62 +44,62 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   getAllSpecialists(refresh?: string): void {
-    this.isLoadingSpecialists = true;
-    this.specialistService.getAllSpecialistUsingGET().toPromise().then(res => {
-      this.specialist = res;
-      if (this.dashboardTotal) {
-        this.dashboardTotal.setDoctorsTotal(res.length);
-      }
-    }).finally(() => {
-      this.isLoadingSpecialists = false;
-      if (!refresh)
-        this.doctorsDtTrigger.next('');
-    });
+    // this.isLoadingSpecialists = true;
+    // this.specialistService.getAllSpecialistUsingGET().toPromise().then(res => {
+    //   this.specialist = res;
+    //   if (this.dashboardTotal) {
+    //     this.dashboardTotal.setDoctorsTotal(res.length);
+    //   }
+    // }).finally(() => {
+    //   this.isLoadingSpecialists = false;
+    //   if (!refresh)
+    //     this.doctorsDtTrigger.next('');
+    // });
   }
 
   getAllPatients(refresh?: string): void {
-    this.isLoadingPatients = true;
-    this.appointmentService.getAllDistinctPatientsUsingGET().toPromise().then(res => {
-      this.patients = res;
-      if (this.dashboardTotal) {
-        this.dashboardTotal.setPatientsTotal(res.length);
-      }
-    }).finally(() => {
-      this.isLoadingPatients = false;
-      if (!refresh)
-        this.patientsDtTrigger.next('');
-    });
+    // this.isLoadingPatients = true;
+    // this.appointmentService.getAllDistinctPatientsUsingGET().toPromise().then(res => {
+    //   this.patients = res;
+    //   if (this.dashboardTotal) {
+    //     this.dashboardTotal.setPatientsTotal(res.length);
+    //   }
+    // }).finally(() => {
+    //   this.isLoadingPatients = false;
+    //   if (!refresh)
+    //     this.patientsDtTrigger.next('');
+    // });
   }
 
   getAllAppointments(refresh?: string): void {
-    this.isLoadingAppts = true;
-    this.appointmentService.getAllAppointmentsUsingGET().toPromise().then(res => {
-      this.appointments = res;
-      if (this.dashboardTotal) {
-        this.dashboardTotal.setAppointmentsTotal(res.length);
-      }
-    }).finally(() => {
-      this.isLoadingAppts = false;
-      if (!refresh)
-        this.apptDtTrigger.next('');
-    });
+    // this.isLoadingAppts = true;
+    // this.appointmentService.getAllAppointmentsUsingGET().toPromise().then(res => {
+    //   this.appointments = res;
+    //   if (this.dashboardTotal) {
+    //     this.dashboardTotal.setAppointmentsTotal(res.length);
+    //   }
+    // }).finally(() => {
+    //   this.isLoadingAppts = false;
+    //   if (!refresh)
+    //     this.apptDtTrigger.next('');
+    // });
   }
 
   getAllContacts(refresh?: string): void {
-    this.isLoadingContactsMessages = true;
-    this.contactService.recordsUsingGET().toPromise().then(res => {
-      this.contacts = res!;
-      if (this.dashboardTotal && res) {
-        this.dashboardTotal.setMessagesTotal(this.contacts.length);
-      }
-    }).catch(error => {
-      if(error && error?.errorText == 'The contacts list is null')
-      this.notificationService.danger("The contacts list is null");
-    }).finally(() => {
-      this.isLoadingContactsMessages = false;
-      if (!refresh)
-        this.contactsDtTrigger.next('');
-    });
+    // this.isLoadingContactsMessages = true;
+    // this.contactService.recordsUsingGET().toPromise().then(res => {
+    //   this.contacts = res!;
+    //   if (this.dashboardTotal && res) {
+    //     this.dashboardTotal.setMessagesTotal(this.contacts.length);
+    //   }
+    // }).catch(error => {
+    //   if(error && error?.errorText == 'The contacts list is null')
+    //   this.notificationService.danger("The contacts list is null");
+    // }).finally(() => {
+    //   this.isLoadingContactsMessages = false;
+    //   if (!refresh)
+    //     this.contactsDtTrigger.next('');
+    // });
   }
 
   public ngOnDestroy(): void {

@@ -8,29 +8,26 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Specialities</th>
-                    <th class="text-right">Actions</th>
+                    <th>Boutique name</th>
+                    <th>Boutique quater</th>
+                    <th class="text-right">image</th>
+                    <th>Boutique Description</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of items">
-                    <td>{{ item?.id }}</td>
-                    <td>
-                        <h2 class="table-avatar">
-                            <a href="javascript:void(0);" class="avatar avatar-sm mr-2">
-                                <app-custom-image [src]="imageService.getCover(item?.specialityImagePath)" [alt]="item?.specialityName"></app-custom-image>
-                            </a>
-                            <a href="javascript:void(0);">{{ item?.specialityName }}</a>
-                        </h2>
-                    </td>
+                    <td class="text-right">{{ item?.specialistId }}</td>
+                    <td class="text-right">{{item.boutiqueName}}</td>
+                    <td class="text-right">{{item.boutiqueQuater}}</td>
+                    <td class="text-right">{{item.boutiqueImage}}</td>
+                    <td class="text-right">{{item.boutiqueDescription}}</td>
                     <td class="text-right">
                         <div class="actions">
-                            <a (click)="edit(item)" class="btn btn-sm bg-success-light" data-toggle="modal"
-                                href="javascript:void(0);">
+                            <a (click)="edit(item)" class="btn btn-sm bg-success-light" data-toggle="modal" href="javascript:void(0);">
                                 <i class="fe fe-pencil"></i> Edit
                             </a>
-                            <a (click)="delete(item)" data-toggle="modal" href="javascript:void(0);"
-                                class="btn btn-sm bg-danger-light">
+                            <a (click)="update(item)" data-toggle="modal" href="javascript:void(0);" class="btn btn-sm bg-danger-light">
                                 <i class="fe fe-trash"></i> Delete
                             </a>
                         </div>

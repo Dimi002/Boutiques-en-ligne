@@ -2,6 +2,7 @@ package com.ibrasoft.storeStackProd.controller;
 
 import com.ibrasoft.storeStackProd.exceptions.ClinicException;
 import com.ibrasoft.storeStackProd.exceptions.InvalidInputException;
+import com.ibrasoft.storeStackProd.models.Boutique;
 import com.ibrasoft.storeStackProd.response.SpecialistDTO;
 import com.ibrasoft.storeStackProd.beans.Appointment;
 import com.ibrasoft.storeStackProd.beans.SocialMediaLinks;
@@ -10,6 +11,7 @@ import com.ibrasoft.storeStackProd.service.SpecialistService;
 import com.ibrasoft.storeStackProd.util.Constants;
 import com.ibrasoft.storeStackProd.service.SpecialistSpecialityService;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @CrossOrigin("*")
@@ -33,6 +36,33 @@ public class SpecialistController {
 
 	@Autowired
 	private SpecialistSpecialityService specialistSpecialityService;
+
+	@RequestMapping(method = RequestMethod.POST, value = "/createBoutique", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> createBoutique(@RequestBody Boutique specialist)
+			throws ClinicException, IOException {
+		return new ResponseEntity<>(specialistService.createBoutique(specialist), HttpStatus.OK);
+
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/updateBoutique", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> updateBoutique(@RequestBody Specialist specialist) {
+		return new ResponseEntity<>(specialistService.updateBoutique(specialist), HttpStatus.OK);
+
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/getAllBoutique", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllBoutique() {
+		return new ResponseEntity<>(specialistService.getAllBoutique(), HttpStatus.OK);
+
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/deleteBoutique/{specialistId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> deleteBoutique(@PathVariable("specialistId") Integer specialistId) {
+		return new ResponseEntity<>(specialistService.deleteBoutique(specialistId), HttpStatus.OK);
+
+	}
+
+	////// Boutique
 
 	@RequestMapping(method = RequestMethod.GET, value = "/getAllSpecialist", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getAllSpecialist() {

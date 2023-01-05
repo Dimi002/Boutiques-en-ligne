@@ -8,33 +8,15 @@ export const navItems: INavData[] = [
     roles: ['ADMIN'],
   },
   {
-    name: 'Appointments',
-    url: '/home/admin-appointments',
-    icon: 'fas fa-calendar-check',
-    roles: ['ADMIN'],
-  },
-  {
-    name: 'Specialities',
-    url: '/home/admin-specialities',
+    name: 'Boutiques',
+    url: '/home/admin-boutique',
     icon: 'fas fa-users',
     roles: ['ADMIN'],
   },
   {
-    name: 'Doctors',
-    url: '/home/admin-doctors',
+    name: 'Produits',
+    url: '/home/admin-produits',
     icon: 'fas fa-user-md',
-    roles: ['ADMIN'],
-  },
-  {
-    name: 'Patients',
-    url: '/home/admin-patients',
-    icon: 'fas fa-user-injured',
-    roles: ['ADMIN'],
-  },
-  {
-    name: 'Messages',
-    url: '/home/admin-contacts',
-    icon: 'fas fa-envelope',
     roles: ['ADMIN'],
   },
   {
@@ -56,8 +38,8 @@ export const navItems: INavData[] = [
     roles: ['ADMIN'],
   },
   {
-    name: 'Doctor Dashboard',
-    url: '/home/doctor-dashboard',
+    name: 'Boutique Dashboard',
+    url: '/home/boutique-dashboard',
     roles: ['SPECIALIST'],
     icon: 'fas fa-home'
   },

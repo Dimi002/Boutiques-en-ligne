@@ -2,42 +2,30 @@ import { INavData } from "../models/menu.model";
 
 export const navItems: INavData[] = [
   {
-    name: 'Doctors',
-    url: '/home/doctor-dashboard',
+    name: 'Produits',
+    url: '/home/boutique-dashboard',
     children: [
       {
-        name: 'Doctor Dashboard',
-        url: '/home/doctor-dashboard',
+        name: 'Produits Dashboard',
+        url: '/home/boutique-dashboard',
         icon: 'fa-columns',
         roles: ['SPECIALIST']
       },
       {
-        name: 'Appointments',
-        url: '/home/doctor-appointments',
-        icon: 'fa-calendar-check',
-        roles: ['SPECIALIST']
-      },
-      {
-        name: 'Schedule Timing',
-        url: '/home/doctor-schedule-timing',
-        icon: 'fa-hourglass-start',
-        roles: ['SPECIALIST']
-      },
-      {
         name: 'Profile Settings',
-        url: '/home/doctor-profile-settings',
+        url: '/home/boutique-profile-settings',
         icon: 'fa-user-cog',
         roles: ['SPECIALIST']
       },
       {
         name: 'Social Media',
-        url: '/home/doctor-social-media',
+        url: '/home/boutique-social-media',
         icon: 'fa-share-alt',
         roles: ['SPECIALIST']
       },
       {
         name: 'Change Password',
-        url: '/home/doctor-change-password',
+        url: '/home/boutique-change-password',
         icon: 'fa-lock',
         roles: ['SPECIALIST']
       },
